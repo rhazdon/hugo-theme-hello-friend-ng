@@ -25,14 +25,11 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
-{{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $base := resources.Get "scss/base.scss" }}
+{{ $main := resources.Get "scss/main.scss" }}
+{{ $scss := slice $base $main | resources.Concat "scss/main.scss" }}
+{{ $style := $scss | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
-
-{{ range $val := $.Site.Params.customCSS }}
-{{ if gt (len $val) 0 }}
-<link rel="stylesheet" type="text/css" href="{{ $val }}">
-{{ end }}
-{{ end }}
 
 <!-- Icons -->
 {{- partial "favicons.html" }}

@@ -3,8 +3,9 @@
 {{ $prism := resources.Get "js/prism.js" }}
 {{ $theme := resources.Get "js/theme.js" }}
 {{ $js := slice $main $menu $prism $theme | resources.Concat "js/bundle.js" }}
-{{ $secureJS := $js | resources.Fingerprint "sha512" }}
-<script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+{{ $secureJS := $js | minify | fingerprint }}
+<script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"
+    crossorigin="anonymous"></script>
 
 {{- if .Site.GoogleAnalytics }}
     <script>
@@ -16,9 +17,3 @@
         ga('send', 'pageview');
     </script>
 {{- end}}
-
-{{ range $val := $.Site.Params.customJS }}
-	{{ if gt (len $val) 0 }}
-		<script src="{{ $val }}"></script>
-	{{ end }}
-{{ end }}

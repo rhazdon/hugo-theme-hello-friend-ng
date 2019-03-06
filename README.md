@@ -68,12 +68,56 @@ Use [RealFaviconGenerator](https://realfavicongenerator.net/) to generate these 
 
 ## How to configure
 
-The theme doesn't require any advanced configuration. Just copy:
+The theme doesn't require any advanced configuration. Just copy this code to ./config.toml
 
 ```
-baseurl = "/"
-languageCode = "en-us"
+baseURL = "https://example.com"
+title   = "Hello Friend NG"
+
+DefaultContentLanguage = "en"
+
 theme = "hello-friend-ng"
+
+pygmentsCodefences = true
+pygmentsUseClasses = true
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+
+# googleAnalytics = ""
+# disqusShortname = ""
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpored = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+[permalinks]
+  posts = "/posts/:year/:month/:title/"
+
+[author]
+  name = "Jane Doe"
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  tag      = "tags"
+  category = ""
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -82,52 +126,66 @@ theme = "hello-friend-ng"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Metadata mostly used in document's head
-  description = "Homepage and blog by Djordje Atlialp"
-  keywords = "homepage, blog, science, informatics, development, programming"
+  description = "Nice theme for homepages and blogs"
+  keywords = ""
   images = [""]
+
+  homeSubtitle = "Hello Friend NG"
+
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  # gitUrl = ""
+
+  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+  justifyContent = false  # Set "text-align: justify" to .content.
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
   # Default theme "light" or "dark"
   defaultTheme = "dark"
+  themeColor = "#252627"
+
+  [params.logo]
+    logoText     = "$ cd /home/"
+    logoHomeLink = "/"
+
+  # Social icons
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:nobody@example.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/"
 
 [languages]
   [languages.en]
-    title = "Hello Friend NG"
-    subtitle = "A simple theme for Hugo"
-    keywords = ""
-    copyright = ""
-    readOtherPosts = "Read other posts"
+    subtitle  = "Hello Friend NG Theme"
+    weight    = 1
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
-    [languages.en.params.logo]
-      logoText = "hello friend ng"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+  [languages.fr]
+    subtitle  = "Hello Friend NG Theme"
+    weight    = 2
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
-	# You can create a language based menu
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about"
-      [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
-
-# And you can even create generic menu
 [menu]
   [[menu.main]]
     identifier = "about"
     name       = "About"
-    url        = "/about"
+    url        = "about/"
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
+    identifier = "posts"
+    name       = "Posts"
+    url        = "posts/"
+
 ```
 
 
@@ -156,6 +214,11 @@ and then run:
 $ npm install
 ```
 
+## How to add custom CSS or JS code
+
+This theme is configured to bundle any code in assets/JS/main.js or assets/SCSS/main.scss into your website using [Hugo Pipes](https://gohugo.io/hugo-pipes/introduction/).
+Simply create these folders and files and add your custom code there.
+
 
 ## How to contribute
 
@@ -167,6 +230,7 @@ If you spot any bugs, please use [Issue Tracker](https://github.com/rhazdon/hugo
   - [normalize.css](https://github.com/necolas/normalize.css)
   - [Feather Open Source Icons](https://github.com/feathericons/feather)
   - [Flag Icon](https://github.com/lipis/flag-icon-css)
+  - [Prism.js](https://prismjs.com/)
 
 
 ## Licence
