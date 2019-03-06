@@ -62,6 +62,11 @@ disableHugoGeneratorInject = false
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   # gitUrl = ""
 
+  # Integrate Javascript files or stylesheets by adding the url to the external assets or by
+  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+  customCSS = []
+  customJS  = []
+
   # Toggle this option need to rebuild SCSS, requires extended version of Hugo
   justifyContent = false  # Set "text-align: justify" to .content.
 
