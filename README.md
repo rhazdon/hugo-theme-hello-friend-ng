@@ -156,6 +156,11 @@ and then run:
 $ npm install
 ```
 
+## How to add custom CSS or JS code
+
+This theme is configured to bundle any code in assets/JS/main.js or assets/SCSS/main.scss into your website using [Hugo Pipes](https://gohugo.io/hugo-pipes/introduction/).
+Simply create these folders and files and add your custom code there.
+
 
 ## How to contribute
 
