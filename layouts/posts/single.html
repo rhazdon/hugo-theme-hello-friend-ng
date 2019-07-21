@@ -14,9 +14,9 @@
             </p>
         </div>
 
-        <article>
-            <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
-
+        <article class="h-entry">
+            <h1 class="post-title e-title p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+            <time class="dt-published" datetime="{{dateFormat "2006-01-02 15:04 -0700" .Date.Local}}"/>
             {{- if .Params.toc }}
                 <hr />
                 <aside id="toc">
@@ -30,7 +30,7 @@
                 <img src="/img/{{ . }}" class="post-cover" />
             {{ end }}
 
-            <div class="post-content">
+            <div class="post-content e-content">
                 {{ .Content }}
             </div>
         </article>
