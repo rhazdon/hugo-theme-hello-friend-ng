@@ -4,20 +4,49 @@
 {{ $theme := resources.Get "js/theme.js" }}
 {{ $secureJS := slice $main $menu $prism $theme | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@2.0.6/dist/fingerprint2.min.js"></script>
 {{- if .Site.GoogleAnalytics }}
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', '{{.Site.GoogleAnalytics}}', 'auto');
-        ga('send', 'pageview');
-    </script>
+<script>
+    if (window.requestIdleCallback) {
+        requestIdleCallback(function () {
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            {
+                Fingerprint2.get(function (components) {
+                    ga('create', '{{.Site.GoogleAnalytics}}', { 'storage': 'none', 'clientId': Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31) });
+                    console.log("ClientID: " + Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31));
+                    ga('set', 'anonymizeIp', true);
+                    ga('send', 'pageview');
+                });
+            }
+        })
+    } else {
+        setTimeout(function () {
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            {
+                Fingerprint2.get(function (components) {
+                    ga('create', '{{.Site.GoogleAnalytics}}', { 'storage': 'none', 'clientId': Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31) });
+                    console.log("ClientID: " + Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31));
+                    ga('set', 'anonymizeIp', true);
+                    ga('send', 'pageview');
+                });
+            }
+        }, 500)
+    }
+</script>
 {{- end}}
 
 {{ range $val := $.Site.Params.customJS }}
-	{{ if gt (len $val) 0 }}
-		<script src="{{ $val }}"></script>
-	{{ end }}
+{{ if gt (len $val) 0 }}
+<script src="{{ $val }}"></script>
+{{ end }}
 {{ end }}
