@@ -4,8 +4,9 @@
 {{ $theme := resources.Get "js/theme.js" }}
 {{ $secureJS := slice $main $menu $prism $theme | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@2.0.6/dist/fingerprint2.min.js"></script>
+
 {{- if .Site.GoogleAnalytics }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.0/fingerprint2.min.js"></script>
 <script>
     if (window.requestIdleCallback) {
         requestIdleCallback(function () {
