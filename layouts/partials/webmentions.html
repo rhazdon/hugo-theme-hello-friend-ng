@@ -1,0 +1,21 @@
+<div class="webmentions">
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">Mentions</span>
+            <hr />
+        </div>
+    </div>
+    {{ $thisURL := ""}}
+    {{ range $.Site.Data }}        
+        {{ if $.Site.Params.webmentionTestUrl }}
+            <!-- If During Development -->
+            {{ $thisURL = printf "https://markgroves.us%s" $.RelPermalink }}
+        {{ else }}
+            {{ $thisURL = $.Permalink }}
+        {{ end }}
+        {{ if $thisURL = .target }}
+        <div>{{ .source }}</div>
+    
+        {{ end }}
+    {{ end }}
+</div>
