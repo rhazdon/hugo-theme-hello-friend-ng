@@ -8,7 +8,10 @@
 <meta name="keywords" content="{{ .Site.Params.keywords }}" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="{{ .Permalink }}" />
-
+<!-- Custom head tags -->
+{{- if templates.Exists "partials/extra-head.html" -}}
+{{ partial "extra-head.html" . }}
+{{- end }}
 {{ block "title" . }}
 <title>
     {{ if .IsHome }}
@@ -55,7 +58,3 @@
     type="application/json" title="{{ .Site.Title }}" />
 {{ end }}
 
-<!-- Custom head tags -->
-{{- if templates.Exists "partials/extra-head.html" -}}
-{{ partial "extra-head.html" . }}
-{{- end }}

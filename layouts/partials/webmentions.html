@@ -6,16 +6,29 @@
         </div>
     </div>
     {{ $thisURL := ""}}
-    {{ range $.Site.Data }}        
-        {{ if $.Site.Params.webmentionTestUrl }}
-            <!-- If During Development -->
-            {{ $thisURL = printf "https://markgroves.us%s" $.RelPermalink }}
-        {{ else }}
-            {{ $thisURL = $.Permalink }}
-        {{ end }}
-        {{ if $thisURL = .target }}
-        <div>{{ .source }}</div>
-    
-        {{ end }}
+    {{ range $.Site.Data }}
+    {{ if $.Site.Params.webmentionTestUrl }}
+    <!-- If During Development -->
+    {{ $thisURL = printf "https://markgroves.us%s" $.RelPermalink }}
+    {{ else }}
+    {{ $thisURL = $.Permalink }}
+    {{ end }}
+    {{ if $thisURL = .target }}
+    <div class="u-comment h-cite">
+        <a class="u-author h-card" {{- if .post.author.url -}} href="{{ .post.author.url }}" {{ end }}>            
+            {{ .post.author.name | humanize }}
+        </a>
+    </p>
+        <p class="e-content e-name">
+            {{- .post.content.html | safeHTML }}
+        </p>
+        <a class="u-url" href="{{ .post.url }}">
+            {{ .post.url }}
+        </a>
+        &nbsp;@
+        <time class="dt-published">{{ if .post.published }}{{ dateFormat $.Site.Params.dateformNumTime .post.published }}{{ end }}</time>  
+    </div>
+    <hr/>
+    {{ end }}
     {{ end }}
 </div>
