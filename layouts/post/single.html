@@ -138,5 +138,11 @@
         {{- partial "comments.html" . -}}
     </div>
     {{ end }}
+    <!-- Webmentions -->
+    {{ if .Params.webmentions }}
+    <div id="comments" class="thin">
+        {{- partial "webmentions.html" . -}}
+    </div>
+    {{ end }}
 </main>
 {{ end }}

@@ -21,8 +21,14 @@
     </div>
 
     <article class="h-entry">
-        <h1 class="post-title e-title p-name"><a class="u-url" style="text-decoration: underline" href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
-            <a class="u-url" href="{{ .Permalink }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a>
+        <h1 class="post-title e-title p-name"><a class="u-url" style="text-decoration: underline"
+                href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
+            <a class="u-url" href="{{ .Permalink }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-link">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg></a>
         </h1>
         <time class="dt-published" datetime="{{dateFormat "2006-01-02 15:04 -0700" .Date.Local}}" />
         {{- if .Params.toc }}
@@ -135,6 +141,12 @@
     {{ if .Params.comments }}
     <div id="comments" class="thin">
         {{- partial "comments.html" . -}}
+    </div>
+    {{ end }}
+    <!-- Webmentions -->
+    {{ if .Site.Params.webmentions }}
+    <div id="comments" class="thin">
+        {{- partial "webmentions.html" . -}}
     </div>
     {{ end }}
 </main>
