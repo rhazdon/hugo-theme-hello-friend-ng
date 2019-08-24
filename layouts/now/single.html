@@ -1,0 +1,74 @@
+{{ define "main" }}
+    <main class="post">
+        <div class="post-info">
+            {{ if .IsTranslated }}
+                {{ i18n "postAvailable" }}
+                {{ range .Translations }}
+                    <a href="{{ .Permalink }}"><span class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared"></span></a>
+                {{ end}}
+            {{ end }}
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+
+            {{- if .Params.toc }}
+                <hr />
+                <aside id="toc">
+                <div class="toc-title">{{ i18n "tableOfContents" }}</div>
+                    {{ .TableOfContents }}
+                </aside>
+                <hr />
+            {{- end }}
+
+            {{ with .Params.Cover }}
+                <img src="/img/{{ . }}" class="post-cover" />
+            {{ end }}
+
+            <div class="post-content">
+                {{ .Content }}
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-calendar">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg><time class="dt-published"
+                    datetime="{{.Date.Local}}">{{ if .Site.Params.dateformNumTime }}{{ dateFormat .Site.Params.dateformNumTime .Date.Local }}{{ else }}{{ dateFormat "2006-01-02 15:04 -0700" .Date.Local }}{{ end }}</time>
+            </p>
+
+            {{- if .GitInfo }}
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-git-commit">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <line x1="1.05" y1="12" x2="7" y2="12"></line>
+                    <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+                </svg><a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank"
+                    rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a> @
+                {{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{ else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}
+            </p>
+            {{- end }}
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-user">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg><a class="p-author h-card" href="{{ .Site.BaseURL }}">{{.Site.Author.name}}</a>
+            </p>
+
+        </div>
+              
+
+    </main>
+{{ end }}
