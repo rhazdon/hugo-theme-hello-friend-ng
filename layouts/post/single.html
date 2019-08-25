@@ -139,7 +139,7 @@
     </div>
     {{ end }}
     <!-- Webmentions -->
-    {{ if .Params.webmentions }}
+    {{ if .Site.Params.webmentions }}
     <div id="comments" class="thin">
         {{- partial "webmentions.html" . -}}
     </div>
