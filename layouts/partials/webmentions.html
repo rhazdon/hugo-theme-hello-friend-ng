@@ -56,8 +56,8 @@
                     
     {{ range $thisLikes }}
         {{ with .post }}
-            <div class="u-comment h-cite">
-                <div style="display: inline-flex; padding: 1rem;">
+            <div class="u-comment h-cite" style="display: grid; width:12em;">
+                <div style="display:inline-flex; padding: 1rem;">
                     <a class="u-author h-card" style="flex-grow: 1;" {{- if .url -}} href="{{ .url }}" {{ end }}>            
                         <span style="display:block; flex-grow: 1;">{{ .author.name | humanize }}</span>
                     </a>
