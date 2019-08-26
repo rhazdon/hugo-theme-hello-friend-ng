@@ -1,38 +1,50 @@
 {{ $thisURL := ""}}
-{{ $correctPage := false }}
-{{ range $.Site.Data.webmentions }}
-    {{ if $.Site.Params.webmentionTestUrl }}
-        <!-- If During Development -->
-        {{ $thisURL = printf "https://markgroves.us%s" $.RelPermalink }}
-        
-    {{ else }}
-        {{ $thisURL = $.Permalink }}
-        
-    {{ end }}
-    
-    {{ if eq $thisURL .target }}
-        {{ $correctPage = true }}
-    {{ end }}
+{{ if $.Site.Params.webmentionTestUrl }}
+<!-- If During Development -->
+    {{ $thisURL = printf "https://markgroves.us%s" $.RelPermalink }}
+{{ else }}
+    {{ $thisURL = $.Permalink }}    
 {{ end }}
-{{ if $correctPage }}
-{{ $like := false }}
-{{ $reply := false }}
-{{ $mention := false }}
-{{ range .Site.Data.webmentions }}
-    {{ range . }}
-        {{ if isset . "wm-property" }}
-            {{ if eq (index . "wm-property") "like-of"}}
-                {{ $like = true }}
-            {{ else if eq (index . "wm-property") "in-reply-to"}}
-                {{ $reply = true }}
-            {{ else if eq (index . "wm-property") "mention-of"}}
-                {{ $mention = true }}
-            {{ end }}
-        {{ end }}
+
+
+{{ $thisReplies := dict }}
+{{ range $k, $v := .Site.Data.webmentions }}    
+    {{ with . }}
+        {{ if eq .target $thisURL}}
+            {{ $dValue := dict $k $v }}
+             {{ $thisReplies = merge $thisReplies $dValue }}      
+        {{ else }}
+            
+        {{end }}
     {{ end }}
 {{ end }}
 
-{{ if $like }}
+
+
+{{ $thisLikes := dict }}
+{{ $thisInReplyTo := dict }}
+{{ $thisMentionOf := dict }}
+{{ range $k, $v := $thisReplies }}
+    {{ with . }}   
+        
+        
+        {{ if isset .post "wm-property" }}
+            
+            {{ if eq (index .post "wm-property") "like-of"}}
+                {{ $dValue := dict $k $v }}
+                {{ $thisLikes = merge $thisLikes $dValue }}
+            {{ else if eq (index .post "wm-property") "in-reply-to"}}
+                {{ $dValue := dict $k $v }}
+                {{ $thisInReplyTo = merge $thisInReplyTo $dValue }}
+            {{ else if eq (index .post "wm-property") "mention-of"}}
+                {{ $dValue := dict $k $v }}
+                {{ $thisMentionOf = merge $thisMentionOf $dValue }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}  
+
+{{ with $thisLikes }}
     <div class="webmentions">
         <div class="pagination">
                 <div class="pagination__title">
@@ -41,84 +53,70 @@
                     </div>
         </div>
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(10em,1fr));">
-        {{ range .Site.Data.webmentions }}
-            {{ range . }}
-                {{ if isset . "wm-property" }}            
-                    {{ if eq (index . "wm-property") "like-of" }}
-
-                        <div class="u-comment h-cite">
-                            <div style="display: flex; padding: 1rem;">
-                                <a class="u-author h-card" style="flex-grow: 1;" {{- if .url -}} href="{{ .url }}" {{ end }}>            
-                                    <span style="display:block; flex-grow: 1;">{{ .author.name | humanize }}</span>
-                                </a>
-                                <a class="h-card" {{ if .author.url }} href="{{ .author.url }}" {{ end }}><img src="{{ .author.photo }}" style="width: 1.7rem; height: 1.7rem; border-radius: 50%;"/></a>
-                            </div>
-                        </div>
-                    {{ end }}
-                {{ end }}
-            {{ end }}
+                    
+    {{ range $thisLikes }}
+        {{ with .post }}
+            <div class="u-comment h-cite">
+                <div style="display: inline-flex; padding: 1rem;">
+                    <a class="u-author h-card" style="flex-grow: 1;" {{- if .url -}} href="{{ .url }}" {{ end }}>            
+                        <span style="display:block; flex-grow: 1;">{{ .author.name | humanize }}</span>
+                    </a>
+                    <a class="h-card" {{ if .author.url }} href="{{ .author.url }}" {{ end }}><img src="{{ .author.photo }}" style="width: 1.7rem; height: 1.7rem; border-radius: 50%;"/></a>
+                </div>
+            </div>
         {{ end }}
+    {{ end }}
+    </div>
     </div>
 {{ end }}
-{{ if $reply }}
+{{ with $thisInReplyTo }}
     <div class="pagination__title">
         <span class="pagination__title-h">Replies</span>
         <hr/>
     </div>
-    {{ range .Site.Data.webmentions }}
-        {{ range . }}
-            {{ if isset . "wm-property" }} 
-                {{ if eq (index . "wm-property") "in-reply-to" }}
-
-                    <div class="u-comment h-cite">
-                        <a class="u-author h-card" {{- if .author.url -}} href="{{ .author.url }}" {{ end }}>            
-                            {{ .author.name | humanize }}
-                        </a>
-                    </p>
-                        <p class="e-content e-name">
-                            {{- .content.html | safeHTML }}
-                        </p>
-                        <a class="u-url" href="{{ .url }}">
-                            {{ .url }}
-                        </a>
-                        &nbsp;@
-                        <time class="dt-published">{{ if .published }}{{ dateFormat $.Site.Params.dateformNumTime .published }}{{ end }}</time>  
-                    </div>
-                    <hr/>
-                {{ end }}
-            {{ end }}
+    
+    {{ range $thisInReplyTo }}
+        {{ with .post }}
+            <div class="u-comment h-cite">
+                <a class="u-author h-card" {{- if .author.url -}} href="{{ .author.url }}" {{ end }}>            
+                    {{ .author.name | humanize }}
+                </a>
+            </p>
+                <p class="e-content e-name">
+                    {{- .content.html | safeHTML }}
+                </p>
+                <a class="u-url" href="{{ .url }}">
+                    {{ .url }}
+                </a>
+                &nbsp;@
+                <time class="dt-published">{{ if .published }}{{ dateFormat $.Site.Params.dateformNumTime .published }}{{ end }}</time>  
+            </div>
+        <hr/>
         {{ end }}
     {{ end }}
 {{ end }}
-{{ if $mention }}
+
+{{ with $thisMentionOf }}
     <div class="pagination__title">
         <span class="pagination__title-h">Mentions</span>
         <hr/>
     </div>
-    {{ range .Site.Data.webmentions }}
-        {{ range . }}
-            {{ if isset . "wm-property" }} 
-                {{ if eq (index . "wm-property") "mention-of" }}
-                    <div class="u-comment h-cite">
-                        <a class="u-author h-card" {{- if .author.url -}} href="{{ .author.url }}" {{ end }}>            
-                            {{ .author.name | humanize }}
-                        </a>
-                    </p>
-                        <p class="e-content e-name">
-                            {{- .content.html | safeHTML }}
-                        </p>
-                        <a class="u-url" href="{{ .url }}">
-                            {{ .url }}
-                        </a>
-                        &nbsp;@
-                        <time class="dt-published">{{ if .published }}{{ dateFormat $.Site.Params.dateformNumTime .published }}{{ end }}</time>  
-                    </div>
-                    <hr/>
-                {{ end }}
-            {{ end }}
+    {{ range $thisMentionOf }}
+        {{ with .post }}
+            <div class="u-comment h-cite">
+                <a class="u-author h-card" {{- if .author.url -}} href="{{ .author.url }}" {{ end }}>            
+                    {{ .author.name | humanize }}
+                </a>
+            </p>
+                <p class="e-content e-name">
+                    {{- .content.html | safeHTML }}
+                </p>
+                <a class="u-url" href="{{ .url }}">
+                    {{ .url }}
+                </a>
+                &nbsp;@
+                <time class="dt-published">{{ if .published }}{{ dateFormat $.Site.Params.dateformNumTime .published }}{{ end }}</time>  
+            </div>
         {{ end }}
     {{ end }}
 {{ end }}
-
-{{ end }}
-</div>
