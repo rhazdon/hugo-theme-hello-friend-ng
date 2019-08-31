@@ -58,7 +58,7 @@
         {{ with .post }}
             <div class="u-comment h-cite">
                 <div class="card">
-                    <a class="u-author h-card" style="flex-grow: 1;" {{- if .url -}} href="{{ .url }}" {{ end }}>            
+                    <a class="u-author h-card" {{- if .url -}} href="{{ .url }}" {{ end }}>            
                         <span class="name" >{{ .author.name | humanize }}</span>
                     </a>
                     <a class="h-card" {{ if .author.url }} href="{{ .author.url }}" {{ end }}><img src="{{ if .author.photo }}{{ .author.photo }}{{else}}/default-person.png{{end}}"/></a>
