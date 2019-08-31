@@ -52,16 +52,16 @@
                         <hr/>
                     </div>
         </div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(10em,1fr));">
+    <div class="likes">  
                     
     {{ range $thisLikes }}
         {{ with .post }}
-            <div class="u-comment h-cite" style="display: grid; width:12em;">
-                <div style="display:inline-flex; padding: 1rem;">
+            <div class="u-comment h-cite">
+                <div class="card">
                     <a class="u-author h-card" style="flex-grow: 1;" {{- if .url -}} href="{{ .url }}" {{ end }}>            
-                        <span style="display:block; flex-grow: 1;">{{ .author.name | humanize }}</span>
+                        <span class="name" >{{ .author.name | humanize }}</span>
                     </a>
-                    <a class="h-card" {{ if .author.url }} href="{{ .author.url }}" {{ end }}><img src="{{ .author.photo }}" style="width: 1.7rem; height: 1.7rem; border-radius: 50%;"/></a>
+                    <a class="h-card" {{ if .author.url }} href="{{ .author.url }}" {{ end }}><img src="{{ if .author.photo }}{{ .author.photo }}{{else}}/default-person.png{{end}}"/></a>
                 </div>
             </div>
         {{ end }}

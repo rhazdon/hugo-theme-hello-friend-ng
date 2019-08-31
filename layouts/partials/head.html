@@ -27,7 +27,12 @@
     type="text/css">
 
 {{ $options := (dict "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-{{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Minify | resources.Fingerprint }}
+{{ $style := "" }}
+{{ if .Site.IsServer }}
+    {{ $style = resources.Get "scss/main.scss" | resources.ToCSS "main.css"  }}
+{{ else }}
+    {{ $style = resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Minify | resources.Fingerprint }}
+{{ end }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 {{ range $val := $.Site.Params.customCSS }}
