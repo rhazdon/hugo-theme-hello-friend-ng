@@ -1,10 +1,10 @@
 {{ define "main" }}
     <main aria-role="main">
         <div>
-            <h1>{{ .Site.Title }}</h1>
+            <h1 id="index-title">{{ .Site.Title }}</h1>
 
             {{- with .Site.Params.homeSubtitle }}
-                <p>{{.}}</p>
+                <p id="index-subtitle">{{.}}</p>
             {{- end }}
 
             {{- with .Site.Params.social }}
