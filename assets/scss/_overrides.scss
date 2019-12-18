@@ -1,0 +1,19 @@
+#index-title {
+    font-size: 4rem;
+    margin: 0;
+}
+
+#index-subtitle {
+    font-size: 1.25rem;
+    margin: 0 0 30px 0;
+}
+
+@media #{$media-size-phone} {
+    #index-title {
+      font-size: 2rem;
+    }
+
+    #index-subtitle {
+      font-size: 1rem;
+    }
+  }
