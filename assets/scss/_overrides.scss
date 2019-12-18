@@ -8,13 +8,27 @@
     margin: 0 0 30px 0;
 }
 
+.social-icons svg {
+  transform: scale(1.5);
+  stroke-width: 1;
+  width: 32px;
+}
+
 @media #{$media-size-phone} {
     #index-title {
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
 
     #index-subtitle {
       font-size: 1rem;
       padding: 0 50px;
     }
+
+    .social-icons svg {
+      transform: scale(1.25);
+      stroke-width: 1;
+      width: 24px;
+    }
+
   }
+
