@@ -12,6 +12,12 @@
   transform: scale(1.5);
   stroke-width: 1;
   width: 32px;
+  position: relative;
+}
+
+.social-icons svg:hover {
+  bottom: 1px;
+  color: #fe5186;
 }
 
 @media #{$media-size-phone} {
@@ -29,6 +35,5 @@
       stroke-width: 1;
       width: 24px;
     }
-
   }
 
