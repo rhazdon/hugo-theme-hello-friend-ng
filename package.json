@@ -1,8 +1,8 @@
 {
-  "name": "hello-friend-ng",
+  "name": "nyx",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Djordje Atlialp <djordje@atlialp.com>",
+  "author": "Graham Plata <graham.plata@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
