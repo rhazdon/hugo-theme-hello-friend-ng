@@ -170,6 +170,7 @@ Use [RealFaviconGenerator](https://realfavicongenerator.net/) to generate these 
 - gitbook
 - [github](https://feathericons.com/?query=github)
 - [gitlab](https://feathericons.com/?query=gitlab)
+- hackthebox
 - [instagram](https://feathericons.com/?query=instagram)
 - [kaggle](https://simpleicons.org/?q=kaggle)
 - [keybase](https://simpleicons.org/?q=keybase)
