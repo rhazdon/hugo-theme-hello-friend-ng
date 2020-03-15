@@ -14,6 +14,7 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
 - An easy way to modify the theme with Hugo tooling
 - Fully responsive
 - Support for social icons
+- utterances comment system supported by [**utterances**](https://utteranc.es/)
 
 
 ## How to start
@@ -61,6 +62,10 @@ theme = "hello-friend-ng"
 
   # Default theme "light" or "dark"
   defaultTheme = "dark"
+
+[params.utterances]       # https://utteranc.es/
+    owner = "sailfishc"              # Your GitHub ID
+    repo = "blog-comments"               # The repo to store comments
 
 [languages]
   [languages.en]

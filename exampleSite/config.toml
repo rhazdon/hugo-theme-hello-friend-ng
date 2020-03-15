@@ -47,6 +47,11 @@ disableHugoGeneratorInject = false
   tag      = "tags"
   category = "categories"
 
+# comment support
+[params.utterances]       # https://utteranc.es/
+    owner = "sailfishc"              # Your GitHub ID
+    repo = "blog-comments"               # The repo to store comments
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
