@@ -146,10 +146,11 @@ Use [RealFaviconGenerator](https://realfavicongenerator.net/) to generate these 
 
 ## Available Social Icons:
 
+- [behance](https://simpleicons.org/?q=behance)
 - [codechef](https://simpleicons.org/?q=codechef)
 - [codepen](https://simpleicons.org/?q=codepen)
 - [docker](https://simpleicons.org/?q=docker)
-- [dribble](https://simpleicons.org/?q=dribble)
+- [dribbble](https://simpleicons.org/?q=dribbble)
 - [email](https://feathericons.com/?query=mail)
 - [facebook](https://simpleicons.org/?q=facebook)
 - gitbook
