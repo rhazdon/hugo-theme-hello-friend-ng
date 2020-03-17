@@ -1,17 +1,21 @@
 {{ define "main" }}
-    <main aria-role="main">
+<main aria-role="main">
+    <div>
+        <h1>{{ .Site.Title }}</h1>
+
         <div>
-            <h1>{{ .Site.Title }}</h1>
-
-            {{- with .Site.Params.homeSubtitle }}
-                <p>{{.}}</p>
-            {{- end }}
-
-            {{- with .Site.Params.social }}
-                <div>
-                    {{ partial "social-icons.html" . }}
-                </div>
-            {{- end }}
+            {{ partial "avatar.html" . }}
         </div>
-    </main>
+
+        {{- with .Site.Params.homeSubtitle }}
+        <p>{{.}}</p>
+        {{- end }}
+
+        {{- with .Site.Params.social }}
+        <div>
+            {{ partial "social-icons.html" . }}
+        </div>
+        {{- end }}
+    </div>
+</main>
 {{ end }}
