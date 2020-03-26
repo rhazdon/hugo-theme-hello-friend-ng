@@ -18,7 +18,7 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
 
 ## How to start
 
-You can download the theme manually by going to [https://github.com/rhazdon/hugo-theme-hello-friend-ng.git](https://github.com/rhazdon/hugo-theme-hello-friend-ng.git) and pasting it to `themes/hello-friend-ng` in your root directory.
+You can download the theme manually by going to [https://github.com/firehawke/hugo-theme-hello-friend-ng.git](https://github.com/firehawke/hugo-theme-hello-friend-ng.git) and pasting it to `themes/hello-friend-ng` in your root directory.
 
 You can also clone it directly to your Hugo folder:
 
@@ -211,4 +211,8 @@ $ npm install
 
 Copyright © 2019-2020 Djordje Atlialp
 
-The theme is released under the MIT License. Check the [original theme license](https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/master/LICENSE.md) for additional licensing information.
+The theme is released under the MIT License. Check the [original theme license](https://github.com/firehawke/hugo-theme-hello-friend-ng/blob/master/LICENSE.md) for additional licensing information.
+
+## Notes from Firehawke
+
+This fork is here to allow me to merge in a few outside contributions to my personal version of this. It adds PRs [#128](https://github.com/rhazdon/hugo-theme-hello-friend-ng/pull/128) and [#123](https://github.com/rhazdon/hugo-theme-hello-friend-ng/pull/123) in particular and may or may not diverge more in the future.
