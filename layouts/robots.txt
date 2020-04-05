@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /*.FLV$
+Disallow: /*.RAR$
+Disallow: /*.exe$
+Disallow: /*.flv$
+Disallow: /*.gif$
+Disallow: /*.Gif$
+Disallow: /*.GIF$
+Disallow: /*.jpg$
+Disallow: /*.Jpg$
+Disallow: /*.JPG$
+Disallow: /*.jpeg$
+Disallow: /*.Jpeg$
+Disallow: /*.JPEG$
+Disallow: /*.pdf$
+Disallow: /*.Pdf$
+Disallow: /*.PDF$
+Disallow: /*.png$
+Disallow: /*.rar$
+Disallow: /*.zip$
+Disallow: /*.Zip$
+Disallow: /*.ZIP$
+Disallow: /*.ISO$
+Disallow: /*.iso$
+Disallow: /*.mp3$
+Disallow: /*.MP3$
+
