@@ -58,6 +58,7 @@ disableHugoGeneratorInject = false
   keywords = ""
   images = [""]
 
+  # nickname = "Use me if you want to differentiate between Title and the name displayed in the home page"
   homeSubtitle = "Hello Friend NG"
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.

@@ -5,7 +5,13 @@
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
             {{ end }}
 
-            <h1>{{ .Site.Title }}</h1>
+            <h1>
+                {{ if .Site.Params.nickname }}
+                {{ .Site.Params.nickname }}
+                {{ else }}
+                {{ .Site.Title }}
+                {{ end }}
+            </h1>
             {{- with .Site.Params.homeSubtitle }}
                 <p>{{.}}</p>
             {{- end }}
