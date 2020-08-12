@@ -10,6 +10,7 @@
 - [docker](https://simpleicons.org/?q=docker)
 - [dribbble](https://simpleicons.org/?q=dribbble)
 - [email](https://feathericons.com/?query=mail)
+- [gpg](https://simpleicons.org/?q=gpg)
 - [facebook](https://simpleicons.org/?q=facebook)
 - gitbook
 - [github](https://feathericons.com/?query=github)
