@@ -4,7 +4,7 @@
 
 ## General informations
 
-This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). A lot of kudos for theier great work.
+This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). A lot of kudos for their great work.
 
 ---
 ## Table of Contents
@@ -56,7 +56,7 @@ $ git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git th
 
 The theme doesn't require any advanced configuration. Just copy the following config file.
 To see all possible configurations, [check the docs](docs/config.md).
-Note: There are more options to configure. Take a look into the `config.toml` in `exampleSite`.
+Note: There are more options to configure. Take a look at `config.toml` in `exampleSite`.
 
 ``` toml
 baseurl      = "localhost"
