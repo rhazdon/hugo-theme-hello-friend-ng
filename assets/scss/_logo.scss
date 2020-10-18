@@ -10,7 +10,12 @@
     height: 44px;
   }
 
-  &__mark {
+  &__arrow {
+    color: #5f3;
+    margin-right: 5px;
+  }
+  &__tilde {
+    color: #6ff;
     margin-right: 5px;
   }
 
@@ -30,14 +35,19 @@
 
   @media (prefers-reduced-motion: reduce) {
     &__cursor {
-        animation: none;
+      animation: none;
     }
   }
-
 }
 
 @keyframes cursor {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

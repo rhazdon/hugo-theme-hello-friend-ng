@@ -1,0 +1,11 @@
+{
+  "name": "hugo-theme-hello-friend-ng",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ivymarkwell/hugo-theme-hello-friend-ng.git",
+  "author": "Ivy Markwell <me@ivymarkwell.com>",
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "^2.1.2"
+  }
+}
