@@ -4,5 +4,10 @@
         {{ range .Site.Menus.main -}}
             <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
         {{- end }}
+        {{ if .Site.IsMultiLingual }}
+            {{ range $.Translations }}
+                <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+            {{ end }}
+        {{ end }}
     </ul>
 </nav>
