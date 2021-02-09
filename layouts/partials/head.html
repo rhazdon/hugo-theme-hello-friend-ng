@@ -8,6 +8,10 @@
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
+{{- if .Site.Params.enableServiceWorker }}
+    <link rel="manifest" href="/site.webmanifest">
+{{ end }}
+
 {{ block "title" . }}
     <title>
         {{ if .IsHome }}
