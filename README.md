@@ -17,6 +17,7 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
     - [image](#image)
   - [Code highlighting](#code-highlighting)
   - [Favicon](#favicon)
+  - [Partials](#partials)
 - [Social Icons](#social-icons)
 - [Known issues](#known-issues)
 - [How to edit the theme](#how-to-edit-the-theme)
@@ -148,6 +149,15 @@ By default the theme is using PrismJS to color your code syntax. All you need to
 ### Favicon
 
 Check the [docs](docs/favicons.md).
+
+### Partials
+
+There are few empty partials you can override in `layouts/partials/`
+
+| Partial | Placement |
+| ------- | --------- |
+| `layouts/partials/inject/head.html` | Before closing `<head>` tag |
+| `layouts/partials/inject/body.html` | Before closing `<body>` tag |
 
 ## Social Icons:
 

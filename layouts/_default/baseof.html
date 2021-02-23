@@ -2,6 +2,9 @@
 <html lang="{{ .Site.Language }}">
     <head>
         {{ partial "head.html" . }}
+        {{- if templates.Exists "partials/inject/head.html" -}}
+            {{ partial "partials/inject/head.html" . }}
+        {{- end }}
     </head>
 
     {{ block "body" . }}
@@ -21,5 +24,8 @@
         </div>
 
         {{ partial "javascript.html" . }}
+        {{- if templates.Exists "partials/inject/body.html" -}}
+            {{ partial "partials/inject/body.html" . }}
+        {{- end }}
     </body>
 </html>
