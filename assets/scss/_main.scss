@@ -189,6 +189,7 @@ code {
   margin: 0 2px;
   border-radius: 5px;
   font-size: 0.95rem;
+  overflow-wrap: break-word;  // Make code readable on mobile
 
   @media (prefers-color-scheme: dark) {
     background: $dark-background-secondary;
