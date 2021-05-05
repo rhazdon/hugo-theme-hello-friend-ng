@@ -22,6 +22,20 @@
         <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
       </h1>
 
+      {{ with .Params.Description }}
+        <div class="post-excerpt">{{ . }}</div>
+      {{ end }}
+
+      {{ if .Params.Cover }}
+        <figure class="post-cover">
+          <img src="{{ .Params.Cover | absURL }}" alt="{{ .Title }}" />
+          
+          {{ if .Params.CoverCaption }}
+            <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
+          {{ end }}
+        </figure>
+      {{ end }}
+
       {{- if .Params.toc }}
         <hr />
         <aside id="toc">
@@ -43,6 +57,13 @@
             <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
           {{ end }}
         </figure>
+
+      {{ if .Params.Audio }}
+        <div class="post-audio">
+          <audio controls>
+            <source src="{{ .Params.Audio }}">
+          </audio>
+        </div>
       {{ end }}
 
       <div class="post-content">
@@ -53,7 +74,7 @@
     <hr />
 
     <div class="post-info">
-      {{ partial "tags.html" . }}
+      {{ partial "tags.html" .Params.tags }}
       {{ partial "categories.html" . }}
 
       <p>
@@ -112,35 +133,7 @@
       </div>
     {{- end }}
 
-    {{ if and (not $.Site.Params.DisableReadOtherPosts) (or .NextInSection .PrevInSection) }}
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">{{ .Site.Params.ReadOtherPosts }}</span>
-          <hr />
-        </div>
-
-        <div class="pagination__buttons">
-          {{ if .NextInSection }}
-            <span class="button previous">
-              <a href="{{ .NextInSection.Permalink }}">
-                <span class="button__icon">←</span>
-                <span class="button__text">{{ .NextInSection.Title }}</span>
-              </a>
-            </span>
-          {{ end }}
-
-          {{ if .PrevInSection }}
-            <span class="button next">
-              <a href="{{ .PrevInSection.Permalink }}">
-                <span class="button__text">{{ .PrevInSection.Title }}</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          {{ end }}
-        </div>
-      </div>
-    {{ end }}
-
+    {{ partial "pagination-single.html" . }}
 
     {{ if .Site.DisqusShortname }}
       {{ if not (eq .Params.Comments "false") }}
@@ -148,6 +141,11 @@
           {{ template "_internal/disqus.html" . }}
         </div>
       {{ end }}
+    {{ end }}
+
+    {{ if .Site.Params.Commento.Url }}
+      <script defer src={{ .Site.Params.Commento.Url }}></script>
+      <div id="commento"></div>
     {{ end }}
 
   </main>

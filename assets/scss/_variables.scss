@@ -1,24 +1,31 @@
 @charset "UTF-8";
 
-/* light theme color */
+/* Light theme color */
 $light-background: #fff;
 $light-background-secondary: #eaeaea;
+$light-background-header: #fafafa;
 $light-color: #222;
 $light-color-secondary: #999;
 $light-border-color: #dcdcdc;
+$light-table-color: #dcdcdc;
 
-/* dark theme colors */
-$dark-background: #292a2d;
+/* Dark theme colors */
+$dark-background: #232425;
 $dark-background-secondary: #3b3d42;
+$dark-background-header: #1b1c1d;
 $dark-color: #a9a9b3;
-$dark-color-secondary: #73747b;
-$dark-border-color: #4a4b50;
+$dark-color-secondary: #b3b3bd;
+$dark-border-color: #4e4e57;
+$dark-table-color: #4e4e57;
 
 $media-size-phone: "(max-width: 684px)";
 $media-size-tablet: "(max-width: 900px)";
 
-/* variables for js, must be the same as these in @custom-media queries */
+/* Variables for js, must be the same as these in @custom-media queries */
 :root {
   --phoneWidth: (max-width: 684px);
   --tabletWidth: (max-width: 900px);
 }
+
+/* Content */
+$max-width: 860px;

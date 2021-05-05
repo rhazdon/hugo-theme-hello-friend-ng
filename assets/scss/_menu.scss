@@ -1,11 +1,22 @@
 .menu {
-  background: #fafafa;
-  border-right: 1px solid;
-  margin-right: 18px;
   z-index: 9999;
+  // Default
+  background: $light-background-header;
 
-  .dark-theme & {
-    background: #252627;
+  @media (prefers-color-scheme: dark) {
+    background: $dark-background-header;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background: $light-background-header;
+  }
+
+  [data-theme=dark] & {
+    background: $dark-background-header;
+  }
+
+  [data-theme=light] & {
+    background: $light-background-header;
   }
 
   @media #{$media-size-phone} {

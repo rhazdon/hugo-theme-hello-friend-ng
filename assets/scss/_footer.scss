@@ -39,7 +39,7 @@
     }
 
     & > *:last-child {
-      padding: 0 5px;
+      padding: 0 0px;
 
       @media #{$media-size-tablet} {
           padding: 0;

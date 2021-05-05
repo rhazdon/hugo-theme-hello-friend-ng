@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   line-height: 1.6;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
   scroll-behavior: smooth;
 }
 
@@ -14,12 +14,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter UI', -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",  Helvetica, Arial, sans-serif;
+  font-family: "Inter UI", -apple-system, BlinkMacSystemFont, "Roboto",
+    "Segoe UI", Helvetica, Arial, sans-serif;
   font-display: auto;
   font-size: 1rem;
   line-height: 1.54;
-  background-color: $light-background;
-  color: $light-color;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
@@ -30,17 +29,40 @@ body {
   min-height: 100vh;
   flex-direction: column;
 
+  // Default
+  background-color: $light-background;
+  color: $light-color;
+
   @media #{$media-size-phone} {
     font-size: 1rem;
   }
 
-  &.dark-theme {
+  @media (prefers-color-scheme: dark) {
     background-color: $dark-background;
     color: $dark-color;
   }
+
+  @media (prefers-color-scheme: light) {
+    background-color: $light-background;
+    color: $light-color;
+  }
+
+  [data-theme=dark] & {
+    background-color: $dark-background;
+    color: $dark-color;
+  }
+
+  [data-theme=light] & {
+    background-color: $light-background;
+    color: $light-color;
+  }
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   display: flex;
   align-items: center;
   line-height: 1.3;
@@ -52,6 +74,7 @@ h1 {
 
 h2 {
   font-size: 1.625rem;
+  margin-top: 2.5em;
 }
 
 h3 {
@@ -150,7 +173,7 @@ figure {
   figcaption {
     font-size: 14px;
     margin-top: 5px;
-    opacity: .8;
+    opacity: 0.8;
 
     &.left {
       text-align: left;
@@ -166,18 +189,52 @@ figure {
   }
 }
 
+em, i, strong {
+  // Default
+  color: black;
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: black;
+  }
+
+  [data-theme=dark] & {
+    color: white;
+  }
+
+  [data-theme=light] & {
+    color: black;
+  }
+}
+
 code {
-  font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   font-display: auto;
   font-feature-settings: normal;
-  background: $light-background-secondary;
   padding: 1px 6px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: .95rem;
+  font-size: 0.95rem;
+  // Default
+  background: $light-background-secondary;
 
-  .dark-theme & {
+  @media (prefers-color-scheme: dark) {
     background: $dark-background-secondary;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background: $light-background-secondary;
+  }
+
+  [data-theme=dark] & {
+    background: $dark-background-secondary;
+  }
+
+  [data-theme=light] & {
+    background: $light-background-secondary;
   }
 }
 
@@ -185,7 +242,7 @@ pre {
   background: #212020;
   padding: 10px 10px 10px 20px;
   border-radius: 8px;
-  font-size: .95rem;
+  font-size: 0.95rem;
   overflow: auto;
 
   @media #{$media-size-phone} {
@@ -195,19 +252,32 @@ pre {
 
   code {
     background: none !important;
-    color: #ccc;
     margin: 0;
     padding: 0;
     font-size: inherit;
+    // Default
+    color: #ccc;
 
-    .dark-theme & {
+    @media (prefers-color-scheme: dark) {
       color: inherit;
+    }
+  
+    @media (prefers-color-scheme: light) {
+      color: #ccc;
+    }
+  
+    [data-theme=dark] & {
+      color: inherit;
+    }
+  
+    [data-theme=light] & {
+      color: #ccc;
     }
   }
 }
 
 blockquote {
-  border-left: 2px solid;
+  border-left: 3px solid #3eb0ef;
   margin: 40px;
   padding: 10px 20px;
 
@@ -217,7 +287,7 @@ blockquote {
   }
 
   &:before {
-    content: '”';
+    content: "”";
     font-family: Georgia, serif;
     font-display: auto;
     font-size: 3.875rem;
@@ -235,7 +305,8 @@ blockquote {
   }
 }
 
-ul, ol {
+ul,
+ol {
   margin-left: 40px;
   padding: 0;
 
@@ -272,11 +343,24 @@ ol ol {
 hr {
   width: 100%;
   border: none;
-  background: $light-border-color;
   height: 1px;
+  // Default
+  background: $light-border-color;
 
-  .dark-theme & {
+  @media (prefers-color-scheme: dark) {
     background: $dark-border-color;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background: $light-border-color;
+  }
+
+  [data-theme=dark] & {
+    background: $dark-border-color;
+  }
+
+  [data-theme=light] & {
+    background: $light-border-color;
   }
 }
 
@@ -298,35 +382,47 @@ hr {
 
 // Accessibility
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-    width: auto;
-    top: 5px;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	z-index: 100000;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  width: auto;
+  top: 5px;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  z-index: 100000;
+}
+
+.background-image {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+// Prism JS Additionals
+.highlight {
+  margin: 30px auto;
 }

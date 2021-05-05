@@ -59,7 +59,12 @@ disableHugoGeneratorInject = false
   keywords = ""
   images = [""]
 
+  # Home subtitle of the index page.
+  #
   homeSubtitle = "Hello Friend NG"
+
+  # Set a background for the homepage
+  # backgroundImage = "assets/images/background.jpg"
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   #
@@ -68,6 +73,14 @@ disableHugoGeneratorInject = false
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   #
   disableReadOtherPosts = false
+
+  # Enable theme toggle
+  # 
+  # This options enables the theme toggle for the theme. 
+  # Per default, this option is off. 
+  # The theme is respecting the prefers-color-scheme of the operating systeme. 
+  # With this option on, the page user is able to set the scheme he wants. 
+  enableThemeToggle = false
 
   # Sharing buttons
   #
@@ -87,25 +100,28 @@ disableHugoGeneratorInject = false
   #
   justifyContent = false  # Set "text-align: justify" to .post-content.
 
-  # Default theme "light" or "dark"
-  #
-  defaultTheme = "dark"
-  themeColor = "#252627"
-
   # Custom footer 
   # If you want, you can easily override the default footer with your own content. 
   #
-  # footerLeft = "Powered by <a href=\"http://gohugo.io\">Hugo</a>"
-  # footerRight = "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
+  [params.footer]
+    trademark = true
+    rss = true
+    copyright = true
+    author = true
+
+    topText = []
+    bottomText = ["Powered by <a href=\"http://gohugo.io\">Hugo</a>",
+            "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"]
 
   # Colors for favicons
   #
   [params.favicon.color]
-    mask = "#252627"
-    msapplication = "#252627"
-    theme = "#252627"
+    mask = "#1b1c1d"
+    msapplication = "#1b1c1d"
+    theme = "#1b1c1d"
 
   [params.logo]
+    logoMark     = ">"
     logoText     = "$ cd /home/"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
@@ -114,6 +130,17 @@ disableHugoGeneratorInject = false
     # logoCursorColor    = "#67a2c9"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
     # logoCursorAnimate  = "2s"
+
+  # Commento is more than just a comments widget you can embed — 
+  # it’s a return to the roots of the internet. 
+  # An internet without the tracking and invasions of privacy. 
+  # An internet that is simple and lightweight. 
+  # An internet that is focused on interesting discussions, not ads. 
+  # A better internet.
+  # Uncomment this to enable Commento.
+  #
+  # [params.commento]
+  #   url = ""
 
   # Uncomment this if you want a portrait on your start page
   #

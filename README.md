@@ -1,12 +1,13 @@
 # Hello Friend NG
 
-![Hello Friend NG](https://dsh.re/2bd45)
+![Hello Friend NG](https://dsh.re/d914c)
 
 ## General informations
 
-This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). A lot of kudos for theier great work.
+This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). A lot of kudos for their great work.
 
 ---
+
 ## Table of Contents
 
 - [Features](#features)
@@ -17,6 +18,7 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
     - [image](#image)
   - [Code highlighting](#code-highlighting)
   - [Favicon](#favicon)
+  - [Audio Support](#audio-support)
 - [Social Icons](#social-icons)
 - [Known issues](#known-issues)
 - [How to edit the theme](#how-to-edit-the-theme)
@@ -25,16 +27,18 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
 - [Licence](#licence)
 
 ---
+
 ## Features
 
-- Theming: **dark/light mode**, depending on your preferences (dark is default, but you can change it)
+- Theming: **dark/light mode**, depending on your system preferences or the users choice
 - Great reading experience thanks to [**Inter UI font**](https://rsms.me/inter/), made by [Rasmus Andersson](https://rsms.me/about/)
 - Nice code highlighting thanks to [**PrismJS**](https://prismjs.com)
 - An easy way to modify the theme with Hugo tooling
 - Fully responsive
+- Audio support for posts (thanks to [@talbotp](https://github.com/talbotp))
 - Support for social icons
 - Support for sharing buttons
-
+- Support for [Commento](https://commento.io)
 
 ## How to start
 
@@ -77,16 +81,13 @@ paginate     = 10
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
 
-  # Enable sharing buttons, if you linke
+  # Enable sharing buttons, if you like
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
   description = "My new homepage or blog"
   keywords = "homepage, blog"
   images = [""]
-
-  # Default theme "light" or "dark"
-  defaultTheme = "dark"
 
 [taxonomies]
     category = "blog"
@@ -139,8 +140,6 @@ Example:
 
 ### Code highlighting
 
-Supported languages: [Take a look here](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+abap+actionscript+ada+apacheconf+apl+applescript+c+arff+asciidoc+asm6502+csharp+autohotkey+autoit+bash+basic+batch+bison+brainfuck+bro+cpp+aspnet+arduino+cil+coffeescript+clojure+ruby+csp+css-extras+d+dart+diff+markup-templating+docker+eiffel+elixir+elm+lua+erb+erlang+fsharp+flow+fortran+gcode+gedcom+gherkin+git+glsl+gml+go+graphql+groovy+less+handlebars+haskell+haxe+hcl+http+hpkp+hsts+ichigojam+icon+inform7+ini+io+j+java+scala+php+javastacktrace+jolie+n4js+markdown+json+julia+keyman+kotlin+latex+crystal+scheme+liquid+lisp+livescript+lolcode+makefile+django+matlab+mel+mizar+monkey+n1ql+typescript+nand2tetris-hdl+nasm+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+perl+php-extras+sql+powershell+processing+prolog+properties+protobuf+scss+puppet+pure+python+q+qore+r+jsx+renpy+reason+vala+rest+rip+roboconf+textile+rust+plsql+sass+stylus+smalltalk+smarty+soy+sas+twig+swift+yaml+tcl+haml+toml+tt2+pug+tsx+visual-basic+vbnet+velocity+verilog+vhdl+vim+wasm+wiki+xeora+xojo+xquery+tap)
-
 By default the theme is using PrismJS to color your code syntax. All you need to do is to wrap you code like this:
 
 <pre>
@@ -153,9 +152,27 @@ By default the theme is using PrismJS to color your code syntax. All you need to
 
 Check the [docs](docs/favicons.md).
 
+### Audio Support
+
+You wrote an article and recorded it? Or do you have a special music that you would like to put on a certain article? Then you can do this now without further ado.
+
+In your article add to your front matters part:
+
+```yaml
+audio: path/to/file.mp3
+```
+
 ## Social Icons:
 
-Take a look into this [list](docs/svgs.md)
+A large variety of social icons are available and can be configured like this:
+
+```toml
+[[params.social]]
+  name = "<site>"
+  url = "<profile_URL>"
+```
+
+Take a look into this [list](docs/svgs.md) of available icon options. 
 
 If you need another one, just open an issue or create a pull request with your wished icon. :)
 
@@ -183,6 +200,6 @@ If you like my work and if you think this project is worth to support it, just <
 
 ## Licence
 
-Copyright © 2019-2020 Djordje Atlialp
+Copyright © 2019-2021 Djordje Atlialp
 
 The theme is released under the MIT License. Check the [original theme license](https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/master/LICENSE.md) for additional licensing information.
