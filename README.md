@@ -10,27 +10,29 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
 
 ## Table of Contents
 
-- [Features](#features)
-- [How to start](#how-to-start)
-- [How to configure](#how-to-configure)
-- [More](#more-things)
-  - [Built in shortcodes](#built-in-shortcodes)
-    - [image](#image)
-  - [Code highlighting](#code-highlighting)
-  - [Favicon](#favicon)
-  - [Audio Support](#audio-support)
-- [Social Icons](#social-icons)
-- [Known issues](#known-issues)
-- [How to edit the theme](#how-to-edit-the-theme)
-- [Changelog](CHANGELOG.md)
-- [Sponsoring](#sponsoring)
-- [Licence](#licence)
+- [Hello Friend NG](#hello-friend-ng)
+  - [General informations](#general-informations)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [How to start](#how-to-start)
+  - [How to configure](#how-to-configure)
+  - [More things](#more-things)
+    - [Built-in shortcodes](#built-in-shortcodes)
+      - [image](#image)
+    - [Code highlighting](#code-highlighting)
+    - [Favicon](#favicon)
+    - [Audio Support](#audio-support)
+  - [Social Icons](#social-icons)
+  - [Known issues](#known-issues)
+  - [How to edit the theme](#how-to-edit-the-theme)
+  - [Sponsoring](#sponsoring)
+  - [License](#license)
 
 ---
 
 ## Features
 
-- Theming: **dark/light mode**, depending on your system preferences or the users choice
+- Theming: **dark/light mode**, set by the site, operating system, or the users choice with optional theme toggle.
 - Great reading experience thanks to [**Inter UI font**](https://rsms.me/inter/), made by [Rasmus Andersson](https://rsms.me/about/)
 - Nice code highlighting thanks to [**PrismJS**](https://prismjs.com)
 - An easy way to modify the theme with Hugo tooling
@@ -162,7 +164,7 @@ In your article add to your front matters part:
 audio: path/to/file.mp3
 ```
 
-## Social Icons:
+## Social Icons
 
 A large variety of social icons are available and can be configured like this:
 
@@ -172,7 +174,7 @@ A large variety of social icons are available and can be configured like this:
   url = "<profile_URL>"
 ```
 
-Take a look into this [list](docs/svgs.md) of available icon options. 
+Take a look into this [list](docs/svgs.md) of available icon options.
 
 If you need another one, just open an issue or create a pull request with your wished icon. :)
 
@@ -198,7 +200,7 @@ Just edit it. You don't need any node stuff. ;)
 If you like my work and if you think this project is worth to support it, just <br />
 <a href="https://www.buymeacoffee.com/djordjeatlialp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
-## Licence
+## License
 
 Copyright © 2019-2021 Djordje Atlialp
 
