@@ -7,6 +7,7 @@
 This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). A lot of kudos for their great work.
 
 ---
+
 ## Table of Contents
 
 - [Features](#features)
@@ -17,6 +18,7 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
     - [image](#image)
   - [Code highlighting](#code-highlighting)
   - [Favicon](#favicon)
+  - [Audio Support](#audio-support)
 - [Social Icons](#social-icons)
 - [Known issues](#known-issues)
 - [How to edit the theme](#how-to-edit-the-theme)
@@ -25,17 +27,18 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
 - [Licence](#licence)
 
 ---
+
 ## Features
 
-- Theming: **dark/light mode**, depending on your system preferences
+- Theming: **dark/light mode**, depending on your system preferences or the users choice
 - Great reading experience thanks to [**Inter UI font**](https://rsms.me/inter/), made by [Rasmus Andersson](https://rsms.me/about/)
 - Nice code highlighting thanks to [**PrismJS**](https://prismjs.com)
 - An easy way to modify the theme with Hugo tooling
 - Fully responsive
+- Audio support for posts (thanks to [@talbotp](https://github.com/talbotp))
 - Support for social icons
 - Support for sharing buttons
 - Support for [Commento](https://commento.io)
-
 
 ## How to start
 
@@ -148,6 +151,16 @@ By default the theme is using PrismJS to color your code syntax. All you need to
 ### Favicon
 
 Check the [docs](docs/favicons.md).
+
+### Audio Support
+
+You wrote an article and recorded it? Or do you have a special music that you would like to put on a certain article? Then you can do this now without further ado.
+
+In your article add to your front matters part:
+
+```yaml
+audio: path/to/file.mp3
+```
 
 ## Social Icons:
 

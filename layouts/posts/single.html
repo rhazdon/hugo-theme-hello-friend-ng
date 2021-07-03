@@ -45,6 +45,14 @@
         <hr />
       {{- end }}
 
+      {{ if .Params.Audio }}
+        <div class="post-audio">
+          <audio controls>
+            <source src="{{ .Params.Audio }}">
+          </audio>
+        </div>
+      {{ end }}
+
       <div class="post-content">
         {{ .Content }}
       </div>

@@ -91,6 +91,17 @@
     }
   }
 
+  &-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+    audio {
+      width: 90%;
+    }
+  }
+
   .flag {
     border-radius: 50%;
     margin: 0 5px;
