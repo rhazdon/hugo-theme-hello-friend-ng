@@ -28,8 +28,12 @@
 
       {{ if .Params.Cover }}
         <figure class="post-cover">
-          <img src="{{ .Params.Cover | absURL }}" alt="{{ .Title }}" />
-          
+          {{ if (or (fileExists (path.Join "static" .Params.Cover)) (hasPrefix .Params.Cover "http://") (hasPrefix .Params.Cover "https://")) }}
+            <img src="{{ .Params.Cover | absURL }}" alt="{{ .Title }}" />
+          {{ else }}
+            <img src="{{ path.Join .RelPermalink .Params.Cover | absURL }}" alt="{{ .Title }}" />
+          {{ end }}
+
           {{ if .Params.CoverCaption }}
             <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
           {{ end }}
