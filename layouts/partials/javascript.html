@@ -1,11 +1,24 @@
-{{ $main := resources.Get "js/main.js" }}
-{{ $menu := resources.Get "js/menu.js" }}
-{{ $prism := resources.Get "js/prism.js" }}
-{{ $secureJS := slice $main $menu $prism | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
-<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+{{ $main := resources.Get "js/main.js" }} {{ $menu := resources.Get "js/menu.js"
+}} {{ $prism := resources.Get "js/prism.js" }} {{ $secureJS := slice $main $menu
+$prism | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint
+"sha512" }}
+<script
+	type="text/javascript"
+	src="{{ $secureJS.RelPermalink }}"
+	integrity="{{ $secureJS.Data.Integrity }}"
+></script>
 
-{{ range $val := $.Site.Params.customJS }}
-    {{ if gt (len $val) 0 }}
-        <script src="{{ $val }}"></script>
-    {{ end }}
+{{ range $val := $.Site.Params.customJS }} {{ if gt (len $val) 0 }}
+<script src="{{ $val }}"></script>
+{{ end }} {{ end }}
+
+<!-- highcharts -->
+{{ $js_highchart := resources.Get "js/highcharts/highcharts.js" }} {{
+$js_highchart_more := resources.Get "js/highcharts/highcharts-more.js" }} {{
+$js_highchart_custom := resources.Get "js/mycustom_chart.js" }} {{
+$js_highchart_bundle := slice $js_highchart $js_highchart_more
+$js_highchart_custom | resources.Concat "js/highchart.js" }} {{- if (eq (getenv
+"HUGO_ENV") "production") -}} {{ $js_highchart_bundle = $js_highchart_bundle |
+minify | fingerprint "md5" }} {{ end }} {{ if .IsHome }}
+<script src="{{ $js_highchart_bundle.RelPermalink }}"></script>
 {{ end }}
