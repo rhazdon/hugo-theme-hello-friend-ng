@@ -158,7 +158,7 @@
 	.Site.DisqusShortname }} {{ if not (eq .Params.Comments "false") }}
 	<div id="comments">{{ template "_internal/disqus.html" . }}</div>
 	{{ end }} {{ end }} {{ if .Site.Params.Commento.Url }}
-	<script defer src="{{" .Site.Params.Commento.Url }}></script>
+	<script defer src={{ .Site.Params.Commento.Url }}></script>
 	<div id="commento"></div>
 	{{ end }}
 </main>
