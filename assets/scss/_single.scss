@@ -1,233 +1,238 @@
 .post {
-  width: 100%;
-  max-width: 800px;
-  text-align: left;
-  padding: 20px;
-  margin: 20px auto;
-  @media #{$media-size-tablet} {
-    max-width: 600px;
-  }
+	width: 100%;
+	max-width: 800px;
+	text-align: left;
+	padding: 20px;
+	margin: 20px auto;
+	@media #{$media-size-tablet} {
+		max-width: 600px;
+	}
 
-  &-date {
-    &:after {
-      content: '—';
-    }
-  }
+	&-date {
+		&:after {
+			content: '—';
+		}
+	}
 
-  &-title {
-    font-size: 2.625rem;
-    margin: 0 0 20px;
-    @media #{$media-size-phone} {
-      font-size: 2rem;
-    }
+	&-title {
+		font-size: 2.625rem;
+		margin: 0 0 20px;
+		@media #{$media-size-phone} {
+			font-size: 2rem;
+		}
 
-    a {
-      text-decoration: none;
-    }
-  }
+		a {
+			text-decoration: none;
+		}
+	}
 
-  &-tags {
-    display: block;
-    margin-bottom: 20px;
-    font-size: 1rem;
-    opacity: 0.5;
+	&-tags {
+		display: block;
+		margin-bottom: 20px;
+		font-size: 1rem;
+		opacity: 0.5;
 
-    a {
-      text-decoration: none;
-    }
-  }
+		a {
+			text-decoration: none;
+		}
+	}
 
-  &-content {
-    margin-top: 30px;
-  }
+	&-content {
+		margin-top: 30px;
+	}
 
-  &-cover {
-    border-radius: 8px;
-    margin: 40px -50px;
-    width: $max-width;
-    max-width: $max-width;
-    @media #{$media-size-tablet} {
-      margin: 20px 0;
-      width: 100%;
-    }
-  }
+	&-cover {
+		border-radius: 8px;
+		margin: 40px -50px;
+		width: $max-width;
+		max-width: $max-width;
+		@media #{$media-size-tablet} {
+			margin: 20px 0;
+			width: 100%;
+		}
+	}
 
-  &-excerpt {
-    color: grey;
-    font-style: italic;
-  }
+	&-excerpt {
+		color: grey;
+		font-style: italic;
+	}
 
-  &-info {
-    margin-top: 30px;
-    font-size: 0.8rem;
-    line-height: normal;
-    @include dimmed;
+	&-info {
+		margin-top: 30px;
+		font-size: 0.8rem;
+		line-height: normal;
+		@include dimmed;
 
-    p {
-      margin: 0.8em 0;
-    }
+		p {
+			margin: 0.8em 0;
+		}
 
-    a:hover {
-      border-bottom: 1px solid white;
-    }
+		a:hover {
+			border-bottom: 1px solid white;
+		}
 
-    svg {
-      margin-right: 0.8em;
-    }
+		svg {
+			margin-right: 0.8em;
+		}
 
-    .tag {
-      margin-right: 0.5em;
+		.views {
+			display: inline-block;
+			vertical-align: -0.125em;
+		}
 
-      &::before {
-        content: "#";
-      }
-    }
+		.tag {
+			margin-right: 0.5em;
 
-    .feather {
-      display: inline-block;
-      vertical-align: -.125em;
-      width: 1em;
-      height: 1em;
-    }
-  }
+			&::before {
+				content: '#';
+			}
+		}
 
-  &-audio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+		.feather {
+			display: inline-block;
+			vertical-align: -0.125em;
+			width: 1em;
+			height: 1em;
+		}
+	}
 
-    audio {
-      width: 90%;
-    }
-  }
+	&-audio {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 20px;
 
-  .flag {
-    border-radius: 50%;
-    margin: 0 5px;
-  }
+		audio {
+			width: 90%;
+		}
+	}
+
+	.flag {
+		border-radius: 50%;
+		margin: 0 5px;
+	}
 }
 
 .pagination {
-  margin-top: 20px;
+	margin-top: 20px;
 
-  &__title {
-    display: flex;
-    text-align: center;
-    position: relative;
-    margin: 20px 0;
+	&__title {
+		display: flex;
+		text-align: center;
+		position: relative;
+		margin: 20px 0;
 
-    &-h {
-      text-align: center;
-      margin: 0 auto;
-      padding: 5px 10px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      z-index: 1;
-      // Default
-      background: $light-background;
-      color: $light-color-secondary;
+		&-h {
+			text-align: center;
+			margin: 0 auto;
+			padding: 5px 10px;
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			text-decoration: none;
+			letter-spacing: 0.1em;
+			z-index: 1;
+			// Default
+			background: $light-background;
+			color: $light-color-secondary;
 
-      @media (prefers-color-scheme: dark) {
-        background: $dark-background;
-        color: $dark-color-secondary;
-      }
-    
-      @media (prefers-color-scheme: light) {
-        background: $light-background;
-        color: $light-color-secondary;
-      }
-    
-      [data-theme=dark] & {
-        background: $dark-background;
-        color: $dark-color-secondary;
-      }
-    
-      [data-theme=light] & {
-        background: $light-background;
-        color: $light-color-secondary;
-      }
-    }
+			@media (prefers-color-scheme: dark) {
+				background: $dark-background;
+				color: $dark-color-secondary;
+			}
 
-    hr {
-      position: absolute;
-      left: 0;
-      right: 0;
-      width: 100%;
-      margin-top: 15px;
-      z-index: 0;
-    }
-  }
+			@media (prefers-color-scheme: light) {
+				background: $light-background;
+				color: $light-color-secondary;
+			}
 
-  &__buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+			[data-theme='dark'] & {
+				background: $dark-background;
+				color: $dark-color-secondary;
+			}
 
-    a {
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
+			[data-theme='light'] & {
+				background: $light-background;
+				color: $light-color-secondary;
+			}
+		}
+
+		hr {
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 100%;
+			margin-top: 15px;
+			z-index: 0;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		a {
+			text-decoration: none;
+			font-weight: bold;
+		}
+	}
 }
 
 .button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  max-width: 40%;
-  padding: 0;
-  cursor: pointer;
-  appearance: none;
-  // Default
-  background: $light-background-secondary;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+	font-weight: 600;
+	border-radius: 8px;
+	max-width: 40%;
+	padding: 0;
+	cursor: pointer;
+	appearance: none;
+	// Default
+	background: $light-background-secondary;
 
-  @media (prefers-color-scheme: dark) {
-    background: $dark-background-secondary;
-  }
+	@media (prefers-color-scheme: dark) {
+		background: $dark-background-secondary;
+	}
 
-  @media (prefers-color-scheme: light) {
-    background: $light-background-secondary;
-  }
+	@media (prefers-color-scheme: light) {
+		background: $light-background-secondary;
+	}
 
-  [data-theme=dark] & {
-    background: $dark-background-secondary;
-  }
+	[data-theme='dark'] & {
+		background: $dark-background-secondary;
+	}
 
-  [data-theme=light] & {
-    background: $light-background-secondary;
-  }
+	[data-theme='light'] & {
+		background: $light-background-secondary;
+	}
 
-  + .button {
-    margin-left: 10px;
-  }
+	+ .button {
+		margin-left: 10px;
+	}
 
-  a {
-    display: flex;
-    padding: 8px 16px;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+	a {
+		display: flex;
+		padding: 8px 16px;
+		text-decoration: none;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
 
-  &__text {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+	&__text {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
 
-  &.next .button__icon {
-    margin-left: 8px;
-  }
+	&.next .button__icon {
+		margin-left: 8px;
+	}
 
-  &.previous .button__icon {
-    margin-right: 8px;
-  }
+	&.previous .button__icon {
+		margin-right: 8px;
+	}
 }
