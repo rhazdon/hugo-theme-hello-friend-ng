@@ -1,4 +1,4 @@
-# Hello Friend NG
+# Hello Friend NG Improved
 
 ![Hello Friend NG Improved](https://dsh.re/d914c)
 
