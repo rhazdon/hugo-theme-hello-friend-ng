@@ -1,100 +1,73 @@
-baseURL = "https://example.com"
-title   = "Hello Friend NG"
+baseurl      = "localhost" # Set this to https://yourwebsite.com
 languageCode = "en-us"
-theme = "hello-friend-ng"
-
-PygmentsCodeFences = true
-PygmentsStyle = "monokai"
+theme        = "hello-friend-ng-improved"
 
 paginate  = 10
 rssLimit  = 10  # Maximum number of items in the RSS feed.
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+
+# This message is only used by the RSS template. This copyright is NOT for the original and derivatives of the hello-friend Hugo themes, but for your blog content
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License."
 
 # googleAnalytics = ""
 # disqusShortname = ""
-
-archetypeDir = "archetypes"
-contentDir   = "content"
-dataDir      = "data"
-layoutDir    = "layouts"
-publishDir   = "public"
 
 buildDrafts  = false
 buildFuture  = false
 buildExpired = false
 canonifyURLs = true
 
-enableRobotsTXT = true
-enableGitInfo   = false
+enableRobotsTXT = false # This is false by default as we already provide a default robots.txt and we don't want another one to be generated
 enableEmoji     = true
-enableMissingTranslationPlaceholders = false
 disableRSS     = false
 disableSitemap = false
 disable404     = false
-disableHugoGeneratorInject = false
 
 [permalinks]
   posts = "/posts/:year/:month/:title/"
 
 [author]
-  name = "Jane Doe"
-
-[blackfriday]
-  hrefTargetBlank = true
-
-[taxonomies]
-  tag      = "tags"
-  category = "categories"
-  series   = "series"
+  name = "John Doe"
 
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
+  
+  # Meta tag description for homepage only
+  homeDescription = "Hey there, welcome to my blog"
+  
+  # Meta tag description for other pages
+  description = ""
+  
+  # Main heading for homepage
+  homeHeading = 'Hello Friend NG'
+  
+  # The text just after the main heading on homepage
+  jobShortText = "Software Engineer"
 
-  # Metadata mostly used in document's head
-  # 
-  description = "Nice theme for homepages and blogs"
-  keywords = ""
-  images = [""]
-
-  # Home subtitle of the index page.
-  #
-  homeSubtitle = "Hello Friend NG"
-
-  # Set a background for the homepage
-  # backgroundImage = "assets/images/background.jpg"
-
-  # Prefix of link to the git commit detail page. GitInfo must be enabled.
-  #
-  # gitUrl = ""
+  # The text just after the "jobShortText" on homepage
+  homeShortText = "A simple Hugo theme"
+  
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
-  #
   disableReadOtherPosts = false
 
-  # Enable theme toggle
-  # 
-  # This options enables the theme toggle for the theme. 
-  # Per default, this option is off. 
-  # The theme is respecting the prefers-color-scheme of the operating systeme. 
-  # With this option on, the page user is able to set the scheme he wants. 
-  enableThemeToggle = false
-
-  # Sharing buttons
-  #
-  # There are a lot of buttons preconfigured. If you want to change them,
-  # generate the buttons here: https://sharingbuttons.io
-  # and add them into your own `layouts/partials/sharing-buttons.html`
-  #
+  # Enable sharing buttons, if you like
   enableSharingButtons = true
-
-  # Global language menu
-  #
-  # Enables the global language menu.
-  #
-  enableGlobalLanguageMenu = true
+  
+  # Show reading time in minutes for posts
+  showReadingTime = false
+  
+  # Whether to show the language selection menu
+  enableGlobalLanguageMenu = false
+  
+  # Whether to show the theme toggle button
+  enableThemeToggle = true
+  
+  # Default theme: either "light" or "dark"
+  defaultTheme = "dark"
+  
 
   # Integrate Javascript files or stylesheets by adding the url to the external assets or by
   # linking local files with their path relative to the static folder, e.g. "css/styles.css"
@@ -111,34 +84,34 @@ disableHugoGeneratorInject = false
   #
   [params.footer]
     trademark = true
-    rss = true
     copyright = true
     author = true
+    rss = true
+    
 
     topText = []
     bottomText = [
-      "Powered by <a href=\"http://gohugo.io\">Hugo</a>",
-      "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
+      "Powered by <a href=\"http://gohugo.io\">Hugo</a>"
     ]
-
-  # Colors for favicons
-  #
-  [params.favicon.color]
-    mask = "#1b1c1d"
-    msapplication = "#1b1c1d"
-    theme = "#1b1c1d"
+    
 
   [params.logo]
     logoMark     = ">"
-    logoText     = "$ cd /home/"
+    logoText     = "$ cd /dev/john"
     logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+    #
     # Set true to remove the logo cursor entirely.
     # logoCursorDisabled = false
     # Set to a valid CSS color to change the cursor in the logo.
     # logoCursorColor    = "#67a2c9"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
     # logoCursorAnimate  = "2s"
-
+    
+    
   # Commento is more than just a comments widget you can embed — 
   # it’s a return to the roots of the internet. 
   # An internet without the tracking and invasions of privacy. 
@@ -156,15 +129,16 @@ disableHugoGeneratorInject = false
   #   path     = "/img/image.jpg"
   #   alt      = "Portrait"
   #   maxWidth = "50px"
-
+    
+    
   # Social icons
-  [[params.social]]
-    name = "twitter"
-    url  = "https://twitter.com/"
-
   [[params.social]]
     name = "email"
     url  = "mailto:nobody@example.com"
+    
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/"  
 
   [[params.social]]
     name = "github"
@@ -178,23 +152,54 @@ disableHugoGeneratorInject = false
     name = "stackoverflow"
     url  = "https://www.stackoverflow.com/"
 
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+
 [languages]
   [languages.en]
-    subtitle  = "Hello Friend NG Theme"
-    weight    = 1
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    title = "Hello Friend NG" # First part of the title tag
+    subtitle = "Personal Blog" # Second part of the title tag
+    keywords = "theme, hugo, website, static" # Meta tag keywords
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>'
+    menuMore = "Show more"
+    writtenBy = "Written by"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    minuteReadingTime = "Minutes"
 
-  [languages.fr]
-    subtitle  = "Hello Friend NG Theme"
-    weight    = 2
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
+# And you can even create generic menu
+# Set the "weight" to define the order of the menu items
 [menu]
+  [[menu.main]]
+    identifier = "posts"
+    name       = "Blog"
+    url        = "posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "projects"
+    name       = "Projects"
+    url        = "projects/"
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    name       = "Categories"
+    url        = "categories/"
+    weight = 3
+  [[menu.main]]
+    identifier = "tags"
+    name       = "Tags"
+    url        = "tags/"
+    weight = 4
   [[menu.main]]
     identifier = "about"
     name       = "About"
     url        = "about/"
-  [[menu.main]]
-    identifier = "posts"
-    name       = "Posts"
-    url        = "posts/"
+    weight = 5
+  
