@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-    <main aria-role="main">
+    <main aria-role="main" style="margin-top: 7em;">
         <div>
             {{ if .Site.Params.Portrait.Path }}
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
@@ -22,6 +22,12 @@
                     {{ partial "social-icons.html" . }}
                 </div>
             {{- end }}
+            
+            {{ if .Site.Params.ShowcaseSkills }}
+            	<div>
+            	    {{ partial "showcase-skills.html" . }}
+            	</div>
+            {{ end }}
         </div>
     </main>
 {{ end }}
