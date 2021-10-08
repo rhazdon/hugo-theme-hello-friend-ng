@@ -1,0 +1,91 @@
+<section id="skills" class="skills">
+    <div class="skills-container">
+        <div class="section-title">
+            <h2>Skills</h2>
+            <p>Here are the tools and technologies I have worked with!</p>
+        </div>
+        <div class="skills-nav-center">
+            <ul class="skills-nav" style="padding-inline-start: 0px;">
+                <li class="skill-tab skill-category-all skill-tab-active">All</li>
+                <li class="skill-tab skill-category-programming">Programming</li>
+                <li class="skill-tab skill-category-web">Web</li>
+                <li class="skill-tab skill-category-ml">ML</li>
+                <li class="skill-tab skill-category-tools">Tools</li>
+            </ul>
+        </div>
+        <div class="skills-grid">
+            <ul>
+                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/java.svg"><p>Java</p></li>
+                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/python.svg"><p>Python</p></li>
+                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/cpp.svg"><p>C++</p></li>
+                <li class="skill-inline skill-category-web"><img src="/images/skill-icons/html-5.svg"><p>HTML</p></li>
+                <li class="skill-inline skill-category-web"><img src="/images/skill-icons/javascript.svg"><p>JavaScript</p></li>
+                <li class="skill-inline skill-category-web"><img src="/images/skill-icons/css.svg"><p>CSS</p></li>
+                <li class="skill-inline skill-category-web"><img src="/images/skill-icons/php.svg"><p>PHP</p></li>
+                <li class="skill-inline skill-category-ml"><img src="/images/skill-icons/pytorch.svg"><p>PyTorch</p></li>
+                <li class="skill-inline skill-category-ml"><img src="/images/skill-icons/jupyter-icon.svg"><p>Jupyter Notebook</p></li>
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/github.svg"><p>GitHub</p></li>
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/sql.svg"><p>SQL</p></li>
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/linux-icon.svg"><p>Linux</p></li>
+               
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+    function hasCommonElement(array1, array2)
+    {
+      // Loop for array1
+      for(let i = 0; i < array1.length; i++) {
+            
+          // Loop for array2
+          for(let j = 0; j < array2.length; j++) {
+                
+              // Compare the element of each and
+              // every element from both of the
+              // arrays
+              if(array1[i] === array2[j]) {
+                
+                  // Return if common element found
+                  return true;
+              }
+          }
+      }
+        
+      // Return if no common element exist
+      return false; 
+    }
+
+    var skillTabs = document.getElementsByClassName("skill-tab");
+    for (var i = 0; i < skillTabs.length; i++) 
+    {
+        skillTabs[i].addEventListener("click", function(e)
+        {
+            document.getElementsByClassName("skill-tab-active")[0].classList.remove("skill-tab-active");
+            e.target.classList.add('skill-tab-active');
+
+            var skills = document.querySelectorAll("li.skill-inline");
+
+            if (e.target.classList.contains("skill-category-all"))
+            {
+                skills.forEach(function(el) {
+                    el.style.display = "block";
+                });
+            }
+            else
+            {
+                skills.forEach(function(el) {
+                    el.style.display = "block";
+                });
+
+                skills.forEach(function(el) {
+                    if (!hasCommonElement(el.classList, e.target.classList))
+                    {
+                        el.style.display = "none";
+                    }  
+                });
+            }
+        });
+    }
+</script>
