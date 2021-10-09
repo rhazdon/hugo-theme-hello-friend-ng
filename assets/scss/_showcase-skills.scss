@@ -1,6 +1,7 @@
 .skills {
     // margin-top: 6em;
     margin: 0 auto;
+    padding: 0 5vw;
 
     h2 {
         color:rgb(169, 169, 179);
@@ -29,22 +30,22 @@
     margin: 0 1.5em 2.5em 1.5em;
 
     img {
-        width: 4.5em;
+        max-width: 4.5em;
     }
 }
 
 .skills-grid {
-    max-width: 50em;
+    max-width: 75em;
     min-width: 25em;
     display: flex;
     flex-wrap: wrap;
-    padding: 50px;
+    margin-top: 1.5em;
+    padding: 0 5vw;
     
     ul {
         display: flex;
         flex-wrap: wrap;
         margin: 0 auto;
-        
     }
 }
 
@@ -63,7 +64,7 @@ ul.skills-nav {
     margin-bottom: 25px;
     margin-top: 0px;
     padding-inline-start: 0px;
-    // text-align: center;
+    text-align: center;
 }
 
 ul.skills-nav li {
@@ -88,7 +89,6 @@ ul.skills-nav li {
     margin-bottom: 10px;
     margin-right: 15px;
     padding: 5px 25px;
-    //text-align: left;
 }
 
 .skills-nav-center {

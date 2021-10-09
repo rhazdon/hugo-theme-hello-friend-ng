@@ -2,32 +2,58 @@
     <div class="skills-container">
         <div class="section-title">
             <h2>Skills</h2>
-            <p>Here are the tools and technologies I have worked with!</p>
+            {{- with .Site.Params.showcaseSkillsText }}
+                <p>{{.}}</p>
+            {{- end }}
         </div>
         <div class="skills-nav-center">
             <ul class="skills-nav" style="padding-inline-start: 0px;">
                 <li class="skill-tab skill-category-all skill-tab-active">All</li>
                 <li class="skill-tab skill-category-programming">Programming</li>
                 <li class="skill-tab skill-category-web">Web</li>
-                <li class="skill-tab skill-category-ml">ML</li>
+                <li class="skill-tab skill-category-db">Database</li>
+                <li class="skill-tab skill-category-ml">AI / ML</li>
+                <li class="skill-tab skill-category-cms">CMS</li>                
                 <li class="skill-tab skill-category-tools">Tools</li>
             </ul>
         </div>
         <div class="skills-grid">
             <ul>
+                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/dotnet.svg"><p>.Net</p></li>
+                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/c-sharp.svg"><p>C#</p></li>
+                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/c.svg"><p>C</p></li>
+                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/cpp.svg"><p>C++</p></li>
                 <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/java.svg"><p>Java</p></li>
                 <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/python.svg"><p>Python</p></li>
-                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/cpp.svg"><p>C++</p></li>
+                <li class="skill-inline skill-category-programming"><img src="/images/skill-icons/rust.svg"><p>Rust</p></li>
+
                 <li class="skill-inline skill-category-web"><img src="/images/skill-icons/html-5.svg"><p>HTML</p></li>
                 <li class="skill-inline skill-category-web"><img src="/images/skill-icons/javascript.svg"><p>JavaScript</p></li>
+                <li class="skill-inline skill-category-web"><img src="/images/skill-icons/typescript.svg"><p>TypeScript</p></li>
                 <li class="skill-inline skill-category-web"><img src="/images/skill-icons/css.svg"><p>CSS</p></li>
                 <li class="skill-inline skill-category-web"><img src="/images/skill-icons/php.svg"><p>PHP</p></li>
+                <li class="skill-inline skill-category-web"><img src="/images/skill-icons/golang.svg"><p>Go</p></li>
+                <li class="skill-inline skill-category-web"><img src="/images/skill-icons/asp-net.png"><p>ASP.NET MVC</p></li>
+                <li class="skill-inline skill-category-web"><img src="/images/skill-icons/nodejs2.svg"><p>NodeJS</p></li>
+
                 <li class="skill-inline skill-category-ml"><img src="/images/skill-icons/pytorch.svg"><p>PyTorch</p></li>
+                <li class="skill-inline skill-category-ml"><img src="/images/skill-icons/keras.svg"><p>Keras</p></li>
                 <li class="skill-inline skill-category-ml"><img src="/images/skill-icons/jupyter-icon.svg"><p>Jupyter Notebook</p></li>
+
+                <li class="skill-inline skill-category-db"><img src="/images/skill-icons/mysql.svg"><p>MySQL</p></li>
+                <li class="skill-inline skill-category-db"><img src="/images/skill-icons/mongodb.svg"><p>MongoDB</p></li>
+
+                <li class="skill-inline skill-category-cms"><img src="/images/skill-icons/wordpress.svg"><p>Wordpress</p></li>
+                <li class="skill-inline skill-category-cms"><img src="/images/skill-icons/hugo.svg"><p>Hugo</p></li>
+
                 <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/github.svg"><p>GitHub</p></li>
                 <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/sql.svg"><p>SQL</p></li>
-                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/linux-icon.svg"><p>Linux</p></li>
-               
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/linux-tux.svg"><p>Linux</p></li>
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/travis-ci.svg"><p>Travis CI</p></li>
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/git.svg"><p>Git</p></li>
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/visualstudio.svg"><p>Visual Studio</p></li>
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/vs-code.svg"><p>VS Code</p></li>
+                <li class="skill-inline skill-category-tools"><img src="/images/skill-icons/netlify.svg"><p>Netlify</p></li>
             </ul>
         </div>
     </div>
