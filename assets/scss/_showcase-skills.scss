@@ -1,7 +1,7 @@
 .skills {
     // margin-top: 6em;
-    margin: 0 auto;
-    padding: 0 5vw;
+    // margin: 0 auto;
+    padding: 0 4vw;
 
     h2 {
         color:rgb(169, 169, 179);
@@ -40,7 +40,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 1.5em;
-    padding: 0 5vw;
+    padding: 0 4vw;
     
     ul {
         display: flex;
@@ -102,4 +102,5 @@ ul.skills-nav li {
     justify-content: center;
     line-height: 24px;
     text-align: left;
+    padding: 0 4vw;
 }
