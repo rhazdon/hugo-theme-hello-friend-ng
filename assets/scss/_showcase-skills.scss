@@ -1,7 +1,7 @@
 .skills {
     // margin-top: 6em;
     // margin: 0 auto;
-    margin: 0 2vw;
+    margin: 0 5vw;
     // max-width: 75em;
     // min-width: 25em;
 
@@ -18,11 +18,11 @@
 }
 
 .skills-section-title {
-    margin: 0 2vw;
+    margin: 0 5vw;
     p {
         display: inline-block;
         flex-wrap: wrap;
-        margin: 1em 2vw;
+        margin: 1em 5vw;
     }
 }
 
@@ -51,7 +51,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 1.5em;
-    margin: 0 2vw;
+    margin: 0 5vw;
     
     ul {
         display: flex;
@@ -113,5 +113,5 @@ ul.skills-nav li {
     justify-content: center;
     line-height: 24px;
     text-align: left;
-    margin: 0 2vw;
+    margin: 0 5vw;
 }
