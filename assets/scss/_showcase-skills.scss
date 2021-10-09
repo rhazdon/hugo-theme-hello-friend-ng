@@ -2,6 +2,8 @@
     // margin-top: 6em;
     // margin: 0 auto;
     padding: 0 4vw;
+    // max-width: 75em;
+    // min-width: 25em;
 
     h2 {
         color:rgb(169, 169, 179);
@@ -12,6 +14,14 @@
         font-weight: 600;
         text-align: center;
         text-transform: uppercase;
+    }
+}
+
+.skills-section-title {
+    padding: 0 4vw;
+    p {
+        display: inline-flex;
+        flex-wrap: wrap;
     }
 }
 
