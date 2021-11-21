@@ -8,6 +8,10 @@
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
+{{ if .Site.Params.siteIcon }}
+<link rel="icon" href="{{ .Site.Params.siteIcon }}" />
+{{ end }}
+
 {{ block "title" . }}
     <title>
         {{ if .IsHome }}

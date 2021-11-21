@@ -58,6 +58,7 @@ disableHugoGeneratorInject = false
   description = "Nice theme for homepages and blogs"
   keywords = ""
   images = [""]
+  siteIcon = "assets/images/favicon.ico"
 
   # Home subtitle of the index page.
   #

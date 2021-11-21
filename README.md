@@ -88,6 +88,7 @@ paginate     = 10
   # Metadata mostly used in document's head
   description = "My new homepage or blog"
   keywords = "homepage, blog"
+  siteIcon = "assets/images/favicon.ico"
   images = [""]
 
 [taxonomies]
