@@ -3,6 +3,22 @@
   flex-grow: 0;
   color: $light-color-secondary;
 
+  @media (prefers-color-scheme: dark) {
+    color: $light-color-secondary;
+  }
+
+  @media (prefers-color-scheme: light) {
+      color: black;
+  }
+
+  [data-theme=dark] & {
+    color: $light-color-secondary;
+  }
+
+  [data-theme=light] & {
+      color: black;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -22,6 +38,22 @@
     align-items: center;
     font-size: 1rem;
     color: $light-color-secondary;
+
+    @media (prefers-color-scheme: dark) {
+      color: $light-color-secondary;
+    }
+  
+    @media (prefers-color-scheme: light) {
+        color: black;
+    }
+  
+    [data-theme=dark] & {
+      color: $light-color-secondary;
+    }
+  
+    [data-theme=light] & {
+        color: black;
+    }
 
     @media #{$media-size-tablet} {
       flex-direction: column;
