@@ -9,7 +9,23 @@
         font-weight: 600;
         text-align: center;
         text-transform: uppercase;
-    }
+
+        @media (prefers-color-scheme: dark) {
+            color:rgb(169, 169, 179);
+        }
+    
+        @media (prefers-color-scheme: light) {
+            color: black;
+        }
+
+        [data-theme=dark] & {
+            color:rgb(169, 169, 179);
+        }
+        
+        [data-theme=light] & {
+            color: black;
+        }
+    }    
 }
 
 .skills-section-title {
@@ -25,10 +41,45 @@
 .skill-tab {
     color: rgba(255, 255, 255, 0.85);
     cursor: pointer;
+
+    @media (prefers-color-scheme: dark) {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    @media (prefers-color-scheme: light) {
+        color: black;
+    }
+
+    [data-theme=dark] & {
+        color: rgba(255, 255, 255, 0.85);
+    }
+    
+    [data-theme=light] & {
+        color: black;
+    }
 }
 
 .skill-tab-active {
     background-color: rgb(5, 99, 187);
+
+    color: white;
+    cursor: pointer;
+
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
+
+    @media (prefers-color-scheme: light) {
+        color: white;
+    }
+
+    [data-theme=dark] & {
+        color: white;
+    }
+    
+    [data-theme=light] & {
+        color: white;
+    }
 }
 
 .skill-inline {
