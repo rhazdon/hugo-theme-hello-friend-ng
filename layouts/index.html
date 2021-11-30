@@ -23,11 +23,19 @@
                 </div>
             {{- end }}
             
+            {{ if .Site.Params.showHomeRecentPosts }}
+            	<div>
+            	    {{ partial "home-recent-posts.html" . }}
+            	</div>
+            {{ end }}
+
             {{ if .Site.Params.ShowcaseSkills }}
             	<div>
             	    {{ partial "showcase-skills.html" . }}
             	</div>
             {{ end }}
+            
+
         </div>
     </main>
 {{ end }}

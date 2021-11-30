@@ -1,0 +1,82 @@
+.recent-posts {
+
+    margin-top: -1.5em;
+
+    h2 {
+        color:rgb(169, 169, 179);
+        display: block;
+        font-family: "Inter UI", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+        font-size: 32px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media (prefers-color-scheme: dark) {
+            color:rgb(169, 169, 179);
+        }
+    
+        @media (prefers-color-scheme: light) {
+            color: black;
+        }
+
+        [data-theme=dark] & {
+            color:rgb(169, 169, 179);
+        }
+        
+        [data-theme=light] & {
+            color: black;
+        }
+    }    
+}
+
+
+.recent-posts-grid {
+    max-width: 75em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.recent-posts-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5em 2em;
+
+    width: 25em;
+    text-align: left;
+
+    h3 {
+        margin: 0.3em 0;
+    }
+
+    a {
+        text-decoration-line: none;
+    }
+
+    .date-item {
+        display: inline-flex;
+        align-items: center;
+        margin: -2em 0;
+
+        p {
+            margin-left: 0.5em;
+        }
+    }
+
+    div.read-more {
+        margin-top: 1em;
+        a {
+            text-decoration-line: none;
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .recent-posts-grid {
+        max-width: 75vw;
+    }
+}
