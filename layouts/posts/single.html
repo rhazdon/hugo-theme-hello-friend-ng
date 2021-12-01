@@ -123,7 +123,13 @@
       {{ end }}
 
     </div>
+  
 
+    {{- if .Site.Params.BuyMeACoffeeURL }}
+      <div class="buy-me-a-coffee" style="margin: 2em auto; display: block;">
+        {{ partial "buy-me-a-coffee.html" . }}
+      </div>
+    {{- end }}
     
 
     {{- if .Site.Params.EnableSharingButtons }}
