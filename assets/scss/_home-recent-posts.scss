@@ -1,15 +1,19 @@
 .recent-posts {
 
-    margin-top: -1.5em;
+    // margin-top: -1em;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
 
     h2 {
         color:rgb(169, 169, 179);
-        display: block;
+        display: flex;
+        justify-content: center;
         font-family: "Inter UI", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
         font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
         font-size: 32px;
         font-weight: 600;
-        text-align: center;
         text-transform: uppercase;
 
         @media (prefers-color-scheme: dark) {
@@ -34,17 +38,17 @@
 .recent-posts-grid {
     max-width: 75em;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .recent-posts-item {
     display: flex;
     flex-wrap: wrap;
-    margin: 1.5em 2em;
-
-    width: 25em;
+    margin: 2em;
+    
+    width: 20em;
     text-align: left;
 
     h3 {
@@ -56,9 +60,8 @@
     }
 
     .date-item {
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        margin: -2em 0;
 
         p {
             margin-left: 0.5em;
