@@ -1,4 +1,6 @@
 form#search {
+    margin: 3em auto;
+
 	input {
         padding: 0.5em;
         margin: 0.5em;
@@ -10,6 +12,11 @@ div.content {
 
     ul#results {
         list-style-type: none;
-        margin: 1em auto;
+        text-align: left;
+        margin: 0 3em;
+
+        li {
+            margin-bottom: 3em;
+        }
     }
 }
