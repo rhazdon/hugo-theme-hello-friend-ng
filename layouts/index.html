@@ -5,14 +5,17 @@
 {{ define "main" }}
     <main aria-role="main">
         <div>
-            {{ if .Site.Params.Portrait.Path }}
-               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
-            {{ end }}
-
+            <h1>
+                {{ if .Site.Params.Portrait.Path }}
+                    <img src="{{ .Site.Params.Portrait.Path }}" class="" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+                {{ end }}
+            </h1>
+            <!--
             <h1>{{ .Site.Title }}</h1>
             {{- with .Site.Params.homeSubtitle }}
                 <p>{{.}}</p>
             {{- end }}
+            -->
 
             {{- with .Site.Params.social }}
                 <div>
