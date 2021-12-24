@@ -21,5 +21,8 @@
         </div>
 
         {{ partial "javascript.html" . }}
+        {{- if templates.Exists "partials/extra-body.html" -}}
+            {{ partial "extra-body.html" . }}
+        {{- end }}
     </body>
 </html>

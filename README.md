@@ -10,21 +10,23 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
 
 ## Table of Contents
 
-- [Features](#features)
-- [How to start](#how-to-start)
-- [How to configure](#how-to-configure)
-- [More](#more-things)
-  - [Built in shortcodes](#built-in-shortcodes)
-    - [image](#image)
-  - [Code highlighting](#code-highlighting)
-  - [Favicon](#favicon)
-  - [Audio Support](#audio-support)
-- [Social Icons](#social-icons)
-- [Known issues](#known-issues)
-- [How to edit the theme](#how-to-edit-the-theme)
-- [Changelog](CHANGELOG.md)
-- [Sponsoring](#sponsoring)
-- [Licence](#licence)
+- [Hello Friend NG](#hello-friend-ng)
+  - [General informations](#general-informations)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [How to start](#how-to-start)
+  - [How to configure](#how-to-configure)
+  - [More things](#more-things)
+    - [Built-in shortcodes](#built-in-shortcodes)
+      - [image](#image)
+    - [Code highlighting](#code-highlighting)
+    - [Favicon](#favicon)
+    - [Audio Support](#audio-support)
+  - [Social Icons:](#social-icons)
+  - [Known issues](#known-issues)
+  - [How to edit the theme](#how-to-edit-the-theme)
+  - [Sponsoring](#sponsoring)
+  - [Licence](#licence)
 
 ---
 

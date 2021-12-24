@@ -34,5 +34,6 @@ Temporary Items
 
 .vscode
 
-# customize Headers whiteout touch git submodule.
+# Allows customizing the theme without overriding or changing theme files.
 layouts/partials/extra-head.html
+layouts/partials/extra-body.html
