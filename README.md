@@ -19,6 +19,7 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
   - [Code highlighting](#code-highlighting)
   - [Favicon](#favicon)
   - [Audio Support](#audio-support)
+  - [Extending head](#extending-head)
 - [Social Icons](#social-icons)
 - [Known issues](#known-issues)
 - [How to edit the theme](#how-to-edit-the-theme)
@@ -161,6 +162,21 @@ In your article add to your front matters part:
 
 ```yaml
 audio: path/to/file.mp3
+```
+
+### Extending head
+
+You can globally add HTML inside `<head>` tag by creating `layouts/partials/extra-head.html`.
+
+You can also inject into `<head>` tag on individual pages for their different needs using `extend-head` blocks:
+
+```html
+
+{{ define "extend-head" }}
+    ...
+    <!-- Custom meta tags, CSS imports etc. -->
+{{ end }}
+
 ```
 
 ## Social Icons:
