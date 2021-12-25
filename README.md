@@ -90,6 +90,10 @@ paginate     = 10
   keywords = "homepage, blog"
   images = [""]
 
+  # Configure header / top menu on top of each page
+  disableHeaderOnHome = false  # Hides header on homepage
+  headerCssClasses = [ "" ] # Append CSS classes to header element
+
 [taxonomies]
     category = "blog"
     tag      = "tags"
