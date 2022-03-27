@@ -39,6 +39,11 @@
 {{ template "_internal/twitter_cards.html" . }}
 {{ template "_internal/google_news.html" . }}
 
+{{ if (.Params.mermaid) }}
+<!-- MermaidJS support -->
+<script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
+{{ end }}
+
 {{ if isset .Site.Taxonomies "series" }}
     {{ template "_internal/opengraph.html" . }}
 {{ end }}
