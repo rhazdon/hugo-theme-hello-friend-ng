@@ -142,6 +142,8 @@
 
     {{ partial "pagination-single.html" . }}
 
+    {{ partial "comments.html" . }}
+
     {{ if .Site.DisqusShortname }}
       {{ if not (eq .Params.Comments "false") }}
         <div id="comments">
