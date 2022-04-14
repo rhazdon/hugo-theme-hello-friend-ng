@@ -20,10 +20,11 @@
 <!-- Comments: Staticman -->
 {{ if .Site.Params.staticman }}
 <script>
-    function changeValue(elementName, newValue){
+    function changeValue(elementName, newValue)
+    {
         document.getElementsByName(elementName)[0].value=newValue;
         window.location.hash = "#comment-form";
-    };
+    }
 </script>
 {{ end }}
 
