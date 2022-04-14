@@ -17,6 +17,17 @@
     </title>
 {{ end }}
 
+<!-- Comments: Staticman -->
+{{ if .Site.Params.staticman }}
+<script>
+    function changeValue(elementName, newValue){
+        document.getElementsByName(elementName)[0].value=newValue;
+        window.location.hash = "#comment-form";
+    };
+</script>
+{{ end }}
+
+
 <!-- CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
     type="text/css" integrity="sha384-AxGztB9BXUlWtZEgUrG/w5UhCB9UUKLoknc61kvdS/W6278NI/cCeY1yewPhTPOt" crossorigin="anonymous">
