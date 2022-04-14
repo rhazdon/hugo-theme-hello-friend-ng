@@ -38,7 +38,7 @@
         {{ end }}
     {{ end }}
 
-        <form id="comment-form" class="post-new-comment" method="post" action="{{ .Site.Params.staticman.endpoint }}/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments">
+        <form id="comment-form" class="post-new-comment" method="post" action="{{ .Site.Params.staticman.endpoint }}/github/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments">
             {{ if eq ($.Scratch.Get "hasComments") 0 }}
                 <p>Be the first to leave a comment! 🎉</p>
             {{ end }}
