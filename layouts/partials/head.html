@@ -19,11 +19,17 @@
 
 <!-- Comments: Staticman -->
 {{ if .Site.Params.staticman }}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
     function changeValue(elementName, newValue)
     {
         document.getElementsByName(elementName)[0].value=newValue;
         window.location.hash = "#comment-form";
+    }
+
+    function validateCommentCaptcha()
+    {
+        document.getElementById("comment-btn").disabled = false;
     }
 </script>
 {{ end }}
