@@ -56,14 +56,14 @@
             <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ .Site.Params.reCaptchaSiteKey }}">
             <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.reCaptchaEncryptedSecretKey }}">
             <div class="g-recaptcha" data-sitekey="{{ .Site.Params.reCaptchaSiteKey }}" data-callback="validateCommentCaptcha"></div>
-            <input id="comment-btn" type="submit" class="post-comment-field btn btn-primary comment-buttons" disabled="disabled" aria-disabled="true" value="Submit">
+            <input id="comment-btn" type="submit" class="post-comment-field btn btn-primary comment-buttons" onclick="document.getElementById('comment-submitted').style.animationName='fadeInCommentsDiag';" disabled="disabled" aria-disabled="true" value="Submit">
             <noscript>Your browser does not support JavaScript! You can't submit a comment.</noscript>
         </form>
     </section>
 
     <div id="comment-submitted" class="comment-dialog">
         <p><strong>Thank You!</strong></p>
-        <p>Your comment has been submitted and will be published once it has been approved. &#128522;</p>
+        <p>Your comment has been submitted and will be published shortly. &#128522;</p>
 
         <p><strong><a href="#comments" onclick="document.getElementById('comment-submitted').style.animationName='fadeOutCommentsDiag';" class="btn btn-primary comment-buttons ok">Ok</a></strong></p>
     </div>
