@@ -54,7 +54,7 @@
             <input type="hidden" id="comment-parent" name="fields[reply_to]" value="">
             <textarea name="fields[comment]" class="post-comment-field" placeholder="Comment (markdown is accepted) *" required rows="10"></textarea>
             <div class="g-recaptcha" data-sitekey="{{ .Site.Params.reCaptchaSiteKey }}" data-callback="validateCommentCaptcha"></div>
-            <input type="submit" class="post-comment-field btn btn-primary comment-buttons" disabled="disabled" aria-disabled="true" value="Submit">
+            <input id="comment-btn" type="submit" class="post-comment-field btn btn-primary comment-buttons" disabled="disabled" aria-disabled="true" value="Submit">
             <noscript>Your browser does not support JavaScript! You can't submit a comment.</noscript>
         </form>
     </section>
