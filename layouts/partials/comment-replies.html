@@ -5,7 +5,7 @@
         <div class="post-comment-header">
             <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
             <p class="post-comment-info">
-                <span class="post-comment-name">{{ .name }}<br><i><small>In reply to {{ $.parentName }}</i></small></span>
+                <span class="post-comment-name">{{ .name }}<br><span class="post-comment-reply-name">In reply to {{ $.parentName }}</span></span>
                 <br>
                 <a href="#commentid-{{ ._id }}" title="Permalink to this comment">
                     <time class="post-time">{{ dateFormat "Monday, Jan 2, 2006 at 15:04 MST" .date }}</time>
