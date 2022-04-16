@@ -1,7 +1,7 @@
 {{ if and .Site.Params.staticman (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
     <section id="comments">
         {{ if .Site.Params.staticman }}
-            <h2 class="title"><a href="#comments">&#9997; Comments</a></h2>
+            <h2 class="comment-title"><a href="#comments">Comments</a></h2>
             <section class="staticman-comments post-comments">
                 {{ $comments := readDir "data/comments" }}
                 {{ $.Scratch.Add "hasComments" 0 }}
@@ -55,7 +55,7 @@
             <textarea name="fields[comment]" class="post-comment-field" placeholder="Comment (markdown is accepted) *" required rows="10"></textarea>
             <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ .Site.Params.reCaptchaSiteKey }}">
             <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.reCaptchaEncryptedSecretKey }}">
-            <div class="g-recaptcha" data-sitekey="{{ .Site.Params.reCaptchaSiteKey }}" data-callback="validateCommentCaptcha"></div>
+            <div class="g-recaptcha" style="margin: 0 auto;" data-sitekey="{{ .Site.Params.reCaptchaSiteKey }}" data-callback="validateCommentCaptcha"></div>
             <input id="comment-btn" type="submit" class="post-comment-field btn btn-primary comment-buttons" onclick="document.getElementById('comment-submitted').style.animationName='fadeInCommentsDiag';" disabled="disabled" aria-disabled="true" value="Submit">
             <noscript>Your browser does not support JavaScript! You can't submit a comment.</noscript>
         </form>
