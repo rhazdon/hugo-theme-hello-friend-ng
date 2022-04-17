@@ -110,6 +110,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+  margin: 1rem auto;
 
   &.left {
     margin-right: auto;
@@ -433,3 +434,21 @@ hr {
 .highlight {
   margin: 30px auto;
 }
+
+// Additional shortcodes
+
+div.collate-img-horz {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+div.collate-img-horz img {
+  margin: 0.5rem;
+  max-width: 100%;
+  // max-height: 100%;
+  object-fit: cover;
+  overflow: scroll;
+}
+
+// End additional shortcodes
