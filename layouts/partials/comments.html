@@ -46,7 +46,7 @@
             {{ if eq ($.Scratch.Get "hasComments") 0 }}
                 <p>Be the first to leave a comment! 🎉</p>
             {{ end }}
-            <h3 class="prompt">Say something</h3>
+            <h3 class="prompt">Leave a comment</h3>
             <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
             <input type="hidden" name="options[slug]" value="{{ .File.BaseFileName }}">
             <input type="text" name="fields[name]" class="post-comment-field" placeholder="Name *" required/>
