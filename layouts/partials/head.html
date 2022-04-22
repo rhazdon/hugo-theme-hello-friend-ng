@@ -31,6 +31,40 @@
     {
         document.getElementById("comment-btn").disabled = false;
     }
+
+    function submitComment()
+    {
+        const data = new URLSearchParams(new FormData(document.getElementById('comment-form')));
+        
+        const opts = {
+            method: 'POST',
+            body: data
+        };
+
+        const baseUrl = "https://techblog-comments.herokuapp.com/v3/entry/github";
+        const endpoint = baseUrl + "/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments";
+
+        fetch(endpoint, opts)
+            .catch(err => 
+            {
+                alert("There was an error posting your comment: \n\n" + err.message);
+            })
+            .then(function (response)
+            {
+                return response.json();
+            })
+            .then(function (body)
+            {
+                if (body.success == false)
+                {
+                    alert("There was an error posting your comment: \n\n" + body.message);
+                }
+                else
+                {
+                    document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';
+                }
+            });
+    }
 </script>
 {{ end }}
 

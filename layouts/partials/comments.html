@@ -42,7 +42,7 @@
         {{ end }}
 {{ end }}
 
-        <form id="comment-form" class="post-new-comment" method="post" onsubmit="document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';" action="{{ .Site.Params.staticman.endpoint }}/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments">
+        <form id="comment-form" class="post-new-comment" action="#comment-submitted" onsubmit="event.preventDefault();">
             {{ if eq ($.Scratch.Get "hasComments") 0 }}
                 <p>Be the first to leave a comment! 🎉</p>
             {{ end }}
@@ -56,7 +56,7 @@
             <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ .Site.Params.reCaptchaSiteKey }}">
             <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.reCaptchaEncryptedSecretKey }}">
             <div class="g-recaptcha" style="margin: 0 auto;" data-sitekey="{{ .Site.Params.reCaptchaSiteKey }}" data-callback="validateCommentCaptcha"></div>
-            <input id="comment-btn" type="submit" class="post-comment-field btn btn-primary comment-buttons" onclick="document.getElementById('comment-submitted').style.animationName='fadeInCommentsDiag';" disabled="disabled" aria-disabled="true" value="Submit">
+            <input id="comment-btn" type="submit" class="post-comment-field btn btn-primary comment-buttons" disabled="disabled" aria-disabled="true" onclick="submitComment();" value="Submit">
             <noscript>Your browser does not support JavaScript! You can't submit a comment.</noscript>
         </form>
     </section>
