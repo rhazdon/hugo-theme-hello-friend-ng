@@ -47,13 +47,15 @@
         fetch(endpoint, opts)
             .then(function (response)
             {
+                console.log("this is the response: " + response);
+                console.log("this is the response.json(): " + response.json());
                 return response.json();
             })
             .then(function (body)
             {
-                alert(body);
-                
-                if (JSON.parse(body).success == "false")
+                alert("this is the body:" + body);
+
+                if (body.success == "false")
                 {
                     alert("There was an error posting your comment: \n\n" + body.message);
                 }
@@ -61,10 +63,6 @@
                 {
                     document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';
                 }
-            })
-            .catch(err => 
-            {
-                alert("There was an error posting your comment: \n\n" + err.message);
             });
     }
 </script>
