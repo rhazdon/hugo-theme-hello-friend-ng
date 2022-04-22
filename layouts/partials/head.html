@@ -48,10 +48,10 @@
         const baseUrl = "https://techblog-comments.herokuapp.com/v3/entry/github";
         const endpoint = baseUrl + "/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments";
 
-        await fetch(endpoint, opts);
-
         form.reset();
         document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';
+
+        await fetch(endpoint, opts);
     }
 </script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
