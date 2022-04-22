@@ -31,6 +31,8 @@
         document.getElementById("comment-btn").disabled = false;
     }
 
+    window.validateCommentCaptcha = validateCommentCaptcha;
+
     function submitComment()
     {
         const data = new URLSearchParams(new FormData(document.getElementById('comment-form')));
