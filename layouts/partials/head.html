@@ -51,7 +51,9 @@
             })
             .then(function (body)
             {
-                if (body.success == "false")
+                alert(body);
+                
+                if (JSON.parse(body).success == "false")
                 {
                     alert("There was an error posting your comment: \n\n" + body.message);
                 }
