@@ -45,10 +45,6 @@
         const endpoint = baseUrl + "/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments";
 
         fetch(endpoint, opts)
-            .catch(err => 
-            {
-                alert("There was an error posting your comment: \n\n" + err.message);
-            })
             .then(function (response)
             {
                 return response.json();
@@ -58,11 +54,17 @@
                 if (body.success == false)
                 {
                     alert("There was an error posting your comment: \n\n" + body.message);
+                    console.log(body);
                 }
                 else
                 {
                     document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';
                 }
+            })
+            .catch(err => 
+            {
+                alert("There was an error posting your comment: \n\n" + err.message);
+                console.log(err);
             });
     }
 </script>
