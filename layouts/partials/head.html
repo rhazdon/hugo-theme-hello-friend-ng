@@ -44,26 +44,39 @@
         const baseUrl = "https://techblog-comments.herokuapp.com/v3/entry/github";
         const endpoint = baseUrl + "/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments";
 
-        fetch(endpoint, opts)
-            .then(function (response)
-            {
-                console.log("this is the response: " + response);
-                console.log("this is the response.json(): " + response.json());
-                return response.json();
-            })
-            .then(function (body)
-            {
-                alert("this is the body:" + body);
+        // fetch(endpoint, opts)
+        //     .then(function (response)
+        //     {
+        //         console.log("this is the response: " + response);
+        //         console.log("this is the response.json(): " + response.json());
+        //         return response.json();
+        //     })
+        //     .then(function (body)
+        //     {
+        //         alert("this is the body:" + body);
 
-                if (body.success == "false")
-                {
-                    alert("There was an error posting your comment: \n\n" + body.message);
-                }
-                else
-                {
-                    document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';
-                }
-            });
+        //         if (body.success == "false")
+        //         {
+        //             alert("There was an error posting your comment: \n\n" + body.message);
+        //         }
+        //         else
+        //         {
+        //             document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';
+        //         }
+        //     });
+
+        const response = await fetch(endpoint, opts);
+        const body = await response.json();
+        console.log(body);
+
+        if (body.success == "false")
+        {
+            alert("There was an error posting your comment: \n\n" + body.message);
+        }
+        else
+        {
+            document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';
+        }
     }
 </script>
 {{ end }}
