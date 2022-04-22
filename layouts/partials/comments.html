@@ -42,7 +42,7 @@
         {{ end }}
 {{ end }}
 
-        <form id="comment-form" class="post-new-comment" action="#comment-submitted" onsubmit="event.preventDefault();">
+        <form id="comment-form" class="post-new-comment" onsubmit="event.preventDefault();">
             {{ if eq ($.Scratch.Get "hasComments") 0 }}
                 <p>Be the first to leave a comment! 🎉</p>
             {{ end }}
