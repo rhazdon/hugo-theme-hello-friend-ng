@@ -51,10 +51,9 @@
             })
             .then(function (body)
             {
-                if (body.success == false)
+                if (body.success == "false")
                 {
                     alert("There was an error posting your comment: \n\n" + body.message);
-                    console.log(body);
                 }
                 else
                 {
@@ -64,7 +63,6 @@
             .catch(err => 
             {
                 alert("There was an error posting your comment: \n\n" + err.message);
-                console.log(err);
             });
     }
 </script>
