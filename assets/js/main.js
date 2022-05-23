@@ -25,10 +25,13 @@ function detectOSColorTheme() {
 
 // Switch the theme.
 function switchTheme(e) {
+  var image = document.getElementById("logo-main");
   if (chosenThemeIsDark) {
     localStorage.setItem("theme", "light");
+    image.src = "/img/title.png";
   } else {
     localStorage.setItem("theme", "dark");
+    image.src = "/img/title_dark.png";
   }
 
   detectOSColorTheme();
