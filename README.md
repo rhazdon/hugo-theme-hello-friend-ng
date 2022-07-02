@@ -122,7 +122,7 @@ paginate     = 10
 
 ### Built-in shortcodes
 
-Of course you are able to use all default shortcodes from hugo (https://gohugo.io/content-management/shortcodes/).
+Of course you are able to use all default shortcodes from hugo (<https://gohugo.io/content-management/shortcodes/>).
 
 #### image
 
