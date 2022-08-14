@@ -52,7 +52,11 @@ disableHugoGeneratorInject = false
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
-
+  
+  # easy favicon using path on header
+  
+  favicon = "/favicon.png"
+  
   # Metadata mostly used in document's head
   # 
   description = "Nice theme for homepages and blogs"
@@ -121,12 +125,7 @@ disableHugoGeneratorInject = false
       "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
     ]
 
-  # Colors for favicons
-  #
-  [params.favicon.color]
-    mask = "#1b1c1d"
-    msapplication = "#1b1c1d"
-    theme = "#1b1c1d"
+ 
 
   [params.logo]
     logoMark     = ">"
