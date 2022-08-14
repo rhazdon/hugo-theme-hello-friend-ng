@@ -32,8 +32,8 @@
     {{ end }}
 {{ end }}
 
-<!-- Icons -->
-{{- partial "favicons.html" . }}
+<!-- easy favicon -->
+<link rel="icon" href={{ .Site.Params.favicon | default "/favicon.png" }} type="image/gif">
 
 {{ template "_internal/schema.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
