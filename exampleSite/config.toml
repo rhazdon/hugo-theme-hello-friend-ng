@@ -73,6 +73,7 @@ disable404     = false
   # linking local files with their path relative to the static folder, e.g. "css/styles.css"
   #
   customCSS = []
+  bundleJS  = ["js/theme-toggle.js", "js/prism.js", "js/lunr.min.js", "js/search.js"]
   customJS  = []
 
   # Toggle this option need to rebuild SCSS, requires extended version of Hugo

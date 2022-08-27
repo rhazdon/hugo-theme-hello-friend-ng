@@ -1,11 +1,10 @@
-{{ $main := resources.Get "js/main.js" }}
-{{ $menu := resources.Get "js/menu.js" }}
-{{ $prism := resources.Get "js/prism.js" }}
-{{ $secureJS := slice $main $menu $prism | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
-<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+{{ $main := resources.Get "js/main.js" | slice -}}
+{{ range .Site.Params.bundleJS -}}
+{{ $main = $main | append (resources.Get .) -}}
+{{ end -}}
+{{ $js := $main | resources.Concat "js/bundle.js" | minify | fingerprint -}}
+<script src="{{ $js.Permalink }}" {{ printf "integrity=%q" $js.Data.Integrity | safeHTMLAttr }}></script>
 
-{{ range $val := $.Site.Params.customJS }}
-    {{ if gt (len $val) 0 }}
-        <script src="{{ $val }}"></script>
-    {{ end }}
-{{ end }}
+{{- if templates.Exists "partials/footer-js-extra.html" -}}
+{{ partial "footer-js-extra.html" . }}
+{{- end }}
