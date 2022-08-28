@@ -6,15 +6,15 @@
  *
  */
 
-detectTheme();
+setTheme();
 
-function detectTheme() {
+function setTheme() {
   const themeStorage = "techblog-theme";
   const chosenTheme = window.localStorage && window.localStorage.getItem(themeStorage);
-  const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  const chosenThemeIsDark = chosenTheme == "dark";
   const chosenThemeIsLight = chosenTheme == "light";
+  const chosenThemeIsDark = !chosenThemeIsLight;
+
+  const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   if (chosenThemeIsLight) {
     document.querySelector("#theme-toggle-light").style.setProperty("display", "block");
@@ -37,11 +37,11 @@ if (themeToggle) {
 
 function switchTheme(e) {
   const themeStorage = "techblog-theme";
-  const chosenTheme = window.localStorage && window.localStorage.getItem(themeStorage);
-  const chosenThemeIsDark = chosenTheme == "dark";
-  const chosenThemeIsLight = chosenTheme == "light";
+  const currentTheme = window.localStorage && window.localStorage.getItem(themeStorage);
+  const currentThemeIsLight = currentTheme == "light";
+  const currentThemeIsDark = !currentThemeIsLight;
 
-  if (chosenThemeIsDark) {
+  if (currentThemeIsDark) {
     document.querySelector("#theme-toggle-light").style.setProperty("display", "block");
     document.querySelector("#theme-toggle-dark").style.setProperty("display", "none");
     localStorage.setItem(themeStorage, "light");
