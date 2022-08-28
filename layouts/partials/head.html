@@ -19,6 +19,42 @@
 
 <!-- Comments: Staticman -->
 {{ if .Site.Params.staticman }}
+<script>
+    function changeValue(elementName, newValue)
+    {
+        document.getElementsByName(elementName)[0].value=newValue;
+        window.location.hash = "#comment-form";
+    }
+
+    function validateCommentCaptcha()
+    {
+        document.getElementById("comment-btn").disabled = false;
+    }
+
+    // window.validateCommentCaptcha = validateCommentCaptcha;
+</script>
+
+<script>
+    async function submitComment()
+    {
+        const form = document.getElementById('comment-form');
+        const data = new URLSearchParams(new FormData(form));
+
+        const opts = {
+            method: 'POST',
+            body: data
+        };
+
+        const baseUrl = "https://techblog-comments.herokuapp.com/v3/entry/github";
+        const endpoint = baseUrl + "/{{ .Site.Params.staticman.username }}/{{ .Site.Params.staticman.repository }}/{{ .Site.Params.staticman.branch }}/comments";
+
+        alert('Thank you! Your comment has been submitted and will be published shortly :)');
+        form.reset();
+        document.getElementById('comment-submitted').animationName='fadeInCommentsDiag';
+
+        await fetch(endpoint, opts).catch(err => {});
+    }
+</script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {{ end }}
 
