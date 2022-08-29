@@ -70,8 +70,3 @@
 {{- if .Site.GoogleAnalytics }}
     {{ template "_internal/google_analytics.html" . }}
 {{- end}}
-
-<!-- Lucky Orange Analytics -->
-{{- if .Site.Params.LuckyOrange }}
-{{ partial "lucky-orange.html" . }}
-{{- end}}
