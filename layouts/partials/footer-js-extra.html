@@ -3,6 +3,11 @@
 {{ partial "lucky-orange.html" . }}
 {{- end}}
 
+<!-- Google Analytics internal template -->
+{{- if .Site.GoogleAnalytics }}
+    {{ template "_internal/google_analytics.html" . }}
+{{- end}}
+
 {{ range $val := $.Site.Params.customJS }}
     {{ if gt (len $val) 0 }}
         <script src="{{ $val }}"></script>
