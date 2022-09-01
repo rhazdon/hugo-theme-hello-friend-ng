@@ -1,10 +1,41 @@
 {{ $main := resources.Get "js/main.js" | slice -}}
+
+<!-- Add PrismJS -->
+{{ $main = $main | append (resources.Get "js/prism.js") -}}
+
+<!-- Theme Toggle -->
+{{- if .Site.Params.EnableThemeToggle }}
+    {{ $main = $main | append (resources.Get "js/theme-toggle.js") -}}
+{{- end}}
+
+<!-- Search blog posts -->
+{{- if .Site.Params.EnableSearch }}
+    {{ $main = $main | append (resources.Get "js/lunr.min.js") -}}
+    {{ $main = $main | append (resources.Get "js/search.js") -}}
+{{- end}}
+
+<!-- Add additional scripts specified in BundleJS param in config.toml to the bundle -->
 {{ range .Site.Params.bundleJS -}}
-{{ $main = $main | append (resources.Get .) -}}
+    {{ $main = $main | append (resources.Get .) -}}
 {{ end -}}
-{{ $js := $main | resources.Concat "js/bundle.js" | minify | fingerprint -}}
+
+<!-- Generate the bundled JS file -->
+{{ $js := $main | resources.Concat "js/bundle.js" | minify | fingerprint "sha512" -}}
 <script src="{{ $js.Permalink }}" {{ printf "integrity=%q" $js.Data.Integrity | safeHTMLAttr }}></script>
 
-{{- if templates.Exists "partials/footer-js-extra.html" -}}
-{{ partial "footer-js-extra.html" . }}
-{{- end }}
+<!-- Lucky Orange Analytics (not bundled)-->
+{{- if .Site.Params.LuckyOrange }}
+    <script defer src="https://tools.luckyorange.com/core/lo.js?site-id={{ .Site.Params.LuckyOrange }}"></script>
+{{- end}}
+
+<!-- Google Analytics internal template (not bundled) -->
+{{- if .Site.GoogleAnalytics }}
+    {{ template "_internal/google_analytics.html" . }}
+{{- end}}
+
+<!-- Include (not bundled) additional scripts specified in CustomJS param in config.toml -->
+{{ range $val := $.Site.Params.customJS }}
+    {{ if gt (len $val) 0 }}
+        <script src="{{ $val }}"></script>
+    {{ end }}
+{{ end }}
