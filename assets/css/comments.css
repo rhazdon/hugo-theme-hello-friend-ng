@@ -1,0 +1,98 @@
+.post-comment {
+	display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    border-color: teal;
+    border-width: 0.25rem;
+    border-style: dotted;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.post-comment-reply-name {
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.post-comment hr {
+    margin-bottom: 2rem;
+}
+
+.post-comment.reply {
+    border-color: purple;
+    border-width: 0.25rem;
+    border-style: dashed;
+    padding: 1rem 1rem 1rem 1rem;
+    margin-left: 3rem;
+}
+
+.post-comment-header {
+	display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+.post-comment-avatar {
+    object-fit: cover;
+    width: auto;
+    height: 6.5rem;
+    border-radius: 50%;
+}
+
+.post-comment-info {
+	display: flex;
+    flex-direction: column;
+    margin-left: 2.5rem;
+}
+
+.post-comment-name {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.comment-message {
+    margin-top: 2rem;
+    font-size:large;
+}
+
+.comment__reply {
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.post-new-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-new-comment input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+}
+
+.post-new-comment textarea {
+    margin: 0.5rem 0;
+    padding: 1rem;
+}
+
+@keyframes fadeOutCommentsDiag {
+    from {opacity: 1; font-size: large;}
+    to {opacity: 0; font-size: 0;}
+}
+
+@keyframes fadeInCommentsDiag {
+    from {opacity: 0; font-size: 0;}
+    to {opacity: 1; font-size: large;}
+}
+
+.comment-dialog {
+    font-size: 0;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    opacity: 0;
+}

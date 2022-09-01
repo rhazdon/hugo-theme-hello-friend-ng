@@ -1,0 +1,25 @@
+/* Blog post: font size */
+.post-content {
+    font-size: 1.125rem;
+}
+
+/* Blog post: Hyperlink text color */
+div.post-content a {
+    color: rgb(30, 174, 219)
+}
+
+/* Blog post: Center figures (images) */
+div.post-content figure
+{
+    margin: 2.0rem auto;
+}
+
+/* Center align figure's (images) caption text */
+figcaption
+{
+    text-align: center;
+}
+
+.header a {
+    text-decoration: none;
+}

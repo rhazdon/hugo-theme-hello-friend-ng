@@ -1,0 +1,24 @@
+<!-- CSS -->
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $scss := resources.Get "scss/main.scss" | resources.ToCSS $options | slice -}}
+
+{{- if .Site.Params.Staticman }}
+    {{ $scss = $scss | append (resources.Get "css/comments.css") -}}
+{{- end}}
+
+{{- if .Site.Params.FlagCounter }}
+    {{ $scss = $scss | append (resources.Get "css/flag-counter-icon.min.css") -}}
+{{- end}}
+
+{{ range .Site.Params.bundleCSS -}}
+    {{ $scss = $scss | append (resources.Get .) -}}
+{{ end -}}
+
+{{ $css := $scss | resources.Concat "css/main.css" | resources.ToCSS $options | fingerprint -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" {{ printf "integrity=%q" $css.Data.Integrity | safeHTMLAttr }}>
+
+{{ range $val := $.Site.Params.customCSS }}
+    {{ if gt (len $val) 0 }}
+        <link rel="stylesheet" type="text/css" href="{{ $val }}">
+    {{ end }}
+{{ end }}
