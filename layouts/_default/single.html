@@ -12,7 +12,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+            <h2 class="post-title"><a href="{{ .Permalink }}">{{ humanize .Title | markdownify }}</a></h2>
 
             {{ if .Params.Cover }}
                 <figure class="post-cover">
@@ -39,6 +39,10 @@
         </article>
 
         <hr />
+
+	<div id="remark42"></div>
+
+	<hr />
 
         <div class="post-info">
             {{ partial "tags.html" .Params.tags }}

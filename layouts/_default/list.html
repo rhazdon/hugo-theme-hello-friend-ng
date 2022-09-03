@@ -2,7 +2,7 @@
     {{ $paginator := .Paginate .Data.Pages }}
     
     <main class="posts">
-        <h1>{{ .Title }}</h1>
+        <h1>{{ humanize .Title }}</h1>
 
         {{ if .Content }}
             <div class="content">{{ .Content }}</div>
@@ -16,7 +16,7 @@
                     {{ range .Pages }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
-                                <span class="post-title">{{.Title}}</span>
+                                <span class="post-title">{{ humanize .Title}}</span>
                                 <span class="post-day">
                                     {{ if .Site.Params.dateformShort }}
                                         {{ .Date.Format .Site.Params.dateformShort }}
