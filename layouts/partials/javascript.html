@@ -1,3 +1,8 @@
+<!-- Lucky Orange Analytics (not bundled)-->
+{{- if .Site.Params.LuckyOrange }}
+    <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id={{ .Site.Params.LuckyOrange }}"></script>
+{{- end}}
+
 {{ $main := resources.Get "js/main.js" | slice -}}
 
 <!-- Add PrismJS -->
@@ -22,11 +27,6 @@
 <!-- Generate the bundled JS file -->
 {{ $js := $main | resources.Concat "js/bundle.js" | minify | fingerprint "sha512" -}}
 <script src="{{ $js.Permalink }}" {{ printf "integrity=%q" $js.Data.Integrity | safeHTMLAttr }}></script>
-
-<!-- Lucky Orange Analytics (not bundled)-->
-{{- if .Site.Params.LuckyOrange }}
-    <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id={{ .Site.Params.LuckyOrange }}"></script>
-{{- end}}
 
 <!-- Google Analytics internal template (not bundled) -->
 {{- if .Site.GoogleAnalytics }}
