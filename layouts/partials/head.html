@@ -58,3 +58,8 @@
 {{- if templates.Exists "partials/head-extra.html" -}}
     {{ partial "head-extra.html" . }}
 {{- end }}
+
+<!-- Adsense -->
+{{- if .Site.Params.Adsense }}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-{{ .Site.Params.Adsense }}" crossorigin="anonymous"></script>
+{{- end}}
