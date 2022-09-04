@@ -1,3 +1,8 @@
+<!-- Lucky Orange Analytics (not bundled)-->
+{{- if .Site.Params.LuckyOrange }}
+    <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id={{ .Site.Params.LuckyOrange }}"></script>
+{{- end}}
+
 {{ $main := resources.Get "js/main.js" | slice -}}
 
 <!-- Add PrismJS -->
