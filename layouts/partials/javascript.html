@@ -3,7 +3,8 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-{{ .Site.Params.Adsense }}" crossorigin="anonymous"></script>
 {{- end}}
 
-{{ $main := resources.Get "js/main.js" | slice -}}
+<!-- Add menu.js -->
+{{ $main := resources.Get "js/menu.js" | slice -}}
 
 <!-- Add PrismJS -->
 {{ $main = $main | append (resources.Get "js/prism.js") -}}
