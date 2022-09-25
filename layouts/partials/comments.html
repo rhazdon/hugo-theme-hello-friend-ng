@@ -2,7 +2,7 @@
     <section id="comments">
         {{ if .Site.Params.staticman }}
             <h2 class="comment-title"><a href="#comments">Comments</a></h2>
-            <section class="staticman-comments post-comments">
+            <section class="post-comments">
                 {{ $comments := readDir "data/comments" }}
                 {{ $.Scratch.Add "hasComments" 0 }}
                 {{ $postSlug := .File.BaseFileName }}
@@ -13,26 +13,49 @@
                     {{ range $index, $comments := (index $.Site.Data.comments $postSlug ) }}
                         
                     {{ if not .reply_to }}
-        
                     
                         <div id="commentid-{{ ._id }}" class="post-comment">
-                            <!-- <hr> -->
-                            <div class="post-comment-header">
-                                <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{     .email }}?s=70&r=pg&d=identicon">
-                                    <p class="post-comment-info">
-                                        <span class="post-comment-name">{{ .name }}</span>
-                                        <br>
-                                        <a href="#commentid-{{ ._id }}" title="Permalink to this comment">
-                                            <time class="post-time">{{ dateFormat "Monday, Jan 2, 2006 at     15:04 MST" .date }}</time>
-                                        </a>
-                                    </p>
+
+                            <div class="post-comment-permalink">
+                                <div class="post-comment-dots">
+                                    <div class="post-comment-dot"></div>
+                                    <div class="post-comment-dot"></div>
+                                    <div class="post-comment-dot"></div>
+                                </div>
+                                <div class="post-comment-permalink-dropdown">
+                                    <a href="#commentid-{{ ._id }}" title="Permalink to this comment">Permalink to comment</a>
+                                </div>
                             </div>
-                            <div class="comment-message">
+
+                            <div class="post-comment-header">
+                                <div class="post-comment-avatar">
+                                    {{ if eq .email "ba9aea05fec978920e463180dcf103a6" }}
+                                        <img class="post-comment-avatar-pic post-comment-avatar-pic-admin" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
+                                    {{ else }}
+                                        <img class="post-comment-avatar-pic" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
+                                    {{ end }}
+                                </div>
+
+                                <div class="post-comment-info">
+                                    <div class="post-comment-author">
+                                        <span>{{ .name }}</span>
+                                    </div>
+                                    <div class="post-comment-date">
+                                        <time>{{ dateFormat "Monday, Jan 2, 2006 at 15:04 MST" .date }}</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="post-comment-message">
                                 {{ .comment | markdownify }}
                             </div>
-                            <div class="comment__reply">
-                                <button id="{{ ._id }}" class="btn-info" href="#comment-form" onclick="changeValue('fields[reply_to]', '{{ ._id }}')">Reply to {{ .name     }}</button>
+
+                            <div class="post-comment-footer">
+                                <div class="post-comment-reply_btn">
+                                    <button id="{{ ._id }}" class="btn-info comment-buttons" href="#comment-form" onclick="changeValue('fields[reply_to]', '{{ ._id }}')">Reply to {{ .name }}</button>
+                                </div>
                             </div>
+
                         </div>
                         
                         {{ partial "comment-replies" (dict "entryId_parent" $postSlug "SiteDataComments_parent" $.Site.Data.comments "parentId" ._id "parentName" .name     "context" .) }}
@@ -42,7 +65,7 @@
         {{ end }}
 {{ end }}
 
-        <form id="comment-form" class="post-new-comment" onsubmit="event.preventDefault();">
+        <form id="comment-form" class="post-comment-form" onsubmit="event.preventDefault();">
             {{ if eq ($.Scratch.Get "hasComments") 0 }}
                 <p>Be the first to leave a comment! 🎉</p>
             {{ end }}
@@ -61,7 +84,7 @@
         </form>
     </section>
 
-    <div id="comment-submitted" class="comment-dialog">
+    <div id="comment-submitted" class="post-comment-dialog">
         <p><strong>Thank You!</strong></p>
         <p>Your comment has been submitted and will be published shortly. &#128522;</p>
 

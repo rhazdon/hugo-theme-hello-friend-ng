@@ -1,23 +1,53 @@
 {{ range $index, $comments := (index $.SiteDataComments_parent $.entryId_parent ) }}
   {{ if eq .reply_to $.parentId }}
-    <div id="commentid-{{ ._id }}" class="post-comment reply">
+    <div id="commentid-{{ ._id }}" class="post-comment post-comment-reply">
         <div class="arrow-up"></div>
-        <div class="post-comment-header">
-            <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
-            <p class="post-comment-info">
-                <span class="post-comment-name">{{ .name }}<br><span class="post-comment-reply-name">In reply to {{ $.parentName }}</span></span>
-                <br>
-                <a href="#commentid-{{ ._id }}" title="Permalink to this comment">
-                    <time class="post-time">{{ dateFormat "Monday, Jan 2, 2006 at 15:04 MST" .date }}</time>
-                </a>
-            </p>
+
+        <div class="post-comment-permalink">
+            <div class="post-comment-dots">
+                <div class="post-comment-dot"></div>
+                <div class="post-comment-dot"></div>
+                <div class="post-comment-dot"></div>
+            </div>
+            <div class="post-comment-permalink-dropdown">
+                <a href="#commentid-{{ ._id }}" title="Permalink to this comment">Permalink to comment</a>
+            </div>
         </div>
-        <div class="comment-message">
+
+        <div class="post-comment-header post-comment-indent">
+            <div class="post-comment-avatar">
+                {{ if eq .email "ba9aea05fec978920e463180dcf103a6" }}
+                    <img class="post-comment-avatar-pic post-comment-avatar-pic-admin" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
+                    <!-- <code>Admin</code> -->
+                {{ else }}
+                    <img class="post-comment-avatar-pic" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
+                {{ end }}
+            </div>
+
+            <div class="post-comment-info">
+                <div class="post-comment-author">
+                    <span>{{ .name }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg>
+                    <a href="#commentid-{{ $.parentId }}" title="Permalink to this comment"><span class="post-comment-reply-name">{{ $.parentName }}</span></a>
+                </div>
+                <div class="post-comment-date">
+                    <time>{{ dateFormat "Monday, Jan 2, 2006 at 15:04 MST" .date }}</time>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-comment-message post-comment-indent">
             {{ .comment | markdownify }}
         </div>
-        <div class="comment__reply">
-            <button id="{{ ._id }}" class="btn-info" href="#comment-form" onclick="changeValue('fields[reply_to]', '{{ $.parentId }}')">Reply to thread</button>
+
+        <div class="post-comment-footer">
+            <div class="post-comment-reply_btn">
+                <button id="{{ ._id }}" class="btn-info comment-buttons" href="#comment-form" onclick="changeValue('fields[reply_to]', '{{ $.parentId }}')">Reply to thread</button>
+            </div>
         </div>
+
     </div>
   {{ end }}
 {{ end }}
