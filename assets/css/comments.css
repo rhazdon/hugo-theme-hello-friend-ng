@@ -21,20 +21,23 @@
     margin: .2rem 0;
 }
 
-.post-comment-permalink, .post-comment-dots {
-    float: right;
+.post-comment-permalink {
+    display: flex;
     flex-direction: row;
+    float: right;
     cursor: pointer;
 }
 
 .post-comment-permalink-dropdown {
-    visibility: collapse;
-    float: right;
-    margin-right: .75rem;
+    visibility: hidden;
+    height: 0;
+    width: 0;
 }
 
-.post-comment-permalink:hover div.post-comment-permalink-dropdown {
+.post-comment-permalink:focus .post-comment-permalink-dropdown {
     visibility: visible;
+    width: fit-content;
+    margin-right: .75rem;
 }
 
 .post-comment-permalink-dropdown a {
