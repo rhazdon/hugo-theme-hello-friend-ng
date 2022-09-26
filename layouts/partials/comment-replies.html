@@ -17,12 +17,17 @@
         </div>
 
         <div class="post-comment-header post-comment-indent">
-            <div class="post-comment-avatar">
+            <div class="post-comment-avatar-wrapper">
                 {{ if eq .email "ba9aea05fec978920e463180dcf103a6" }}
-                    <img class="post-comment-avatar-pic post-comment-avatar-pic-admin" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
-                    <!-- <code>Admin</code> -->
+                    <img class="post-comment-avatar-pic avatar-pic-admin" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
+                    <div class="post-comment-avatar-text">
+                        <code>ADMIN</code>
+                    </div>
                 {{ else }}
                     <img class="post-comment-avatar-pic" src="https://www.gravatar.com/avatar/{{ .email }}?s=70&r=pg&d=identicon">
+                    <div class="post-comment-avatar-text">
+                        <code>GUEST</code>
+                    </div>
                 {{ end }}
             </div>
 
