@@ -50,9 +50,6 @@
     border-radius: 50%;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-self: center;
-    justify-content: center;
     align-items: center;
 }
 
@@ -71,12 +68,13 @@
 }
 
 .post-comment-avatar-text {
-    visibility: collapse;
+    visibility: hidden;
     width: 0;
     height: 0;
     opacity: 0;
-    margin: 0 auto;
-    margin-left: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .post-comment-avatar-wrapper:hover .post-comment-avatar-pic {
@@ -87,7 +85,7 @@
 .post-comment-avatar-wrapper:hover .post-comment-avatar-text {
     visibility: visible;
     opacity: 1.0;
-    translate: 0 -7rem;
+    translate: 0 -6.3rem;
     text-transform: capitalize;
     font-weight: bolder;
     transition: .9s;
@@ -198,7 +196,6 @@
 
     .post-comment-avatar-text {
         margin: 0 auto;
-        margin-left: 6.5rem;
     }
 
     .post-comment-indent {
