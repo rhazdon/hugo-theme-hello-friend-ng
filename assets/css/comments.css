@@ -1,8 +1,12 @@
+:root {
+    --comment-reply-background-light: whitesmoke;
+    --comment-reply-background-dark: rgb(50, 51, 52);
+}
+
 .post-comment {
     display: flex;
     flex-direction: column;
     margin: 0 1rem;
-    margin-top: 1rem;
     padding: 1.5rem;
     border-color: grey;
     border-style: solid;
@@ -12,6 +16,22 @@
 .post-comment-reply {
     margin-top: 0;
     border-top: none;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--comment-reply-background-dark);
+    }
+
+    @media (prefers-color-scheme: light) {
+        background-color: var(--comment-reply-background-light);
+    }
+
+    [data-theme=dark] & {
+        background-color: var(--comment-reply-background-dark);
+    }
+
+    [data-theme=light] & {
+        background-color: var(--comment-reply-background-light);
+    }
 }
 
 .post-comment-dot {

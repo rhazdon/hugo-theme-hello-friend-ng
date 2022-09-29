@@ -1,8 +1,7 @@
 {{ range $index, $comments := (index $.SiteDataComments_parent $.entryId_parent ) }}
   {{ if eq .reply_to $.parentId }}
-    <div id="commentid-{{ ._id }}" class="post-comment post-comment-reply">
-        <div class="arrow-up"></div>
 
+    <div id="commentid-{{ ._id }}" class="post-comment post-comment-reply">
         <div class="post-comment-permalink-wrapper">
             <div class="post-comment-permalink" tabindex="1">
                 <div class="post-comment-permalink-dropdown">
