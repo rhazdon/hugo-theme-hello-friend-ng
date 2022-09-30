@@ -10,7 +10,7 @@
     padding: 1.5rem;
     border-color: grey;
     border-style: solid;
-    border-width: .1rem;
+    border-width: .15rem;
 }
 
 .post-comment-reply {
@@ -65,8 +65,11 @@
     color: rgb(30, 174, 219)
 }
 
+.post-comment-header {
+   display: flex;
+}
+
 .post-comment-avatar-wrapper {
-    float: left;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -112,12 +115,15 @@
 }
 
 .post-comment-info {
-    float: left;
+    display: flex;
+    flex-direction: column;
     margin-left: 2rem;
 }
 
 .post-comment-author {
     margin: .5rem 0;
+    display: flex;
+    align-items: center;
 }
 
 .post-comment-author span {
@@ -125,9 +131,17 @@
     font-size: large;
 }
 
+.post-comment-author-reply-new {
+    margin-right: .4rem;
+}
+
+.post-comment-author-reply-previous {
+    margin-left: .4rem;
+}
+
 .post-comment-date {
     font-style: italic;
-    font-size: .9rem;
+    font-size: small;
 }
 
 .post-comment-message {
@@ -135,12 +149,9 @@
 }
 
 .post-comment-footer {
-    flex-direction: row;
-}
-
-.post-comment-reply_btn {
-    float: right;
-    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5rem 0;
 }
 
 .comment-buttons {
@@ -196,26 +207,29 @@
 
 @media screen and (max-width: 600px) {
     .post-comment-header {
+        flex-direction: column;
         text-align: center;
-        align-self: center;
         margin-top: 1.25rem;
     }
 
     .post-comment-info {
-        margin: 0 auto;
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
     }
 
     .post-comment-avatar-wrapper {
-        float: none;
-        display: block;
+        margin-bottom: 1rem;
     }
 
-    .post-comment-avatar-pic {
-        display: inline-flex;
+    .post-comment-footer {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .post-comment-avatar-text {
-        margin: 0 auto;
+    .post-comment-reply_btn button {
+        padding-left: 4.75rem;
+        padding-right: 4.75rem;
     }
 
     .post-comment-indent {
