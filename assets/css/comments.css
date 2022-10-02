@@ -150,6 +150,13 @@
     margin: 2rem 0;
 }
 
+.post-comment-message code {
+    background-color: black;
+    color: limegreen;
+    /* color: darkorange; */
+    word-wrap: break-word;
+}
+
 .post-comment-footer {
     display: flex;
     justify-content: flex-end;
