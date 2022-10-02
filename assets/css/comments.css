@@ -145,6 +145,8 @@
 }
 
 .post-comment-message {
+    display: flex;
+    flex-direction: column;
     margin: 2rem 0;
 }
 
