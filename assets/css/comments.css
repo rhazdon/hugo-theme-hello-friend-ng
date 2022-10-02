@@ -230,8 +230,7 @@
     }
 
     .post-comment-reply_btn button {
-        padding-left: 4.75rem;
-        padding-right: 4.75rem;
+        padding: .5rem 3rem;
     }
 
     .post-comment-indent {
