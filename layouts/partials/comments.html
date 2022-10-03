@@ -5,10 +5,11 @@
             <section class="post-comments">
                 {{ $comments := readDir "data/comments" }}
                 {{ $.Scratch.Add "hasComments" 0 }}
-                {{ $postSlug := .File.BaseFileName }}
+                {{ $postSlug := replace .File.Dir "posts/" "" }}
+                {{ $postSlug := replace $postSlug "/" "" }}
         
                 {{ range $comments }}
-                {{ if eq .Name $postSlug }}
+                {{ if in $postSlug .Name }}
                     {{ $.Scratch.Add "hasComments" 1 }}
                     {{ range $index, $comments := (index $.Site.Data.comments $postSlug ) }}
                         
