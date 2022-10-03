@@ -1,0 +1,53 @@
+.posts-related-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+
+    .post-related:hover {
+      scale: 1.05;
+    }
+
+    .post-related {
+      display: flex;
+      flex-direction: column;
+      margin: 1.2rem 1.55rem;
+      max-width: 17vw;
+      background-color: lightgray;
+      color: black;
+      box-shadow: .3rem .5rem #888888;
+      padding: 1rem;
+
+      .post-related-date {
+        margin: .5rem 0;
+        visibility: collapse;
+      }
+
+      .post-related-title {
+        margin: .25rem 0;
+        font-weight: bold;
+        font-size: large;
+      }
+
+      .post-related-cover {
+        min-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .posts-related-container {
+    flex-direction: column;
+    align-items: center;
+
+    .post-related {
+      display: flex;
+      flex-wrap: wrap;
+      min-width: 75vw;
+    }
+  }
+}
