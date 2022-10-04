@@ -1,0 +1,16 @@
+<a href="{{ .RelPermalink }}">
+    <div class="post-related">
+        <div class="post-related-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+        <div class="post-related-title">{{ .Title }}</div>
+        <div class="post-related-cover">
+            {{ with .Resources }}
+                {{ with .GetMatch "{cover.*,*.jpg,*.png,*.jpeg}" }}
+                    {{ $cover := .Resize "600x" }}
+                    {{ with $cover }}
+                        <img src="{{ .Permalink }}"/>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</a>

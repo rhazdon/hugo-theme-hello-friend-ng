@@ -7,50 +7,25 @@
 
         {{ $related := .Site.RegularPages.Related . | first 4 }}
 
-        {{ if eq (len $related) 0 }}
-            <div class="pagination__buttons">
+        <div class="posts-related-container">
+            {{ if eq (len $related) 0 }}
+
                 {{ if .NextInSection }}
-                <span class="button previous">
-                    <a href="{{ .NextInSection.Permalink }}">
-                        <span class="button__icon">←</span>
-                        <span class="button__text">{{ .NextInSection.Title }}</span>
-                    </a>
-                </span>
+                    {{ partial "pagination-related-embed.html" .NextInSection }}
                 {{ end }}
 
                 {{ if .PrevInSection }}
-                <span class="button next">
-                    <a href="{{ .PrevInSection.Permalink }}">
-                        <span class="button__text">{{ .PrevInSection.Title }}</span>
-                        <span class="button__icon">→</span>
-                    </a>
-                </span>
+                    {{ partial "pagination-related-embed.html" .PrevInSection }}
                 {{ end }}
-            </div>
-        {{ else }}
-            {{ with $related }}
-            <!-- <h3>See Also</h3> -->
-                <div class="posts-related-container">
-                    {{ range . }}
-                        <a href="{{ .RelPermalink }}">
-                            <div class="post-related">
-                                <div class="post-related-date">{{ .Date.Format "Jan 2, 2006" }}</div>
-                                <div class="post-related-title">{{ .Title }}</div>
-                                <div class="post-related-cover">
-                                    {{ with .Resources }}
-                                        {{ with .GetMatch "{cover.*,*.jpg,*.png,*.jpeg}" }}
-                                            {{ $cover := .Resize "600x" }}
-                                            {{ with $cover }}
-                                                <img src="{{ .Permalink }}"/>
-                                            {{ end }}
-                                        {{ end }}
-                                    {{ end }}
-                                </div>
-                            </div>
-                        </a>
-                    {{ end }}
-                </div>
+
+            {{ else }}
+                {{ with $related }}
+                        {{ range . }}
+                            {{ partial "pagination-related-embed.html" . }}
+                        {{ end }}
+                {{ end }}
             {{ end }}
-        {{ end }}
+        </div>
+
     </div>
 {{ end }}

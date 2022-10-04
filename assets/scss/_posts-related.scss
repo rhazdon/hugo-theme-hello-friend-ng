@@ -11,6 +11,8 @@
     }
 
     .post-related {
+      min-width: 20rem;
+      min-height: 23rem;
       display: flex;
       flex-direction: column;
       margin: 1.2rem 1.55rem;
@@ -47,7 +49,7 @@
     .post-related {
       display: flex;
       flex-wrap: wrap;
-      min-width: 75vw;
+      max-width: 75vw;
     }
   }
 }
