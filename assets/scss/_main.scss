@@ -268,15 +268,15 @@ pre {
     @media (prefers-color-scheme: dark) {
       color: inherit;
     }
-  
+
     @media (prefers-color-scheme: light) {
       color: #ccc;
     }
-  
+
     [data-theme=dark] & {
       color: inherit;
     }
-  
+
     [data-theme=light] & {
       color: #ccc;
     }
@@ -340,7 +340,7 @@ ol ol {
   flex: 1 auto;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin: 15%;
 
   @media #{$media-size-phone} {
     margin-top: 0;
