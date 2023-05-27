@@ -1,0 +1,239 @@
+
+{{ define "body" }}
+    <body class="{{ if .Site.Params.backgroundImage }} background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');" {{ else }}"{{ end }}>
+{{ end }}
+
+
+{{ define "main" }}
+    <main aria-role="main">
+
+        <div class="homepage-content" style="text-align: left; margin-left: 23%; margin-right:23%">
+            <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+            <div class="intro-container" >
+                <style>
+                    .intro-container{
+                        display: flex;
+  
+                        justify-content: space-between;
+                        gap: 3%;
+                        flex-wrap: wrap;
+                        padding-top: 40px;
+
+                    }
+                    .icon-image{
+                        flex: 2;
+                    }
+                    .greeting{
+                        flex: 5;
+                        padding: 3px;
+                        
+
+                    }
+                    @media only screen and (max-width: 850px) {
+
+                    
+                    .greeting { display: none; }
+                    
+                    .intro-container { 
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        display: flex;
+                    }
+                    
+                    .icon-image , .icon-image img { 
+                        flex: 100%; 
+                        align-items: center;
+                        margin: auto;
+                    }
+                    
+                }
+                .tag-2{
+                    flex-wrap: wrap;
+                    padding: 4px 8px;
+                    border: 1px solid #70777b;
+                    font-size: 10px;
+                    font-weight: 600;
+                    align-content: space-around;
+                    border-radius: 50px;
+                    margin: auto;
+                }
+                ul {
+                    line-height: 1.5em;
+                    margin: 5px 0 15px;
+                    padding-left: 0;
+                    font-size: 14px;
+                }
+
+                li {
+                    list-style: none;
+                    position: relative;
+                    margin: 0 0 3px 0;
+                    
+                }
+                .links-list li:before{
+                    font-family: 'FontAwesome';
+                    margin:0 5px 0 -15px;
+                }
+
+                </style>
+                <div class="icon-image" style="align-content: center;" >         
+                    {{ $image := resources.Get "me-black-and-white.jpg" }}
+                    {{ $image := resources.GetMatch "me-black-and-white.jpg" }}
+                    {{ $image := $image.Fit "250x250" }}
+                    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" style="border-radius: 12px; object-fit: cover; ">
+                    <div class="icon-container" >
+
+                            <ul class="links-list" style="padding: 10px;" >
+                                <li id="name">👨 He/Him</li>
+                                <li id="uni">✉️ {<em>first name</em>} b25 {<em>at</em>} gmail {<em>dot</em>} com</li>
+                                <li id="address">🏠 10 Chrichton Street, Edinburgh, Scotland</li>
+                            </ul>
+
+                            <span class="tag-2">C++</span>
+                            <span class="tag-2">Agda</span>
+                            <span class="tag-2">Coq</span>
+                            <span class="tag-2">CMake</span>
+                            <span class="tag-2">Java</span>
+                            <span class="tag-2">Python3</span>
+                            <span class="tag-2">Haskell</span>
+                            <span class="tag-2">C</span>
+                            <span class="tag-2">MatLab</span>
+                            <span class="tag-2">HTML5</span>
+                            <span class="tag-2">CSS3</span>
+                            <span class="tag-2">AWS</span>
+                            <span class="tag-2">MongoDB</span>
+                            <span class="tag-2">PyTorch</span>
+                            <span class="tag-2">NumPy</span>
+
+                            <span class="tag-2">R</span>
+                    </div>
+                </div>
+                <div class="greeting ">
+                    <h2 style="font-family: monospace;">Hello 👋</h2>
+    
+                    <p>I am currently interning at <a href="https://web.inf.ed.ac.uk/icsa">ICSA</a> laboratory under the supervision of Dr. Boris Grot, working on the vHive project.</p>
+                    <span class="responsive-text"> <em>2020-2024</em> BSc (Hons) AI & CS @ University of Edinburgh </span>
+                    <br>
+                    <span class="responsive-text"> <em>2022-2023</em> Exchange Program @ University of Pennsylvania</span>
+                    <br><br>
+                    <span>📍  Where am I located?</span>
+                    <br>
+                    <p><em> -> Edinburgh</em></p>
+                </div>
+
+            </div>
+            {{ .Content }}
+            <div id="card-container" style="display: flex; align-content: space-around; flex-wrap: wrap; padding: 5px;">
+                <style>
+                    .card{
+                        width: 50%;
+                    }
+                    
+                </style>
+                <div class="card" style="border-radius: 12px; padding: 8px; ">
+                    {{ $image := resources.Get "ball.png" }}
+                    {{ $image := resources.GetMatch "ball.png" }}
+                    <img src="{{ $image.RelPermalink }}" alt="Lago di Braises" style="border-radius: 12px; width: fit-content; height: 214px; object-fit: cover;" >
+                    <div class="card__details">
+                        <span class="tag-1">C++</span>
+                        <span class="tag-1">CMake</span>
+                        <span class="tag-1">Google Test</span>
+                        <style>
+                            .tag-1{
+                                padding: 4px 8px;
+                                border: 1px solid #70777b;
+    
+                                border-radius: 50px;
+                                font-size: 12px;
+                                font-weight: 600;
+                            }
+                            .card__details{
+                                padding: 16px 8px 8px 8px;
+                            }
+                        </style>
+                        <h3>Ray Tracer</h3>
+                        <p>Created libraries to handle matrix and vector based operations, projections, image wrangling and reflections using the Phong reflection model. </p>
+                        <button onclick="window.location.href='https://github.com/arn25-lk/RayTracer';">Read More</button>
+                    </div>
+                </div>
+                <div class="card" style="border-radius: 12px; padding: 8px; ">
+                    {{ $image := resources.Get "shell.png" }}
+                    {{ $image := resources.GetMatch "shell.png" }}
+                    <img src="{{ $image.RelPermalink }}" alt="Lago di Braises" style="border-radius: 12px; width: fit-content; height: 214px; object-fit: cover;" >
+                    <div class="card__details">
+                        <span class="tag-1">C</span>
+                        <style>
+                            .tag-1{
+                                padding: 4px 8px;
+                                border: 1px solid #70777b;
+    
+                                border-radius: 50px;
+                                font-size: 12px;
+                                font-weight: 600;
+                            }
+                            .card__details{
+                                padding: 16px 8px 8px 8px;
+                            }
+                        </style>
+                        <h3>Linux Operating System</h3>
+                        <p>A fully working operating system: PENNOS with a scheduler, FAT file system and Linux shell.</p>
+                        <button onclick="window.location.href='https://w3docs.com';">Read More</button>
+                    </div>
+                </div>
+                <div class="card" style="border-radius: 12px; padding: 8px; ">
+                    {{ $image := resources.Get "searchEngine.png" }}
+                    {{ $image := resources.GetMatch "searchEngine.png" }}
+                    <img src="{{ $image.RelPermalink }}" alt="Lago di Braises" style="border-radius: 12px; width: fit-content; height: 214px; object-fit: cover;" >
+                    <div class="card__details">
+                        <span class="tag-1">Java</span>
+                        <span class="tag-1">Groovy</span>
+                        <span class="tag-1">AWS</span>
+                        <style>
+                            .tag-1{
+                                padding: 4px 8px;
+                                border: 1px solid #70777b;
+    
+                                border-radius: 50px;
+                                font-size: 12px;
+                                font-weight: 600;
+                            }
+                            .card__details{
+                                padding: 16px 8px 8px 8px;
+                            }
+                        </style>
+                        <h3>Cloud-deployed Search Engine</h3>
+                        <p>Developed a Java-based from scratch including a web server with dynamic routing, crawler, indexer, PageRank and a Spark-like analytics engine. Used TF/IDF to rank and display results.</p>
+                        <button onclick="window.location.href='https://w3docs.com';">Read More</button>
+                    </div>
+                </div>
+                <div class="card" style="border-radius: 12px; padding: 8px; ">
+                    {{ $image := resources.Get "tetris.jpg" }}
+                    {{ $image := resources.GetMatch "tetris.jpg" }}
+                    <img src="{{ $image.RelPermalink }}" alt="Lago di Braises" style="border-radius: 12px; width: fit-content; height: 214px; object-fit: cover;" >
+                    <div class="card__details">
+                        <span class="tag-1">Java</span>
+                        <span class="tag-1">JavaFX</span>
+                        <style>
+                            .tag-1{
+                                padding: 4px 8px;
+                                border: 1px solid #70777b;
+    
+                                border-radius: 50px;
+                                font-size: 12px;
+                                font-weight: 600;
+                            }
+                            .card__details{
+                                padding: 16px 8px 8px 8px;
+                            }
+                        </style>
+                        <h3>Tetris</h3>
+                        <p>Re-creation of Tetris using JavaFX played using the keyboard with levels, scoring system and detailed GUI.</p>
+                        <button onclick="window.location.href='https://github.com/arn25-lk/Tetris';">Read More</button>
+                    </div>
+                </div>
+
+                
+            </div>
+          </div>
+    </main>
+{{ end }}
