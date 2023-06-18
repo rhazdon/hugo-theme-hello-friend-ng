@@ -67,7 +67,7 @@
     &-item {
       border-bottom: 1px grey dashed;
 
-      a {
+      &-inner {
         display: flex;
         justify-content: space-between;
         align-items: baseline;

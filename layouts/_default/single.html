@@ -5,7 +5,7 @@
             {{ if .IsTranslated }}
                 {{ i18n "postAvailable" }}
                 {{ range .Translations }}
-                    <a href="{{ .Permalink }}"><span class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared"></span></a>
+                    <a href="{{ .Permalink }}"><span class="flag fi fi-{{ index $.Site.Data.langFlags (.Lang) }}"></span></a>
                 {{ end}}
             {{ end }}
             </p>
