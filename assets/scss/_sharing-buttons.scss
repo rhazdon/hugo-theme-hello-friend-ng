@@ -2,7 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
+  
+  [data-theme=light] & {
+      color: $light-accent-color;
+  }
+  [data-theme=dark] & {
+      color: $dark-accent-color;
+  }
   .resp-sharing-button__icon,
   .resp-sharing-button__link {
     display: inline-block;
