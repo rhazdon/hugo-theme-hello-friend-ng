@@ -62,8 +62,13 @@
       @media #{$media-size-tablet} {
         margin: -6px 0 4px;
       }
+      [data-theme=light] & {
+        color: $light-accent-color;
+      }
+      [data-theme=dark] & {
+        color: $dark-accent-color;
+      }
     }
-
     &-item {
       border-bottom: 1px grey dashed;
 
