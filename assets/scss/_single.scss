@@ -1,234 +1,243 @@
 .post {
-  width: 100%;
-  max-width: 800px;
-  text-align: left;
-  padding: 20px;
-  margin: 20px auto;
-  @media #{$media-size-tablet} {
-    max-width: 600px;
-  }
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    padding: 20px;
+    margin: 20px auto;
 
-  &-date {
-    &:after {
-      content: '—';
-    }
-  }
-
-  &-title {
-    font-size: 2.625rem;
-    margin: 0 0 20px;
-    @media #{$media-size-phone} {
-      font-size: 2rem;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
-
-  &-tags {
-    display: block;
-    margin-bottom: 20px;
-    font-size: 1rem;
-    opacity: 0.5;
-
-    a {
-      text-decoration: none;
-    }
-  }
-
-  &-content {
-    margin-top: 30px;
-  }
-
-  &-cover {
-    border-radius: 8px;
-    margin: 40px -50px;
-    width: $max-width;
-    max-width: $max-width;
-    overflow: hidden;
     @media #{$media-size-tablet} {
-      margin: 20px 0;
-      width: 100%;
-    }
-  }
-
-  &-excerpt {
-    color: grey;
-    font-style: italic;
-  }
-
-  &-info {
-    margin-top: 30px;
-    font-size: 0.8rem;
-    line-height: normal;
-    @include dimmed;
-
-    p {
-      margin: 0.8em 0;
+        max-width: 600px;
     }
 
-    a:hover {
-      border-bottom: 1px solid white;
+    &-date {
+        &:after {
+            content: '—';
+        }
     }
 
-    svg {
-      margin-right: 0.8em;
+    &-title {
+        font-size: 2.625rem;
+        margin: 0 0 20px;
+
+        @media #{$media-size-phone} {
+            font-size: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
     }
 
-    .tag {
-      margin-right: 0.5em;
+    &-tags {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        opacity: 0.5;
 
-      &::before {
-        content: "#";
-      }
+        a {
+            text-decoration: none;
+        }
     }
 
-    .feather {
-      display: inline-block;
-      vertical-align: -.125em;
-      width: 1em;
-      height: 1em;
+    &-content {
+        margin-top: 30px;
     }
-  }
 
-  &-audio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+    &-cover {
+        border-radius: 8px;
+        margin: auto;
+        width: $max-width;
+        max-width: $max-width;
+        overflow: hidden;
 
-    audio {
-      width: 90%;
+        @media #{$media-size-tablet} {
+            margin: auto;
+            width: 100%;
+        }
+
+        &-caption {
+            font-size: smaller;
+            font-weight: lighter;
+            font-style: italic;
+        }
     }
-  }
 
-  .flag {
-    border-radius: 50%;
-    margin: 0 5px;
-  }
+    &-excerpt {
+        color: grey;
+        font-style: italic;
+    }
+
+    &-info {
+        margin-top: 30px;
+        font-size: 0.8rem;
+        line-height: normal;
+        @include dimmed;
+
+        p {
+            margin: 0.8em 0;
+        }
+
+        a:hover {
+            border-bottom: 1px solid white;
+        }
+
+        svg {
+            margin-right: 0.8em;
+        }
+
+        .tag {
+            margin-right: 0.5em;
+
+            &::before {
+                content: "#";
+            }
+        }
+
+        .feather {
+            display: inline-block;
+            vertical-align: -.125em;
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    &-audio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+
+        audio {
+            width: 90%;
+        }
+    }
+
+    .flag {
+        border-radius: 50%;
+        margin: 0 5px;
+    }
 }
 
 .pagination {
-  margin-top: 20px;
+    margin-top: 20px;
 
-  &__title {
-    display: flex;
-    text-align: center;
-    position: relative;
-    margin: 20px 0;
+    &__title {
+        display: flex;
+        text-align: center;
+        position: relative;
+        margin: 20px 0;
 
-    &-h {
-      text-align: center;
-      margin: 0 auto;
-      padding: 5px 10px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      z-index: 1;
-      // Default
-      background: $light-background;
-      color: $light-color-secondary;
+        &-h {
+            text-align: center;
+            margin: 0 auto;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            z-index: 1;
+            // Default
+            background: $light-background;
+            color: $light-color-secondary;
 
-      @media (prefers-color-scheme: dark) {
-        background: $dark-background;
-        color: $dark-color-secondary;
-      }
-    
-      @media (prefers-color-scheme: light) {
-        background: $light-background;
-        color: $light-color-secondary;
-      }
-    
-      [data-theme=dark] & {
-        background: $dark-background;
-        color: $dark-color-secondary;
-      }
-    
-      [data-theme=light] & {
-        background: $light-background;
-        color: $light-color-secondary;
-      }
+            @media (prefers-color-scheme: dark) {
+                background: $dark-background;
+                color: $dark-color-secondary;
+            }
+
+            @media (prefers-color-scheme: light) {
+                background: $light-background;
+                color: $light-color-secondary;
+            }
+
+            [data-theme=dark] & {
+                background: $dark-background;
+                color: $dark-color-secondary;
+            }
+
+            [data-theme=light] & {
+                background: $light-background;
+                color: $light-color-secondary;
+            }
+        }
+
+        hr {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            margin-top: 15px;
+            z-index: 0;
+        }
     }
 
-    hr {
-      position: absolute;
-      left: 0;
-      right: 0;
-      width: 100%;
-      margin-top: 15px;
-      z-index: 0;
-    }
-  }
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-  &__buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    a {
-      text-decoration: none;
-      font-weight: bold;
+        a {
+            text-decoration: none;
+            font-weight: bold;
+        }
     }
-  }
 }
 
 .button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  max-width: 40%;
-  padding: 0;
-  cursor: pointer;
-  appearance: none;
-  // Default
-  background: $light-background-secondary;
-
-  @media (prefers-color-scheme: dark) {
-    background: $dark-background-secondary;
-  }
-
-  @media (prefers-color-scheme: light) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    max-width: 40%;
+    padding: 0;
+    cursor: pointer;
+    appearance: none;
+    // Default
     background: $light-background-secondary;
-  }
 
-  [data-theme=dark] & {
-    background: $dark-background-secondary;
-  }
+    @media (prefers-color-scheme: dark) {
+        background: $dark-background-secondary;
+    }
 
-  [data-theme=light] & {
-    background: $light-background-secondary;
-  }
+    @media (prefers-color-scheme: light) {
+        background: $light-background-secondary;
+    }
 
-  + .button {
-    margin-left: 10px;
-  }
+    [data-theme=dark] & {
+        background: $dark-background-secondary;
+    }
 
-  a {
-    display: flex;
-    padding: 8px 16px;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+    [data-theme=light] & {
+        background: $light-background-secondary;
+    }
 
-  &__text {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+    +.button {
+        margin-left: 10px;
+    }
 
-  &.next .button__icon {
-    margin-left: 8px;
-  }
+    a {
+        display: flex;
+        padding: 8px 16px;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-  &.previous .button__icon {
-    margin-right: 8px;
-  }
+    &__text {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &.next .button__icon {
+        margin-left: 8px;
+    }
+
+    &.previous .button__icon {
+        margin-right: 8px;
+    }
 }
