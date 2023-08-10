@@ -31,13 +31,18 @@ function switchTheme(e) {
     if (image) {
       image.src = "/img/title.png";
     }
-    
-  } else {
+  } else if (chosenThemeIsLight) {
     localStorage.setItem("theme", "dark");
+  } else {
+    if (document.documentElement.getAttribute("data-theme") == "dark") {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+
     if (image) {
       image.src = "/img/title_dark.png";
     }
-    
   }
 
   detectOSColorTheme();

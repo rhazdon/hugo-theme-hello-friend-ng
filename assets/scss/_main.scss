@@ -199,14 +199,14 @@ figure {
 
 em, i, strong {
   // Default
-  color: black;
+  color: $light-color-variant;
 
   @media (prefers-color-scheme: dark) {
-    color: white;
+    color: $dark-color-variant;
   }
 
   @media (prefers-color-scheme: light) {
-    color: black;
+    color: $light-color-variant;
   }
 
   [data-theme=dark] & {

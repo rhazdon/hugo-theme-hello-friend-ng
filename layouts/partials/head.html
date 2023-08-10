@@ -19,12 +19,9 @@
 {{ end }}
 
 <!-- CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
-
 {{ $options := (dict "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
 {{ range $val := $.Site.Params.customCSS }}
     {{ if gt (len $val) 0 }}
@@ -37,7 +34,6 @@
 
 {{ template "_internal/schema.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
-{{ template "_internal/google_news.html" . }}
 
 {{ if isset .Site.Taxonomies "series" }}
     {{ template "_internal/opengraph.html" . }}
@@ -70,4 +66,9 @@
 <!-- Google Analytics internal template -->
 {{- if .Site.GoogleAnalytics }}
     {{ template "_internal/google_analytics.html" . }}
+{{- end}}
+
+<!-- Plausible.io -->
+{{- if $.Site.Params.plausibleDataDomain }}
+    <script defer data-domain="{{ .Site.Params.plausibleDataDomain }}" src="{{ .Site.Params.plausibleScriptSource }}"></script>
 {{- end}}

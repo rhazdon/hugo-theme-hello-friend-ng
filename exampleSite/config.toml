@@ -106,6 +106,10 @@ disableHugoGeneratorInject = false
   #
   justifyContent = false  # Set "text-align: justify" to .post-content.
 
+  # Integrate Plausible.io
+  # plausibleDataDomain = 'test.com'
+  # plausibleScriptSource = 'https://plausible.io/js/script.js'
+
   # Custom footer 
   # If you want, you can easily override the default footer with your own content. 
   #
@@ -138,6 +142,8 @@ disableHugoGeneratorInject = false
     # logoCursorColor    = "#67a2c9"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
     # logoCursorAnimate  = "2s"
+    # Append the current url pathname to logoText 
+    # logoCursorPathname = true
 
   # Commento is more than just a comments widget you can embed — 
   # it’s a return to the roots of the internet. 
