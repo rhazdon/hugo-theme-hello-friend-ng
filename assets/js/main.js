@@ -31,6 +31,7 @@ function switchTheme(e) {
     if (image) {
       image.src = "/img/title.png";
     }
+
   } else if (chosenThemeIsLight) {
     localStorage.setItem("theme", "dark");
   } else {
