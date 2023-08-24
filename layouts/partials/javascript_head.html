@@ -1,0 +1,3 @@
+{{ $mainBlock := resources.Get "js/main_block.js" | resources.Minify | resources.Fingerprint "sha512" }}
+
+<script type="text/javascript" src="{{ $mainBlock.RelPermalink }}" integrity="{{ $mainBlock.Data.Integrity }}"></script>
