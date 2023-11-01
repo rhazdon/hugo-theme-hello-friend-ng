@@ -164,23 +164,23 @@ disableHugoGeneratorInject = false
   #   maxWidth = "50px"
 
   # Social icons
-  [[params.social]]
+  [[params.socialIcons]]
     name = "twitter"
     url  = "https://twitter.com/"
 
-  [[params.social]]
+  [[params.socialIcons]]
     name = "email"
     url  = "mailto:nobody@example.com"
 
-  [[params.social]]
+  [[params.socialIcons]]
     name = "github"
     url  = "https://github.com/"
 
-  [[params.social]]
+  [[params.socialIcons]]
     name = "linkedin"
     url  = "https://www.linkedin.com/"
 
-  [[params.social]]
+  [[params.socialIcons]]
     name = "stackoverflow"
     url  = "https://www.stackoverflow.com/"
 
