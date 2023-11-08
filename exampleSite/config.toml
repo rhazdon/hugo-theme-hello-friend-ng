@@ -63,6 +63,11 @@ disableHugoGeneratorInject = false
   #
   homeSubtitle = "Hello Friend NG"
 
+  # Uncomment enableServiceWorker only if you have configured your site.webmanifest in the static folder.
+  # Check the documentation on how to generate a site.webmanifest.
+  # 
+  # enableServiceWorker = true
+
   # Set a background for the homepage
   # backgroundImage = "assets/images/background.jpg"
 

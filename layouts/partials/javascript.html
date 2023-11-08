@@ -9,3 +9,12 @@
         <script src="{{ $val }}"></script>
     {{ end }}
 {{ end }}
+
+{{- if .Site.Params.enableServiceWorker }}
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('/sw.js', { scope: '/' });
+        }
+    </script>
+{{- end}}
