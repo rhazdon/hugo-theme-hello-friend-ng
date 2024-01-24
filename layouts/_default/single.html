@@ -1,18 +1,7 @@
 {{ define "main" }}
     <main class="post">
-
-        <div class="post-info">
-            {{ if .IsTranslated }}
-                {{ i18n "postAvailable" }}
-                {{ range .Translations }}
-                    <a href="{{ .Permalink }}"><span class="flag fi fi-{{ index $.Site.Data.langFlags (.Lang) }}"></span></a>
-                {{ end}}
-            {{ end }}
-            </p>
-        </div>
-
         <article>
-            <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+            <!-- <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2> -->
 
             {{ if .Params.Cover }}
                 <figure class="post-cover">
