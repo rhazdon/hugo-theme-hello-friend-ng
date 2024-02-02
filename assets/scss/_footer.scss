@@ -28,17 +28,22 @@
       margin-top: 10px;
     }
 
-    & > *:not(:last-child) {
-      border-right: 1px solid;
-      padding: 0 15px;
+    & > *:not(:last-child)::after {
+      content: "•";
+      padding: 0 5px;
 
       @media #{$media-size-tablet} {
-        border: none;
+          content: "";
+          padding: 0;
       }
     }
 
     & > *:last-child {
-      padding: 0 15px;
+      padding: 0 0px;
+
+      @media #{$media-size-tablet} {
+          padding: 0;
+      }
     }
   }
 }

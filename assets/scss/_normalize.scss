@@ -8,6 +8,21 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+/* Webkit Scrollbar Customize */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #212020;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+
+  &:hover {
+    background: #dcdcdc;
+  }
+}
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -63,6 +78,7 @@ hr {
 
 pre {
   font-family: monospace, monospace; /* 1 */
+  font-display: auto;
   font-size: 1em; /* 2 */
 }
 
@@ -106,6 +122,7 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace; /* 1 */
+  font-display: auto;
   font-size: 1em; /* 2 */
 }
 
@@ -163,6 +180,7 @@ optgroup,
 select,
 textarea {
   font-family: inherit; /* 1 */
+  font-display: auto;
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */

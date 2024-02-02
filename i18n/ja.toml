@@ -1,0 +1,44 @@
+# Translations for Japanese
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Generic
+#
+[translations]
+other = "翻訳"
+
+[postAvailable]
+other = "他の言語"
+
+
+# 404.html
+#
+[archives]
+other = "アーカイブ"
+
+[home]
+other = "ホームページ"
+
+[notFound]
+other = "あっ、ページが見つかりません……"
+
+# Please add hasCJKLanguage = true under [languages.ja] for the below to behave correctly
+# posts/single.html
+#
+[readingTime]
+one   = "一分"
+other = "{{ .Count }}分"
+
+[tableOfContents]
+other = "目次"
+
+[wordCount]
+one   = "一文字"
+other = "{{ .Count }}文字"
+
+[lastModified]
+other = "最終更新"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "新しいエントリー"
+olderPosts = "古いエントリー"

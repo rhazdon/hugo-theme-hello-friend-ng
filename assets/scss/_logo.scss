@@ -3,6 +3,7 @@
   align-items: center;
   text-decoration: none;
   font-weight: bold;
+  font-display: auto;
   font-family: monospace, monospace;
 
   img {
@@ -15,6 +16,7 @@
 
   &__text {
     font-size: 1.125rem;
+    white-space: nowrap;
   }
 
   &__cursor {

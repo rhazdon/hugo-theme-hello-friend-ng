@@ -1,4 +1,4 @@
-# Translations for Portuguese
+# Translations for Portuguese (Brasilian)
 # https://gohugo.io/content-management/multilingual/#translation-of-strings
 
 # Generic
@@ -34,3 +34,11 @@ other = "Índice"
 [wordCount]
 one   = "Uma Palavra"
 other = "{{ .Count }} Palavras"
+
+[lastModified]
+other = "Última actualização"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Entradas mais recentes"
+olderPosts = "Entradas mais antigas"

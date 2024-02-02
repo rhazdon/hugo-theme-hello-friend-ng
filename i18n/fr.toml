@@ -1,4 +1,4 @@
-# Translations for France
+# Translations for French
 # https://gohugo.io/content-management/multilingual/#translation-of-strings
 
 # Generic
@@ -32,5 +32,13 @@ other = "{{ .Count }} minutes"
 other = "Table des matières"
 
 [wordCount]
-one   = "Une Mot"
+one   = "Un Mot"
 other = "{{ .Count }} Mots"
+
+[lastModified]
+other = "Mise à jour"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Articles plus récents"
+olderPosts = "Articles plus anciens"

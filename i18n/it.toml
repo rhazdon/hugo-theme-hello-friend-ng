@@ -1,0 +1,44 @@
+# Translations for Italian
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Generic
+#
+[translations]
+other = "Traduzioni"
+
+[postAvailable]
+other = "Disponibile anche in"
+
+
+# 404.html
+#
+[archives]
+other = "Archivi"
+
+[home]
+other = "Home"
+
+[notFound]
+other = "Oops, pagina non trovata…"
+
+
+# posts/single.html
+#
+[readingTime]
+one   = "Un minuto"
+other = "{{ .Count }} minuti"
+
+[tableOfContents]
+other = "Contenuti"
+
+[wordCount]
+one   = "Una parola"
+other = "{{ .Count }} parole"
+
+[lastModified]
+other = "Ultimo aggiornamento"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Voci più recenti"
+olderPosts = "Voci più vecchie"

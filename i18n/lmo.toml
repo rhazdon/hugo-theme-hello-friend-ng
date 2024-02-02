@@ -1,0 +1,39 @@
+# Translations for Lombardian
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Generic
+#
+[translations]
+other = "Traduzion"
+
+[postAvailable]
+other = "Disponibel anca in"
+
+
+# 404.html
+#
+[archives]
+other = "Archivi"
+
+[home]
+other = "Home"
+
+[notFound]
+other = "Oops, pagina minga trovada…"
+
+
+# posts/single.html
+#
+[readingTime]
+one   = "On megnuu"
+other = "{{ .Count }} megnuu"
+
+[tableOfContents]
+other = "Contegnuu"
+
+[wordCount]
+one   = "Ona parolla"
+other = "{{ .Count }} paroll"
+
+[lastModified]
+other = "Last update"

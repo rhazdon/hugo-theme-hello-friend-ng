@@ -1,26 +1,35 @@
 {{ define "main" }}
+    {{ $paginator := .Paginate .Data.Pages }}
+    
     <main class="posts">
         <h1>{{ .Title }}</h1>
 
-        {{- if .Content }}
+        {{ if .Content }}
             <div class="content">{{ .Content }}</div>
-        {{- end }}
+        {{ end }}
 
-        {{- range .Data.Pages.GroupByDate "2006" }}
+        {{ range $paginator.Pages.GroupByDate "2006" }}
             <div class="posts-group">
                 <div class="post-year">{{ .Key }}</div>
 
                 <ul class="posts-list">
-                    {{- range .Pages }}
+                    {{ range .Pages }}
                         <li class="post-item">
-                            <a href="{{.Permalink}}">
+                            <a href="{{.Permalink}}" class="post-item-inner">
                                 <span class="post-title">{{.Title}}</span>
-                                <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
+                                <span class="post-day">
+                                    {{ if .Site.Params.dateformShort }}
+                                        {{ .Date.Format .Site.Params.dateformShort }}
+                                    {{ else }}
+                                        {{ .Date.Format "Jan 2"}}
+                                    {{ end }}
+                                </span>
                             </a>
                         </li>
-                    {{- end }}
+                    {{ end }}
                 </ul>
             </div>
-        {{- end }}
+        {{ end }}
+    {{ partial "pagination-list.html" . }}
     </main>
 {{ end }}

@@ -1,0 +1,44 @@
+# Translations for Romanian
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Generic
+#
+[translations]
+other = "Traduceri"
+
+[postAvailable]
+other = "Disponibil și în"
+
+
+# 404.html
+#
+[archives]
+other = "Arhive"
+
+[home]
+other = "Acasă"
+
+[notFound]
+other = "Ups, pagina nu a fost găsită…"
+
+
+# posts/single.html
+#
+[readingTime]
+one   = "Un minut"
+other = "{{ .Count }} de minute"
+
+[tableOfContents]
+other = "Cuprins"
+
+[wordCount]
+one   = "Un cuvânt"
+other = "{{ .Count }} de cuvinte"
+
+[lastModified]
+other = "Ultima modificare"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Intrări mai noi"
+olderPosts = "Intrări mai vechi"

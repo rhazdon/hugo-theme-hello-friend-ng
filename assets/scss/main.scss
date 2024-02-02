@@ -1,11 +1,14 @@
+/* Must be loaded before everything else */
 @import "normalize";
 @import "prism";
+@import "flag-icons";
 
+/* Main stuff */
 @import "variables";
 @import "mixins";
 @import "fonts";
 @import "buttons";
-
+/* Modules */
 @import "header";
 @import "logo";
 @import "menu";
@@ -13,3 +16,6 @@
 @import "list";
 @import "single";
 @import "footer";
+@import "sharing-buttons";
+@import "tables";
+@import "404";

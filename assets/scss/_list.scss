@@ -10,10 +10,23 @@
   }
 
   &:not(:last-of-type) {
+    // Default
     border-bottom: 1px solid $light-border-color;
 
-    .dark-theme & {
-      border-color: $dark-border-color;
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid $dark-border-color;
+    }
+  
+    @media (prefers-color-scheme: light) {
+      border-bottom: 1px solid $light-border-color;
+    }
+  
+    [data-theme=dark] & {
+      border-bottom: 1px solid $dark-border-color;
+    }
+  
+    [data-theme=light] & {
+      border-bottom: 1px solid $light-border-color;
     }
   }
 
@@ -54,7 +67,7 @@
     &-item {
       border-bottom: 1px grey dashed;
 
-      a {
+      &-inner {
         display: flex;
         justify-content: space-between;
         align-items: baseline;

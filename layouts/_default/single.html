@@ -5,7 +5,7 @@
             {{ if .IsTranslated }}
                 {{ i18n "postAvailable" }}
                 {{ range .Translations }}
-                    <a href="{{ .Permalink }}"><span class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared"></span></a>
+                    <a href="{{ .Permalink }}"><span class="flag fi fi-{{ index $.Site.Data.langFlags (.Lang) }}"></span></a>
                 {{ end}}
             {{ end }}
             </p>
@@ -14,17 +14,23 @@
         <article>
             <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
 
-            {{- if .Params.toc }}
+            {{ if .Params.Cover }}
+                <figure class="post-cover">
+                    <img src="{{ .Params.Cover | absURL }}" alt="{{ .Title }}" />
+                
+                    {{ if .Params.CoverCaption }}
+                        <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
+                    {{ end }}
+                </figure>
+            {{ end }}
+            
+            {{ if .Params.toc }}
                 <hr />
                 <aside id="toc">
                 <div class="toc-title">{{ i18n "tableOfContents" }}</div>
                     {{ .TableOfContents }}
                 </aside>
                 <hr />
-            {{- end }}
-
-            {{ with .Params.Cover }}
-                <img src="/img/{{ . }}" class="post-cover" />
             {{ end }}
 
             <div class="post-content">
@@ -35,15 +41,8 @@
         <hr />
 
         <div class="post-info">
-  				{{- with .Params.tags }}
-  				<p>
-  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
-  					{{- range . -}}
-  					     <span class="tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>
-  					{{- end }}
-  				</p>
-  				{{- end }}
-
+            {{ partial "tags.html" .Params.tags }}
+            {{ partial "categories.html" . }}
                 {{- if .GitInfo }}
   				    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg><a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a> @ {{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{ else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}</p>
   				{{- end }}

@@ -1,11 +1,22 @@
 .menu {
-  background: #fafafa;
-  border-right: 1px solid;
-  margin-right: 18px;
   z-index: 9999;
+  // Default
+  background: $light-background-header;
 
-  .dark-theme & {
-    background: #252627;
+  @media (prefers-color-scheme: dark) {
+    background: $dark-background-header;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background: $light-background-header;
+  }
+
+  [data-theme=dark] & {
+    background: $dark-background-header;
+  }
+
+  [data-theme=light] & {
+    background: $light-background-header;
   }
 
   @media #{$media-size-phone} {
@@ -49,6 +60,11 @@
     fill: currentColor;
     margin-left: 10px;
     cursor: pointer;
+    display: none;
+
+    @media #{$media-size-phone} {
+      display: block;
+    }
   }
 
   a {
@@ -63,5 +79,87 @@
     &:last-of-type {
       margin-right: 0;
     }
+  }
+}
+
+
+.submenu {
+  background: $light-background-header;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-background-header;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background: $light-background-header;
+  }
+
+  [data-theme=dark] & {
+    background: $dark-background-header;
+  }
+
+  [data-theme=light] & {
+    background: $light-background-header;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li a, .dropbtn {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  li.dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: $dark-background-header;
+
+    @media (prefers-color-scheme: light) {
+      background: $light-background-header;
+    }
+    
+    [data-theme=dark] & {
+      background: $dark-background-header;
+    }
+  
+    [data-theme=light] & {
+      background: $light-background-header;
+    }
+  }
+
+  .dropdown-content a {
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background: $dark-background-header;
+    
+    @media (prefers-color-scheme: light) {
+      background: $light-background-header;
+    }
+
+    [data-theme=dark] & {
+      background: $dark-background-header;
+    }
+  
+    [data-theme=light] & {
+      background: $light-background-header;
+    }
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 }

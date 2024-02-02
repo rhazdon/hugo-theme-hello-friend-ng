@@ -1,53 +1,37 @@
 {{ $main := resources.Get "js/main.js" }}
 {{ $menu := resources.Get "js/menu.js" }}
 {{ $prism := resources.Get "js/prism.js" }}
-{{ $theme := resources.Get "js/theme.js" }}
-{{ $secureJS := slice $main $menu $prism $theme | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $secureJS := slice $main $menu $prism | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
-{{- if .Site.GoogleAnalytics }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.0/fingerprint2.min.js"></script>
-<script>
-    if (window.requestIdleCallback) {
-        requestIdleCallback(function () {
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-            {
-                Fingerprint2.get(function (components) {
-                    ga('create', '{{.Site.GoogleAnalytics}}', { 'storage': 'none', 'clientId': Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31) });
-                    console.log("ClientID: " + Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31));
-                    ga('set', 'anonymizeIp', true);
-                    ga('send', 'pageview');
-                });
-            }
-        })
-    } else {
-        setTimeout(function () {
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-            {
-                Fingerprint2.get(function (components) {
-                    ga('create', '{{.Site.GoogleAnalytics}}', { 'storage': 'none', 'clientId': Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31) });
-                    console.log("ClientID: " + Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31));
-                    ga('set', 'anonymizeIp', true);
-                    ga('send', 'pageview');
-                });
-            }
-        }, 500)
-    }
-</script>
-{{- end}}
-
 {{ range $val := $.Site.Params.customJS }}
-{{ if gt (len $val) 0 }}
-<script src="{{ $val }}"></script>
+    {{ if gt (len $val) 0 }}
+        <script src="{{ $val }}"></script>
+    {{ end }}
 {{ end }}
+
+{{ if .Page.Store.Get "hasMermaid" }}
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+    const settings = localStorage.getItem("theme") === "dark" ?
+        {
+            startOnLoad: true,
+            theme: "dark",
+            darkMode: true,
+            themeVariables: {
+                tertiaryColor: "#dee3ed"
+            }
+        }
+        :
+        {
+            startOnLoad: true,
+            theme: "base",
+            darkMode: false,
+            themeVariables: {
+                tertiaryColor: "#dee3ed"
+            }
+        }
+    ;
+    mermaid.initialize(settings);
+</script>
 {{ end }}

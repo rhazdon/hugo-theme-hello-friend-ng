@@ -1,0 +1,44 @@
+# Translations for Indonesia
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Generic
+#
+[translations]
+other = "Terjemahan"
+
+[postAvailable]
+other = "Tersedia juga di"
+
+
+# 404.html
+#
+[archives]
+other = "Arsip"
+
+[home]
+other = "Beranda"
+
+[notFound]
+other = "Oops, halaman tidak ditemukan…"
+
+
+# posts/single.html
+#
+[readingTime]
+one   = "Satu menit"
+other = "{{ .Count }} menit"
+
+[tableOfContents]
+other = "Daftar isi"
+
+[wordCount]
+one   = "Satu Kata"
+other = "{{ .Count }} Kata"
+
+[lastModified]
+other = "Terakhir diupdate"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Postingan yang lebih baru"
+olderPosts = "Postingan yang lebih lama"

@@ -1,0 +1,39 @@
+# Translations for Danish
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Generic
+#
+[translations]
+other = "Oversættelser"
+
+[postAvailable]
+other = "Også tilgængelig på"
+
+
+# 404.html
+#
+[archives]
+other = "Arkiver"
+
+[home]
+other = "Hjem"
+
+[notFound]
+other = "Ups, siden blev ikke fundet…"
+
+
+# posts/single.html
+#
+[readingTime]
+one   = "Ét minut"
+other = "{{ .Count }} minutter"
+
+[tableOfContents]
+other = "Indholdsfortegnelse"
+
+[wordCount]
+one   = "Ét Ord"
+other = "{{ .Count }} Ord"
+
+[lastModified]
+other = "Sidst opdateret"
