@@ -41,3 +41,8 @@ other = "{{ .Count }} слів"
 
 [lastModified]
 other = "Останнє оновлення"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Нові записи"
+olderPosts = "Старіші записи"

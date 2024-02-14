@@ -37,3 +37,8 @@ other = "{{ .Count }}文字"
 
 [lastModified]
 other = "最終更新"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "新しいエントリー"
+olderPosts = "古いエントリー"

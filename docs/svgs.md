@@ -10,6 +10,7 @@
 - [codechef](https://simpleicons.org/?q=codechef)
 - [codepen](https://simpleicons.org/?q=codepen)
 - [cs:go](https://simpleicons.org/?q=counterstrike)
+- [cyberdefenders](https://simpleicons.org/?q=cyberdefenders)
 - dev
 - [deviantart](https://simpleicons.org/?q=deviantart)
 - [discogs](https://simpleicons.org/?q=discogs)
@@ -58,6 +59,7 @@
 - [peertube](https://simpleicons.org/?q=peertube)
 - [pinterest](https://simpleicons.org/?q=pinterest)
 - [pixelfed](https://github.com/pixelfed/pixelfed/blob/dev/public/img/pixelfed-icon-black.svg)
+- [pleroma](https://simpleicons.org/?q=pleroma)
 - [podcasts-apple](https://simpleicons.org/?q=podcast)
 - [podcasts-google](https://simpleicons.org/?q=podcast)
 - [polywork](https://simpleicons.org/?q=polywork)
@@ -67,6 +69,7 @@
 - [signal](https://simpleicons.org/?q=signal)
 - [slack](https://simpleicons.org/?q=slack)
 - [soundcloud](https://simpleicons.org/?q=soundcloud)
+- [sourcehut](https://simpleicons.org/?q=sourcehut)
 - [spotify](https://simpleicons.org/?q=spotify)
 - [stackoverflow](https://simpleicons.org/?q=stackoverflow)
 - [steam](https://simpleicons.org/?q=Steam)

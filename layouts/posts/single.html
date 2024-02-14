@@ -135,5 +135,16 @@
       <div id="commento"></div>
     {{ end }}
 
+    {{ if .Site.Params.Utterances.Repository }}
+    <script src="https://utteranc.es/client.js"
+            repo="{{ .Site.Params.Utterances.Repository }}"
+            {{ if .Site.Params.Utterances.Label }}label="{{ .Site.Params.Utterances.Label }}"{{ end }}
+            issue-term="{{ .Site.Params.Utterances.IssueTerm }}"
+            theme="{{ .Site.Params.Utterances.Theme }}"
+            crossorigin="anonymous"
+            async>
+    </script>
+    {{ end }}
+
   </main>
 {{ end }}

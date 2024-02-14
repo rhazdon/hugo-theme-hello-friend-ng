@@ -37,3 +37,8 @@ other = "{{ .Count }} Kata"
 
 [lastModified]
 other = "Terakhir diupdate"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Postingan yang lebih baru"
+olderPosts = "Postingan yang lebih lama"
