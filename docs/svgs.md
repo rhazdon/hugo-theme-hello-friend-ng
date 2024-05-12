@@ -64,6 +64,7 @@
 - [podcasts-google](https://simpleicons.org/?q=podcast)
 - [polywork](https://simpleicons.org/?q=polywork)
 - [reddit](https://simpleicons.org/?q=reddit)
+- repec
 - [researchgate](https://simpleicons.org/?q=researchgate)
 - [revolut](https://simpleicons.org/?q=revolut)
 - [signal](https://simpleicons.org/?q=signal)
