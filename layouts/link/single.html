@@ -1,0 +1,153 @@
+{{ define "main" }}
+<main class="post">
+
+    <div class="post-info">
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-clock">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>{{ i18n "readingTime" .Page.ReadingTime }}
+
+            {{ if .IsTranslated }}
+            | {{ i18n "postAvailable" }}
+            {{ range .Translations }}
+            <a href="{{ .Permalink }}"><span
+                    class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared"></span></a>
+            {{ end}}
+            {{ end }}
+
+        </p>
+    </div>
+
+    <article class="h-entry">
+        <h1 class="post-title e-title p-name"><a class="u-url" style="text-decoration: underline"
+                href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
+            <a class="u-url" href="{{ .Permalink }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-link">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg></a>
+        </h1>
+        <time class="dt-published" datetime="{{dateFormat "2006-01-02 15:04 -0700" .Date.Local}}" />
+        {{- if .Params.toc }}
+        <hr />
+        <aside id="toc">
+            <div class="toc-title">{{ i18n "tableOfContents" }}</div>
+            {{ .TableOfContents }}
+        </aside>
+        <hr />
+        {{- end }}
+
+        {{ with .Params.Cover }}
+        <img src="/img/{{ . }}" class="post-cover" />
+        {{ end }}
+
+        <div class="post-content e-content">
+            {{ .Content }}
+        </div>
+        <hr />
+
+        <div class="post-info">
+            {{- with .Params.tags }}
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-tag meta-icon">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7" y2="7"></line>
+                </svg>
+                {{- range . -}}
+                <span class="tag p-category"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>
+                {{- end }}
+            </p>
+            {{- end }}
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-file-text">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>{{ i18n "wordCount" .Page.WordCount }}</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-calendar">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg><time class="dt-published"
+                    datetime="{{.Date.Local}}">{{ if .Site.Params.dateformNumTime }}{{ dateFormat .Site.Params.dateformNumTime .Date.Local }}{{ else }}{{ dateFormat "2006-01-02 15:04 -0700" .Date.Local }}{{ end }}</time>
+            </p>
+
+            {{- if .GitInfo }}
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-git-commit">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <line x1="1.05" y1="12" x2="7" y2="12"></line>
+                    <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+                </svg><a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank"
+                    rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a> @
+                {{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{ else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}
+            </p>
+            {{- end }}
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-user">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg><a class="p-author h-card" href="{{ .Site.BaseURL }}">{{.Site.Author.name}}</a>
+            </p>
+
+        </div>
+
+    </article>
+
+    {{ if or .NextInSection .PrevInSection }}
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">{{ .Site.Params.ReadOtherPosts }}</span>
+            <hr />
+        </div>
+
+        <div class="pagination__buttons">
+            {{ if .NextInSection }}
+            <span class="button previous">
+                <a href="{{ .NextInSection.Permalink }}">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">{{ .NextInSection.Title }}</span>
+                </a>
+            </span>
+            {{ end }}
+
+            {{ if .PrevInSection }}
+            <span class="button next">
+                <a href="{{ .PrevInSection.Permalink }}">
+                    <span class="button__text">{{ .PrevInSection.Title }}</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    {{ if .Params.comments }}
+    <div id="comments" class="thin">
+        {{- partial "comments.html" . -}}
+    </div>
+    {{ end }}
+    <!-- Webmentions -->
+    {{ if .Site.Params.webmentions }}
+    <div id="comments" class="thin">
+        {{- partial "webmentions.html" . -}}
+    </div>
+    {{ end }}
+</main>
+{{ end }}

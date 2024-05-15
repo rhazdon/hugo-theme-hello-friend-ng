@@ -10,7 +10,10 @@
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
-
+<!-- Custom head tags -->
+{{- if templates.Exists "partials/extra-head.html" -}}
+{{ partial "extra-head.html" . }}
+{{- end }}
 {{ block "title" . }}
     <title>
         {{ if .IsHome }}

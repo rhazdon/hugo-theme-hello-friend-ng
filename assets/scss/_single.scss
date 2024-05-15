@@ -107,6 +107,41 @@
     border-radius: 50%;
     margin: 0 5px;
   }
+  #comments.thin { 
+    display: inline;
+    .webmentions {
+      display: block;
+      .likes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10em,1fr));
+        
+        .u-comment {
+          display: grid;
+          width: 12em;
+          
+          .card {
+            display:inline-flex; 
+            padding: 1rem;
+            
+            .h-card {
+              flex-grow: 1;
+
+              .name {
+                display: block;
+                flex-grow: 1;
+              }
+             img {
+               width: 1.7rem;
+               height: 1.7rem;
+               border-radius: 50%;
+             }
+            }
+          }
+        }
+      }
+
+    }
+  }
 }
 
 .pagination {
@@ -173,6 +208,7 @@
     }
   }
 }
+
 
 .button {
   position: relative;
