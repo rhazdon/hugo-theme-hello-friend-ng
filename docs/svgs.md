@@ -76,6 +76,7 @@
 - [strava](https://simpleicons.org/?q=strava)
 - [telegram](https://simpleicons.org/?q=telegram)
 - [threema](https://simpleicons.org/?q=threema)
+- [tiktok](https://simpleicons.org/?q=tiktok)
 - [tryhackme](https://simpleicons.org/?q=tryhackme)
 - [tumblr](https://simpleicons.org/?q=tumblr)
 - [twitch](https://simpleicons.org/?q=twitch)
