@@ -1,4 +1,5 @@
-<header class="header">
+{{ if not (or .Params.disableHeader (and .Site.Params.header.disableOnHome .IsHome)) }}
+<header class="header {{ if .Site.Params.header.cssClasses }}{{ range .Site.Params.header.cssClasses }} {{ . }}{{ end }}">
     <span class="header__inner">
         {{ partial "logo.html" . }}
 
@@ -19,3 +20,4 @@
         </span>
     </span>
 </header>
+{{ end }}
