@@ -146,5 +146,13 @@
     </script>
     {{ end }}
 
+    {{ if .Site.Params.issoUrl }}
+      <script data-isso="{{ .Site.Params.issiUrl}}"
+      src="{{ .Site.Params.issiUrl }}/js/embed.min.js"></script>
+      <section id="isso-thread">
+      <noscript>Javascript needs to be activated to view comments.</noscript>
+      </section>
+    {{ end }}
+
   </main>
 {{ end }}
