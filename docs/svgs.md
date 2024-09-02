@@ -82,6 +82,7 @@
 - [twitter](https://simpleicons.org/?q=twitter)
 - [unsplash](https://simpleicons.org/?q=unsplash)
 - [whatsapp](https://simpleicons.org/?q=whatsapp)
+- [X](https://simpleicons.org/?q=X)
 - [xampp](https://simpleicons.org/?q=xampp)
 - [xda](https://simpleicons.org/?q=xda)
 - [xing](https://simpleicons.org/?q=xing)

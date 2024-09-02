@@ -45,8 +45,6 @@ disableHugoGeneratorInject = false
   series   = "series"
 
 [params]
-  [params.author]
-    name = "Jane Doe"
 
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
@@ -109,6 +107,9 @@ disableHugoGeneratorInject = false
   # Integrate Plausible.io
   # plausibleDataDomain = 'test.com'
   # plausibleScriptSource = 'https://plausible.io/js/script.js'
+
+  [params.author]
+    name = "Jane Doe"
 
   # Custom footer 
   # If you want, you can easily override the default footer with your own content. 
