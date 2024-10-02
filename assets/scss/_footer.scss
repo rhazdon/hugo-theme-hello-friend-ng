@@ -1,7 +1,24 @@
 .footer {
   padding: 40px 20px;
   flex-grow: 0;
+  // Default
   color: $light-color-secondary;
+
+  @media (prefers-color-scheme: dark) {
+    color: $dark-color-secondary;
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: $light-color-secondary;
+  }
+
+  [data-theme=dark] & {
+    color: $dark-color-secondary;
+  }
+
+  [data-theme=light] & {
+    color: $dark-color-secondary;
+  }
 
   &__inner {
     display: flex;
@@ -21,7 +38,6 @@
     flex-direction: row;
     align-items: center;
     font-size: 1rem;
-    color: $light-color-secondary;
 
     @media #{$media-size-tablet} {
       flex-direction: column;
