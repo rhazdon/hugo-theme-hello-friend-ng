@@ -202,11 +202,11 @@ em, i, strong {
   }
 
   [data-theme=dark] & {
-    color: white;
+    color: $light-color-variant;
   }
 
   [data-theme=light] & {
-    color: black;
+    color: $dark-color-variant;
   }
 }
 
