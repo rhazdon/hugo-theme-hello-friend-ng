@@ -9,7 +9,7 @@
     {{ end }}
 
     {{ if ( strings.ContainsNonSpace $title ) }}
-	{{ $link := dict "url" .URL "title" $title }}
+	{{ $link := dict "url" ( absURL .URL ) "title" $title }}
 	{{ $uniqueLinks = $uniqueLinks | append $link }}
     {{ end }}
 {{- end }}
@@ -42,7 +42,7 @@
     {{ $url := $link.url }}
     {{ if not (index $seen $url) }}
         {{ $seen = $seen | merge (dict $url true) }}
-        <span><a href="{{ $url | relLangURL }}">{{ $link.title }}</a></span>
+        <span><a href="{{ $url | relURL }}">{{ $link.title }}</a></span>
     {{ end }}
 {{- end }}
     </div>
