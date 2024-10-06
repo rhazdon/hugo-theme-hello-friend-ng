@@ -58,6 +58,29 @@ body {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @media (prefers-color-scheme: dark) {
+    color: $dark-color-variant;
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: $light-color-variant;
+  }
+
+  [data-theme=dark] & {
+    color: $dark-color-variant;
+  }
+
+  [data-theme=light] & {
+    color: $light-color-variant;
+  }
+}
+
 h2,
 h3,
 h4,
