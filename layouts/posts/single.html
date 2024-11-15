@@ -93,7 +93,7 @@
             {{ if .Site.Params.dateformNumTime }}
               ({{ i18n "lastModified" }}: {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local }})
             {{ else }} 
-              ({{ i18n "lastModified" }}: {{ dateFormat "2006-01-02 15:04" .Lastmod.Local }})
+              ({{ i18n "lastModified" }}: <time class="dt-updated">{{ dateFormat "2006-01-02 15:04" .Lastmod.Local }}</time>)
             {{ end }}
           {{ end }}
         {{ end }}
