@@ -17,13 +17,13 @@
       </p>
     </div>
 
-    <article>
-      <h1 class="post-title">
-        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    <article class="h-entry">
+      <h1 class="post-title p-name">
+        <a href="{{ .Permalink }}" class="u-url">{{ .Title | markdownify }}</a>
       </h1>
 
       {{ with .Params.Description }}
-        <div class="post-excerpt">{{ . }}</div>
+        <div class="post-excerpt p-summary">{{ . }}</div>
       {{ end }}
 
       {{ if .Params.Cover }}
@@ -53,7 +53,7 @@
         </div>
       {{ end }}
 
-      <div class="post-content">
+      <div class="post-content e-content">
         {{ .Content }}
       </div>
     </article>
@@ -85,7 +85,7 @@
         {{ if .Site.Params.dateformNumTime }}
           {{ dateFormat .Site.Params.dateformNumTime .Date.Local }}
         {{ else }}
-          {{ dateFormat "2006-01-02 15:04" .Date.Local }}
+          <time class="dt-published">{{ dateFormat "2006-01-02 15:04" .Date.Local }}</time>
         {{ end }}
 
         {{ if .Lastmod }} 
