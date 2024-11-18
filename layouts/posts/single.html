@@ -82,7 +82,7 @@
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        <time class="dt-published" datetime="dateFormat '2006-01-02T15:04Z07:00' .Date.Local">
+        <time class="dt-published" datetime="{{ dateFormat .Site.Params.ISO8601 .Date.Local }}">
           {{ if .Site.Params.dateformNumTime }}
             {{ dateFormat .Site.Params.dateformNumTime .Date.Local }}
           {{ else }}
@@ -92,7 +92,7 @@
 
         {{ if .Lastmod }} 
           {{ if not (eq .Lastmod .Date )}}
-            <time class="dt-updated" datetime="dateFormat '2006-01-02T15:04Z07:00' .Lastmod.Local">({{ i18n "lastModified" }}: 
+            <time class="dt-updated" datetime="{{ dateFormat .Site.Params.ISO8601 .Date.Local }}">({{ i18n "lastModified" }}: 
               {{ if .Site.Params.dateformNumTime }}
                 {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local }}
               {{ else }} 
@@ -112,7 +112,7 @@
           </svg>
 
           <a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a>
-          @ <time datetime="dateFormat '2006-01-02T15:04Z07:00' .GitInfo.AuthorDate.Local">{{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{ else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}</time>
+          @ <time datetime="{{ dateFormat .Site.Params.ISO8601 .GitInfo.AuthorDate.Local }}">{{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{ else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}</time>
         </p>
       {{- end }}
     </div>
