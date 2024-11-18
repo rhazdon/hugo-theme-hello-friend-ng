@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <main class="post">
+  <main class="post h-entry">
 
     <div class="post-info">
       <p>
@@ -17,7 +17,7 @@
       </p>
     </div>
 
-    <article class="h-entry">
+    <article>
       <h1 class="post-title p-name">
         <a href="{{ .Permalink }}" class="u-url">{{ .Title | markdownify }}</a>
       </h1>
