@@ -92,7 +92,7 @@
 
         {{ if .Lastmod }} 
           {{ if not (eq .Lastmod .Date )}}
-            <time class="dt-updated" datetime="{{ dateFormat .Site.Params.ISO8601 .Date.Local }}">({{ i18n "lastModified" }}: 
+            <time class="dt-updated" datetime="{{ dateFormat .Site.Params.ISO8601 .Lastmod.Local }}">({{ i18n "lastModified" }}: 
               {{ if .Site.Params.dateformNumTime }}
                 {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local }}
               {{ else }} 
