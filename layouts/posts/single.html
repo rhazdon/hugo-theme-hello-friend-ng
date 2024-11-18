@@ -82,19 +82,23 @@
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        {{ if .Site.Params.dateformNumTime }}
-          {{ dateFormat .Site.Params.dateformNumTime .Date.Local }}
-        {{ else }}
-          <time class="dt-published">{{ dateFormat "2006-01-02 15:04" .Date.Local }}</time>
-        {{ end }}
+        <time class="dt-published" datetime="dateFormat '2006-01-02T15:04Z07:00' .Date.Local">
+          {{ if .Site.Params.dateformNumTime }}
+            {{ dateFormat .Site.Params.dateformNumTime .Date.Local }}
+          {{ else }}
+            {{ dateFormat "2006-01-02 15:04" .Date.Local }}
+          {{ end }}
+        </time>
 
         {{ if .Lastmod }} 
           {{ if not (eq .Lastmod .Date )}}
-            {{ if .Site.Params.dateformNumTime }}
-              ({{ i18n "lastModified" }}: {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local }})
-            {{ else }} 
-              ({{ i18n "lastModified" }}: <time class="dt-updated">{{ dateFormat "2006-01-02 15:04" .Lastmod.Local }}</time>)
-            {{ end }}
+            <time class="dt-updated" datetime="dateFormat '2006-01-02T15:04Z07:00' .Lastmod.Local">({{ i18n "lastModified" }}: 
+              {{ if .Site.Params.dateformNumTime }}
+                {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local }}
+              {{ else }} 
+                {{ dateFormat "2006-01-02 15:04" .Lastmod.Local }}
+              {{ end }}
+            )</time>
           {{ end }}
         {{ end }}
       </p>
@@ -108,7 +112,7 @@
           </svg>
 
           <a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a>
-          @ {{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{ else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}
+          @ <time datetime="dateFormat '2006-01-02T15:04Z07:00' .GitInfo.AuthorDate.Local">{{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{ else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}</time>
         </p>
       {{- end }}
     </div>
