@@ -92,24 +92,24 @@
 
         {{ if .Lastmod }} 
           {{ if not (eq .Lastmod .Date )}}
-            <time class="dt-updated" datetime="{{ dateFormat .Site.Params.ISO8601 .Lastmod.Local }}">({{ i18n "lastModified" }}: 
+            ({{ i18n "lastModified" }}: <time class="dt-updated" datetime="{{ dateFormat .Site.Params.ISO8601 .Lastmod.Local }}">
               {{ if .Site.Params.dateformNumTime }}
                 {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local }}
               {{ else }} 
                 {{ dateFormat "2006-01-02 15:04" .Lastmod.Local }}
               {{ end }}
-            )</time>
+            </time>)
           {{ end }}
         {{ end }}
       </p>
-
-      {{ with .Params.Author.name }}
+      
+      {{ if .Param "Author.name" }}
         <p>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
-          <span rel="author" class="p-author h-card">{{ . }}</span>
+          <span rel="author" class="p-author h-card">{{ .Param "Author.name" }}</span>
         </p>
       {{ end }}
 
