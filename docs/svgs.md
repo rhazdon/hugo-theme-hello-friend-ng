@@ -64,6 +64,7 @@
 - [podcasts-apple](https://simpleicons.org/?q=podcast)
 - [podcasts-google](https://simpleicons.org/?q=podcast)
 - [polywork](https://simpleicons.org/?q=polywork)
+- [printables](https://simpleicons.org/?q=printables)
 - [reddit](https://simpleicons.org/?q=reddit)
 - repec
 - [researchgate](https://simpleicons.org/?q=researchgate)
