@@ -3,15 +3,17 @@
 {{ end }}
 
 {{ define "main" }}
-    <main>
+    <main class="h-card">
         <div>
             {{ if .Site.Params.Portrait.Path }}
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle u-photo" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
             {{ end }}
 
-            <h1>{{ .Site.Title }}</h1>
+            <h1 class="p-name">{{ .Site.Title }}</h1>
 
-            {{ partial "subtitle.html" . }}
+            <span class="p-note">
+                {{ partial "subtitle.html" . }}
+            </span>
 
             {{- with .Site.Params.social }}
                 <div>
