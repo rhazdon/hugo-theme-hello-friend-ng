@@ -8,6 +8,7 @@
 - [bitbucket](https://simpleicons.org/?q=bitbucket)
 - case - generic briefcase icon for work based links
 - [codesandbox](https://simpleicons.org/?q=codesandbox)
+- [codeberg](https://simpleicons.org/?q=codeberg)
 - [codechef](https://simpleicons.org/?q=codechef)
 - [codepen](https://simpleicons.org/?q=codepen)
 - [cs:go](https://simpleicons.org/?q=counterstrike)
