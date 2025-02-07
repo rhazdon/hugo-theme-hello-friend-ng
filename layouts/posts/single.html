@@ -61,7 +61,7 @@
     <hr />
 
     <div class="post-info">
-      {{ partial "tags.html" .Params.tags }}
+      {{ partial "tags.html" (dict "Page" . "tags" .Params.tags) }}
       {{ partial "categories.html" . }}
 
       <p>
