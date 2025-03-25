@@ -107,6 +107,11 @@ a {
   color: inherit;
 }
 
+.inline-image {
+  vertical-align: middle;
+  display: inline-block;
+}
+
 img {
   display: block;
   max-width: 100%;

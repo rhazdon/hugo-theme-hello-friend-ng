@@ -1,0 +1,97 @@
+/* Ensure these styles take precedence */
+body, html {
+    background-color: #111 !important;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+.terminal-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terminal-header {
+    background-color: #1f1f1f !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px !important;
+    color: white !important;
+}
+
+.terminal-buttons {
+    display: flex !important;
+    gap: 10px !important;
+    margin-right: 15px !important;
+}
+
+.terminal-button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+}
+
+.terminal-button-close { 
+    background-color: #ff5f57 !important; 
+}
+.terminal-button-minimize { 
+    background-color: #ffbd2e !important; 
+}
+.terminal-button-maximize { 
+    background-color: #28ca41 !important; 
+}
+
+.terminal-content {
+    background-color: black !important;
+    border: 2px solid #1f1f1f !important;
+    color: #0f0 !important;
+    padding: 20px !important;
+    position: relative !important;
+}
+
+.terminal-prompt {
+    color: #0f0 !important;
+    margin-bottom: 10px !important;
+}
+
+.terminal-cursor {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 20px !important;
+    background-color: #0f0 !important;
+    animation: blink 1s infinite !important;
+    position: absolute !important;
+    bottom: 10px !important;
+    right: 10px !important;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+h1 {
+    color: white !important;
+    text-align: center !important;
+}
+
+.social-icons {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    margin-top: 20px !important;
+}
+
+.social-icons a {
+    color: #0f0 !important;
+    text-decoration: none !important;
+}
