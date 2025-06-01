@@ -1,6 +1,6 @@
 {{ define "main" }}
     {{ $paginator := .Paginate .Data.Pages }}
-    
+
     <main class="posts">
         <h1>{{ .Title }}</h1>
 
@@ -19,9 +19,9 @@
                                 <span class="post-title">{{.Title}}</span>
                                 <span class="post-day">
                                     {{ if .Site.Params.dateformShort }}
-                                        {{ .Date.Format .Site.Params.dateformShort }}
+                                        {{ time.Format .Site.Params.dateformShort .Date }}
                                     {{ else }}
-                                        {{ .Date.Format "Jan 2"}}
+                                        {{ time.Format "Jan 2" .Date }}
                                     {{ end }}
                                 </span>
                             </a>
