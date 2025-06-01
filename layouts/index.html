@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-    <main aria-role="main">
+    <main>
         <div>
             {{ if .Site.Params.Portrait.Path }}
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />

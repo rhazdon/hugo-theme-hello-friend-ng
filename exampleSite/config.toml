@@ -6,12 +6,7 @@ theme = "hello-friend-ng"
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
 
-paginate  = 10
-rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
-
-# googleAnalytics = ""
-# disqusShortname = ""
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -33,6 +28,21 @@ disableSitemap = false
 disable404     = false
 disableHugoGeneratorInject = false
 
+[pagination]
+  disableAliases = false
+  pagerSize = 20
+  path = 'page'
+
+[services]
+  [services.rss]
+      # Maximum number of items in the RSS feed.
+      limit = 42
+      
+#   [services.disqus]
+#     shortname = 'your-disqus-shortname'
+#   [services.googleAnalytics]
+#     ID = 'G-MEASUREMENT_ID'
+
 [permalinks]
   posts = "/posts/:year/:month/:title/"
 
@@ -45,7 +55,6 @@ disableHugoGeneratorInject = false
   series   = "series"
 
 [params]
-
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
