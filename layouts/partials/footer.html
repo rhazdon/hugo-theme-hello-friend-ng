@@ -1,3 +1,20 @@
+{{/* Create an empty slice to store unique links */}}
+{{ $uniqueLinks := slice }}
+
+{{/* Range over .Site.Menus.footer and add each item to the slice */}}
+{{ range .Site.Menus.footer -}}
+    {{ $title := or $.Title $.Name }}
+    {{ with .Page }}
+	{{ $title = default $title ( or .LinkTitle .Title $.Title $.Name ) }}
+    {{ end }}
+
+    {{ if ( strings.ContainsNonSpace $title ) }}
+	{{ $link := dict "url" ( absURL .URL ) "title" $title }}
+	{{ $uniqueLinks = $uniqueLinks | append $link }}
+    {{ end }}
+{{- end }}
+
+
 <footer class="footer">
     {{if or (.Site.Params.footer.trademark) (.Site.Params.footer.author) (.Site.Params.footer.copyright) (.Site.Params.footer.rss) (.Site.Params.footer.topText) }}
     <div class="footer__inner">
@@ -15,6 +32,19 @@
         <div class="footer__content">
             {{ range . }}<span>{{ . | safeHTML}}</span>{{ end }}
         </div>
+    </div>
+    {{ end }}
+    {{ if ne .Site.Params.footer.showFooterLinks false }}
+    <div class="footer__inner">
+        <div class="footer__content">
+{{ $seen := dict }}
+{{ range $link := $uniqueLinks }}
+    {{ $url := $link.url }}
+    {{ if not (index $seen $url) }}
+        {{ $seen = $seen | merge (dict $url true) }}
+        <span><a href="{{ $url | relURL }}">{{ $link.title }}</a></span>
+    {{ end }}
+{{- end }}
     </div>
     {{ end }}
 </footer>
