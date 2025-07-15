@@ -6,18 +6,7 @@
         {{- end }}
 
         {{- if .Site.Params.EnableGlobalLanguageMenu }}
-        <div class="submenu">
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">{{ .Language }}</a>
-                <div class="dropdown-content">
-                    {{ if .Site.IsMultiLingual }}
-                        {{ range $.Translations }}
-                            <a title="{{ .Language }}" href="{{ .Permalink }}">{{ .Language }}</a>
-                        {{ end }}
-                    {{ end }}
-                </div>
-            </li>
-        </div>
+        
         {{- end }}
     </ul>
 </nav>

@@ -84,9 +84,8 @@
                     <div class="icon-container" >
 
                             <ul class="links-list" style="padding: 10px;" >
-                                <li id="name">👨 He/Him</li>
                                 <li id="uni">✉️ {<em>first name</em>} b25 {<em>at</em>} gmail {<em>dot</em>} com</li>
-                                <li id="address">🏠 10 Chrichton Street, Edinburgh, Scotland</li>
+                                <li id="address">🏠 Oriel College, Oxford OX1 4EW, United Kingdom</li>
                             </ul>
 
                             <span class="tag-2">C++</span>
@@ -111,18 +110,61 @@
                 <div class="greeting ">
                     <h2 style="font-family: monospace;">Hello 👋</h2>
     
-                    <p>I am currently interning at <a href="https://web.inf.ed.ac.uk/icsa">ICSA</a> laboratory under the supervision of Dr. Boris Grot, working on the vHive project.</p>
-                    <span class="responsive-text"> <em>2020-2024</em> BSc (Hons) AI & CS @ University of Edinburgh </span>
+                    <p>Researching Algorithmic Game Theory under <a href="https://arisfilosratsikas.com">Dr. Aris Filos-Ratsikas</a>.</p>
+                    <span class="responsive-text"> <em>2026</em> MFoCS @ University of Oxford </span> 
                     <br>
-                    <span class="responsive-text"> <em>2022-2023</em> Exchange Program @ University of Pennsylvania</span>
+                    <span class="responsive-text"> <em>2025</em> MInf CS @ University of Edinburgh </span>
+                    <br>
+                    <span class="responsive-text"> <em>2022-2023</em> Exchange @ University of Pennsylvania</span>
                     <br><br>
-                    <span>📍  Where am I located?</span>
-                    <br>
-                    <p><em> -> Edinburgh</em></p>
                 </div>
 
             </div>
             {{ .Content }}
+            <style>
+            .dropdown-container {
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 12px;
+                margin-top: 12px;
+            }
+
+            details summary {
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 16px;
+
+                list-style: none;
+            }
+
+            details summary::-webkit-details-marker {
+                display: none;
+            }
+
+            summary::after {
+                content: " ▼";
+                font-size: 12px;
+            }
+
+            details[open] summary::after {
+                content: " ▲";
+            }
+            </style>
+
+            <div class="dropdown-container">
+            <details>
+                <br>
+                <summary>“Towards Better Approximation Algorithms for α-EFX Allocations” Supervised by Aris Filos-Ratsikas</summary>
+                <ul>
+                <li><strong>Exploration of the “Top-N” Case:</strong> Provided strong evidence that the Top-N instance class — where agents value only their top few goods — cannot be handled organically by the existing 3PA algorithm (Amanatidis, Filos-Ratsikas, Sgouritsa, 2024), countering an existing conjecture.</li>
+                <li><strong>Attempt to Extend 2/3-EFX Guarantee from 7 to 9 Agents:</strong> Extended the proof framework of AFS (2024) to the case of 9 agents. Though not fully complete, the dissertation covers many new subcases and offers groundwork that could lead to a publishable result.</li>
+                <li><strong>Use of Extremal Graph Theory (Group Champion Graphs):</strong> Suggested ways of analyzing EFX allocations using multigraphs and structural properties, inspired by work on EFX-with-charity. This adds a fresh analytical lens to the problem.</li>
+                <li><strong>Empirical experiments on 3PA:</strong> Tested 3PA's running time and step execution frequency. Evaluated allocation properties under different valuation distributions. Analyzed graph-theoretic properties of allocations, including structure of “enhanced envy graphs” and critical goods.</li>
+                </ul>
+            </details>
+            </div>
+
+            <h2>Projects</h2>
             <div id="card-container" style="display: flex; align-content: space-around; flex-wrap: wrap; padding: 5px;">
                 <style>
                     .card{
@@ -177,7 +219,7 @@
                         </style>
                         <h3>Linux Operating System</h3>
                         <p>A fully working operating system: PENNOS with a scheduler, FAT file system and Linux shell.</p>
-                        <button onclick="window.location.href='https://w3docs.com';">Read More</button>
+                        <button onclick="window.location.href='https://www.seas.upenn.edu/~cis3800/23fa/';">Read More</button>
                     </div>
                 </div>
                 <div class="card" style="border-radius: 12px; padding: 8px; ">
@@ -203,7 +245,7 @@
                         </style>
                         <h3>Cloud-deployed Search Engine</h3>
                         <p>Developed a Java-based from scratch including a web server with dynamic routing, crawler, indexer, PageRank and a Spark-like analytics engine. Used TF/IDF to rank and display results.</p>
-                        <button onclick="window.location.href='https://w3docs.com';">Read More</button>
+                        <button onclick="window.location.href='https://cis5550.seas.upenn.edu';">Read More</button>
                     </div>
                 </div>
                 <div class="card" style="border-radius: 12px; padding: 8px; ">
