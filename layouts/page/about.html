@@ -249,6 +249,30 @@
                     </div>
                 </div>
                 <div class="card" style="border-radius: 12px; padding: 8px; ">
+                    {{ $image := resources.Get "demo.gif" }}
+                    {{ $image := resources.GetMatch "demo.gif" }}
+                    <img src="{{ $image.RelPermalink }}" alt="Lago di Braises" style="border-radius: 12px; width: fit-content; height: 214px; object-fit: cover;" >
+                    <div class="card__details">
+                        <span class="tag-1">C++</span>
+                        <style>
+                            .tag-1{
+                                padding: 4px 8px;
+                                border: 1px solid #70777b;
+    
+                                border-radius: 50px;
+                                font-size: 12px;
+                                font-weight: 600;
+                            }
+                            .card__details{
+                                padding: 16px 8px 8px 8px;
+                            }
+                        </style>
+                        <h3>Content Aware Resizing TUI</h3>
+                        <p>Implements content-aware image resizing using the seam carving algorithm in C++ with a fully function TUI for resizing .png images.</p>
+                        <button onclick="window.location.href='https://github.com/arn25-lk/SeamCarver'">Read More</button>
+                    </div>
+                </div>
+                <div class="card" style="border-radius: 12px; padding: 8px; ">
                     {{ $image := resources.Get "tetris.jpg" }}
                     {{ $image := resources.GetMatch "tetris.jpg" }}
                     <img src="{{ $image.RelPermalink }}" alt="Lago di Braises" style="border-radius: 12px; width: fit-content; height: 214px; object-fit: cover;" >
@@ -274,6 +298,7 @@
                     </div>
                 </div>
 
+                
                 
             </div>
           </div>
