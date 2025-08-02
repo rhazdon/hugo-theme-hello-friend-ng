@@ -1,4 +1,4 @@
-# Translations for English
+# Translations for Italian
 # https://gohugo.io/content-management/multilingual/#translation-of-strings
 
 # Generic
@@ -37,3 +37,8 @@ other = "{{ .Count }} parole"
 
 [lastModified]
 other = "Ultimo aggiornamento"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Voci più recenti"
+olderPosts = "Voci più vecchie"

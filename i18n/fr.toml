@@ -37,3 +37,8 @@ other = "{{ .Count }} Mots"
 
 [lastModified]
 other = "Mise à jour"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "Articles plus récents"
+olderPosts = "Articles plus anciens"
