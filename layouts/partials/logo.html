@@ -2,6 +2,8 @@
     <div class="logo">
         {{ if .Site.Params.Logo.path }}
             <img src="{{ .Site.Params.Logo.path }}" alt="{{ .Site.Params.Logo.alt }}" />
+        {{ else if .Site.Params.Logo.svg }}
+            {{ partial .Site.Params.Logo.svg . }}
         {{ else }}
             <span class="logo__mark">{{ with .Site.Params.Logo.logoMark }}{{ . }}{{ else }}>{{ end }}</span>
             <span class="logo__text {{ with.Site.Params.Logo.logoCursorPathname}}logo__pathname{{ end }}">
