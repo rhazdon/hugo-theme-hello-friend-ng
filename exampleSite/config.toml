@@ -222,6 +222,15 @@ disableHugoGeneratorInject = false
   # 
 
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # Addon: Matomo Analytics
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # [params.matomo]
+  # enable = true # To enable matomo analytics change to `true`.
+  # websiteDomain = "my-cool-blog.website.tld" # Set the domain name of your website, in most cases same as your base URL this is required.
+  # domain = "bigbrother.website.tld" # Set to Matomo domain
+  # siteID = "1337" # Default is set to 1, change this to the siteid being tracked
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
   # Addon: Social icons
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   #
