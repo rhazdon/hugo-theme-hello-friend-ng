@@ -45,6 +45,7 @@
 - [keybase](https://simpleicons.org/?q=keybase)
 - [lastfm](https://simpleicons.org/?q=lastfm)
 - [leetcode](https://simpleicons.org/?q=leetcode)
+- [lemmy](https://simpleicons.org/?q=lemmy)
 - [letterboxd](https://simpleicons.org/?q=letterboxd)
 - [librepay](https://simpleicons.org/?q=liberapay)
 - [lichess](https://simpleicons.org/?q=lichess)
